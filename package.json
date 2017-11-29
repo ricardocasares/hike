@@ -1,0 +1,39 @@
+{
+  "name": "analogical",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server -w server.js -w routes.js",
+    "build": "next build",
+    "start": "NODE_ENV=production node server"
+  },
+  "keywords": [],
+  "author": "Ricardo Casares <ricardocasares@gmail.com> (http://analogic.al/)",
+  "license": "MIT",
+  "dependencies": {
+    "babel-plugin-inline-dotenv": "^1.1.1",
+    "isomorphic-unfetch": "^2.0.0",
+    "next": "^4.1.4",
+    "next-routes": "^1.1.0",
+    "nprogress": "^0.2.0",
+    "react": "^16.1.1",
+    "react-dom": "^16.1.1",
+    "react-markdown": "^3.0.2"
+  },
+  "babel": {
+    "env": {
+      "development": {
+        "presets": ["next/babel"],
+        "plugins": ["inline-dotenv"]
+      },
+      "production": {
+        "presets": ["next/babel"],
+        "plugins": ["inline-dotenv"]
+      }
+    }
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.1"
+  }
+}
