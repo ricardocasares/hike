@@ -7,18 +7,18 @@ import Header from "./Header";
 import { Router } from "../routes";
 import { SANS, MONO } from "../lib/fonts";
 import { BLACK, BLUE, WHITE, GRAY, LIGHT_GRAY, ORANGE } from "../lib/colors";
+import { dark, light, red } from "../lib/themes";
 
 NProgress.configure({ showSpinner: false });
-
-Router.onRouteChangeStart = url => {
-  console.log(`Loading: ${url}`);
-  NProgress.start();
-};
-
-Router.onRouteChangeComplete = () => NProgress.done();
 Router.onRouteChangeError = () => NProgress.done();
+Router.onRouteChangeStart = url => NProgress.start();
+Router.onRouteChangeComplete = () => NProgress.done();
 
-export default ({ children, title = "This is the default title" }) => (
+export default ({
+  children,
+  title = "This is the default title",
+  theme = light
+}) => (
   <div className="layout">
     <Head>
       <title>{title}</title>
@@ -45,8 +45,8 @@ export default ({ children, title = "This is the default title" }) => (
       }
 
       body {
-        color: ${BLACK};
-        background: ${WHITE};
+        color: ${theme.color};
+        background: ${theme.background};
         font-family: ${SANS};
         padding: 0;
         margin: 0;
@@ -55,18 +55,15 @@ export default ({ children, title = "This is the default title" }) => (
       }
 
       a {
-        color: ${BLUE};
-        border-bottom: 2px solid transparent;
+        color: ${theme.anchors};
         text-decoration: none;
         padding-bottom: 5px;
         line-height: 30px;
-        transition: 0.2s border-color, 0.2s color;
       }
 
       a:focus,
       a:hover {
-        color: ${BLUE};
-        border-bottom: 2px solid ${BLUE};
+        color: ${theme.anchors};
       }
 
       strong {
@@ -74,9 +71,8 @@ export default ({ children, title = "This is the default title" }) => (
       }
 
       pre {
-        color: ${BLACK};
-        border: 1px solid ${LIGHT_GRAY};
-        border-left: 10px solid ${LIGHT_GRAY};
+        border: 1px solid ${theme.codeblock};
+        border-left: 10px solid ${theme.codeblock};
         font-family: ${MONO};
         font-size: 14px;
         padding: 20px;
@@ -107,13 +103,20 @@ export default ({ children, title = "This is the default title" }) => (
       }
 
       footer {
-        color: ${GRAY};
+        color: ${theme.subtle};
         text-align: center;
       }
 
       del {
-        color: ${LIGHT_GRAY};
+        color: ${theme.muted};
       }
+
+      #nprogress .bar {
+        background: ${theme.loading};
+      }
+
+      #nprogress .peg {
+        box-shadow: 0 0 10px ${theme.loading}, 0 0 5px ${theme.loading};
     `}</style>
   </div>
 );

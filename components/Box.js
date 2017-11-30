@@ -6,7 +6,7 @@ export default ({ children }) => (
     {children}
     <style jsx>{`
       .box {
-        border: 1px solid ${LIGHT_GRAY};
+        border: 1px solid currentColor;
         border-radius: 3px;
         padding: 20px;
         margin-bottom: 20px;
@@ -18,12 +18,6 @@ export default ({ children }) => (
 
       .box:last-of-type {
         margin-right: 0;
-      }
-
-      .box:hover {
-        transform: translateY(-9px);
-        box-shadow: 0 2px ${WHITE}, 0 3px ${LIGHT_GRAY}, 0 5px ${WHITE},
-          0 6px ${LIGHT_GRAY}, 0 8px ${WHITE}, 0 9px ${LIGHT_GRAY};
       }
     `}</style>
   </div>

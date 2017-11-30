@@ -8,6 +8,7 @@ import Title from "../components/Title";
 import LeadText from "../components/LeadText";
 import Box from "../components/Box";
 import Posts from "../components/Posts";
+import { red, black, light } from "../lib/themes";
 
 const Page = props => (
   <Layout title="analogic.al">

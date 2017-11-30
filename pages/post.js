@@ -5,6 +5,7 @@ import React from "react";
 import Layout from "../components/Layout";
 import Box from "../components/Box";
 import Post from "../components/Post";
+import { light } from "../lib/themes";
 import { getIssue, getComments } from "../lib/api";
 
 const Page = ({ issue, comments }) => (
