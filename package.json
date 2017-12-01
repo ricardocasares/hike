@@ -18,30 +18,41 @@
     "nprogress": "^0.2.0",
     "open-color": "^1.5.1",
     "prop-types": "^15.6.0",
-    "react": "^16.1.1",
-    "react-dom": "^16.1.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
     "react-markdown": "^3.0.2"
   },
   "babel": {
     "env": {
       "development": {
-        "presets": ["next/babel"],
-        "plugins": ["inline-dotenv"]
+        "presets": [
+          "next/babel"
+        ],
+        "plugins": [
+          "inline-dotenv"
+        ]
       },
       "production": {
-        "presets": ["next/babel"],
-        "plugins": ["transform-inline-environment-variables"]
+        "presets": [
+          "next/babel"
+        ],
+        "plugins": [
+          "transform-inline-environment-variables"
+        ]
       }
     }
   },
   "devDependencies": {
-    "babel-preset-env": "^1.6.1",
     "babel-plugin-inline-dotenv": "^1.1.1",
     "babel-plugin-transform-inline-environment-variables": "^0.2.0",
+    "babel-preset-env": "^1.6.1",
     "nodemon": "^1.12.1"
   },
   "now": {
-    "alias": ["analogic.al", "www.analogic.al"],
+    "alias": [
+      "analogic.al",
+      "www.analogic.al"
+    ],
     "dotenv": ".env.production"
   }
 }

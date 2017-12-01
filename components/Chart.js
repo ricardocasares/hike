@@ -37,9 +37,9 @@ export default withTheme(({ title, data, theme }) => {
       </ul>
       <style jsx>{`
         .chart {
-          padding: 20px;
-          border: 1px solid ${theme.chart.border};
-          border-radius: 3px;
+          padding: 2rem;
+          border: .1rem solid ${theme.chart.border};
+          border-radius: .3rem;
           width: 100%;
         }
 
@@ -51,21 +51,21 @@ export default withTheme(({ title, data, theme }) => {
         }
 
         .percentages {
-          margin-bottom: 10px;
+          margin-bottom: 1rem;
         }
 
         .percentage {
-          height: 15px;
+          height: 1.5rem;
           display: inline-block;
           position: relative;
         }
 
         .percentage:first-child {
-          border-radius: 3px 0 0 3px;
+          border-radius: .3rem 0 0 .3rem;
         }
 
         .percentage:last-child {
-          border-radius: 0 3px 3px 0;
+          border-radius: 0 .3rem .3rem 0;
         }
 
         .legend {
@@ -75,16 +75,12 @@ export default withTheme(({ title, data, theme }) => {
         }
 
         .label {
-          margin-right: 15px;
-          margin-bottom: 5px;
+          margin-right: 1.5rem;
+          margin-bottom: .5rem;
           font-size: 1.2rem;
         }
 
-        @media (min-width: 900px) {
-          .legend {
-            overflow-x: scroll;
-            -webkit-overflow-scrolling: touch;
-          }
+        @media (min-width: 600px) {
           .label {
             display: inline-block;
           }
@@ -95,9 +91,9 @@ export default withTheme(({ title, data, theme }) => {
         }
 
         .color {
-          height: 8px;
-          width: 8px;
-          margin-right: 5px;
+          height: .8rem;
+          width: .8rem;
+          margin-right: .5rem;
           display: inline-block;
           border-radius: 50%;
         }

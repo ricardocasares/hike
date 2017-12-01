@@ -107,6 +107,12 @@ const Index = props => (
             grid-template-columns: 1fr 1fr;
           }
         }
+
+        @media (min-width: 1024px) {
+          .charts {
+            grid-template-columns: 1fr 1fr 1fr;
+          }
+        }
       `}</style>
     </Page>
   </ThemeProvider>
