@@ -2,7 +2,7 @@ const routes = require("next-routes")();
 
 routes
   .add("index", "/")
-  .add("blog", "/blog")
-  .add("post", "/blog/:slug/:id");
+  .add("changelog", "/changelog")
+  .add("post", "/changelog/:slug/:id");
 
 module.exports = routes;

@@ -11,7 +11,7 @@ export default ({ number, title = "", author, body, comments }) => (
   <article>
     <header>
       <Subtitle>
-        <Link prefetch route={`/blog/${slug(title)}/${number}`}>
+        <Link prefetch route={`/changelog/${slug(title)}/${number}`}>
           <a>{title}</a>
         </Link>
       </Subtitle>
