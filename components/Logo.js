@@ -1,15 +1,21 @@
+// external
 import React from "react";
 
-export default () => (
-  <div>
-    <h1>analogic.al</h1>
-    <style jsx>{`
-      h1 {
-        font-weight: 400;
-        font-size: 150%;
-        letter-spacing: 0px;
-        line-height: 0;
-      }
-    `}</style>
-  </div>
-);
+// internal
+import { withTheme } from "../providers/Theme";
+
+export default withTheme(({ theme, color, size }) => (
+  <svg
+    className="logo"
+    viewBox="0 0 32 32"
+    width={theme.logo.size}
+    height={theme.logo.size}
+    fill="none"
+    stroke={theme.logo.color}
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    strokeWidth="2"
+  >
+    <path d="M4 16 L11 16 14 29 18 3 21 16 28 16" />
+  </svg>
+));

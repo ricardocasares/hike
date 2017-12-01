@@ -5,14 +5,14 @@ import React from "react";
 import { withTheme } from "../providers/Theme";
 
 export default withTheme(({ children, theme }) => (
-  <h2>
+  <h3>
     {children}
     <style jsx>{`
-      h2 {
-        font-size: 2.2rem;
+      h3 {
+        color: ${theme.type.subtitle};
+        font-size: 1.8rem;
         font-weight: 400;
-        color: ${theme.type.title};
       }
     `}</style>
-  </h2>
+  </h3>
 ));

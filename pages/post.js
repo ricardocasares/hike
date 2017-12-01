@@ -2,20 +2,27 @@
 import React from "react";
 
 // internal
-import Layout from "../components/Layout";
-import Box from "../components/Box";
+import Page from "../components/Page";
 import Post from "../components/Post";
+import Comment from "../components/Comment";
+import Subtitle from "../components/Subtitle";
 import { light } from "../lib/themes";
+import { ThemeProvider } from "../providers/Theme";
 import { getIssue, getComments } from "../lib/api";
 
-const Page = ({ issue, comments }) => (
-  <Layout title="analogic.al">
-    <Post {...issue} />
-    {comments.map(comment => <Post key={comment.id} {...comment} />)}
-  </Layout>
+const Article = ({ issue, comments }) => (
+  <ThemeProvider theme={light}>
+    <Page title="analogic.al">
+      <Post {...issue} />
+      <section className="comments">
+        <Subtitle>Comments</Subtitle>
+        {comments.map(comment => <Comment key={comment.id} {...comment} />)}
+      </section>
+    </Page>
+  </ThemeProvider>
 );
 
-Page.getInitialProps = async ({ query }) => {
+Article.getInitialProps = async ({ query }) => {
   const { id } = query;
 
   const issue = await getIssue(id);
@@ -24,4 +31,4 @@ Page.getInitialProps = async ({ query }) => {
   return { issue, comments };
 };
 
-export default Page;
+export default Article;

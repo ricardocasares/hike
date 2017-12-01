@@ -2,21 +2,26 @@
 import React from "react";
 
 // external
-import Layout from "../components/Layout";
-import Box from "../components/Box";
+import Page from "../components/Page";
+import Title from "../components/Title";
 import Posts from "../components/Posts";
 import { getIssues } from "../lib/api";
+import { light, dark } from "../lib/themes";
+import { ThemeProvider } from "../providers/Theme";
 
-const Page = props => (
-  <Layout title="analogic.al">
-    <Posts {...props} />
-  </Layout>
+const Blog = props => (
+  <ThemeProvider theme={dark}>
+    <Page title="analogic.al">
+      <Title>Changelog entries</Title>
+      <Posts {...props} />
+    </Page>
+  </ThemeProvider>
 );
 
-Page.getInitialProps = async ({ query }) => {
+Blog.getInitialProps = async ({ query }) => {
   const issues = await getIssues();
 
   return { issues };
 };
 
-export default Page;
+export default Blog;

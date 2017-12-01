@@ -7,13 +7,19 @@ export default () => (
     <Navigation />
     <style jsx>{`
       header {
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+        justify-items: center;
         margin-bottom: 20px;
       }
 
       @media (min-width: 400px) {
         header {
-          display: flex;
-          justify-content: space-between;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          align-items: center;
+          justify-items: stretch;
         }
       }
     `}</style>

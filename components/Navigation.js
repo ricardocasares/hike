@@ -10,7 +10,7 @@ export default () => (
       </li>
       <li>
         <Link prefetch route="/blog">
-          Blog
+          Changelog
         </Link>
       </li>
       <li>
@@ -20,7 +20,6 @@ export default () => (
     <style jsx>{`
       nav {
         margin-top: 20px;
-        display: grid;
       }
 
       ul {
@@ -38,7 +37,7 @@ export default () => (
         margin-right: 0;
       }
 
-      @media (min-width: 400px) {
+      @media (min-width: 425px) {
         nav {
           margin-top: 0;
           text-align: right;
