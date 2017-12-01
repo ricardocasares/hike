@@ -1,6 +1,5 @@
 // external
 import React from "react";
-import NoSSR from "react-no-ssr";
 
 // internal
 import Link from "../components/Link";

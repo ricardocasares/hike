@@ -37,5 +37,9 @@
   "devDependencies": {
     "babel-plugin-inline-dotenv": "^1.1.1",
     "nodemon": "^1.12.1"
+  },
+  "now": {
+    "alias": ["analogic.al", "www.analogic.al"],
+    "dotenv": ".env.production"
   }
 }
