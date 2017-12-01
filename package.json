@@ -30,12 +30,14 @@
       },
       "production": {
         "presets": ["next/babel"],
-        "plugins": ["inline-dotenv"]
+        "plugins": ["transform-inline-environment-variables"]
       }
     }
   },
   "devDependencies": {
+    "babel-preset-env": "^1.6.1",
     "babel-plugin-inline-dotenv": "^1.1.1",
+    "babel-plugin-transform-inline-environment-variables": "^0.2.0",
     "nodemon": "^1.12.1"
   },
   "now": {
