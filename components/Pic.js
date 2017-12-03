@@ -1,3 +1,5 @@
+import React from "react";
+
 export default ({ link, images, location }) => (
   <div data-location={location.name}>
     <a href={link}>
@@ -15,10 +17,12 @@ export default ({ link, images, location }) => (
 
       div::before {
         content: attr(data-location);
+        font-size: 1.4rem;
         color: white;
         position: absolute;
-        bottom: 10px;
-        left: 10px;
+        bottom: 0;
+        left: 0;
+        padding: 20px;
         opacity: 0;
         transition: opacity 0.2s;
         text-shadow: 1px 1px 1px #000;

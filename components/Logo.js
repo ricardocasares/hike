@@ -1,21 +1,17 @@
 // external
 import React from "react";
+import { Activity } from "react-bytesize-icons";
 
 // internal
 import { themed } from "../providers/Theme";
 
 export default themed(({ theme, color, size }) => (
-  <svg
-    className="logo"
-    viewBox="0 0 32 32"
+  <Activity
     width={theme.logo.size}
     height={theme.logo.size}
-    fill="none"
-    stroke={theme.logo.color}
+    color={theme.logo.color}
+    strokeWidth={"7%"}
     strokeLinecap="round"
     strokeLinejoin="round"
-    strokeWidth="2"
-  >
-    <path d="M4 16 L11 16 14 29 18 3 21 16 28 16" />
-  </svg>
+  />
 ));

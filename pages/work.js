@@ -1,5 +1,6 @@
 // external
 import React from "react";
+import { GitHub } from "react-bytesize-icons";
 
 // internal
 import Page from "../components/Page";
@@ -20,7 +21,10 @@ const Index = ({ repos }) => (
         {repos.map(repo => (
           <Card key={repo.id}>
             <CardTitle>
-              <a href={repo.html_url}>{repo.name}</a>
+              <a href={repo.html_url}>
+                <GitHub width={15} height={15} />
+                <span>{repo.name}</span>
+              </a>
             </CardTitle>
             <P>{repo.description}</P>
           </Card>
@@ -28,6 +32,12 @@ const Index = ({ repos }) => (
       </section>
 
       <style jsx>{`
+        a {
+          display: grid;
+          grid-template-columns: 20px 1fr;
+          align-items: center;
+          justify-items: left;
+        }
         .recent {
           margin-bottom: 30px;
         }
