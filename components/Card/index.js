@@ -1,4 +1,6 @@
-import Card from "./Card";
-import CardTitle from "./Title";
+import Kard from "./Card";
+import Title from "./Title";
+import { themed } from "../../providers/Theme";
 
-export { Card, CardTitle };
+export const Card = themed(Kard);
+export const CardTitle = themed(Title);

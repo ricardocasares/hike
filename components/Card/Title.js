@@ -1,10 +1,7 @@
 // external
 import React from "react";
 
-// internal
-import { themed } from "../../providers/Theme";
-
-export default themed(({ theme, children }) => (
+export default ({ theme, children }) => (
   <h4>
     {children}
     <style jsx>{`
@@ -16,4 +13,4 @@ export default themed(({ theme, children }) => (
       }
     `}</style>
   </h4>
-));
+);
