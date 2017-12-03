@@ -5,10 +5,11 @@ import React from "react";
 import Page from "../components/Page";
 import Title from "../components/Title";
 import Subtitle from "../components/Subtitle";
-import Posts from "../components/Posts";
+import { PostList } from "../components/Posts";
 import Link from "../components/Link";
 import { dark } from "../lib/themes";
 import { getIssues, getLabels } from "../lib/api";
+import { DESKTOP } from "../lib/breakpoints";
 import { ThemeProvider } from "../providers/Theme";
 
 const Changelog = ({ labels, issues }) => (
@@ -16,8 +17,8 @@ const Changelog = ({ labels, issues }) => (
     <Page title="analogic.al">
       <Title>Changelog entries</Title>
       <Subtitle>Because sometimes I like to write stuff</Subtitle>
-      <section className="grid">
-        <Posts posts={issues} />
+      <section className="posts">
+        <PostList posts={issues} />
         <ul>
           <h4>Tags</h4>
           {labels.map((l, idx) => (
@@ -28,37 +29,42 @@ const Changelog = ({ labels, issues }) => (
         </ul>
       </section>
       <style jsx>{`
-        .grid {
+        .posts {
+          display: grid;
           grid-template-columns: 1fr;
           grid-gap: 0;
-        }
-
-        @media (min-width: 700px) {
-          .grid {
-            grid-template-columns: 4fr 1fr;
-          }
-
-          ul {
-            justify-self: right;
-          }
-        }
-
-        section {
-          margin-bottom: 30px;
+          margin: 30px 0;
         }
 
         ul {
           list-style: none;
           margin: 0;
+          margin-top: 30px;
           padding: 0;
         }
 
-        h4 {
-          font-weight: normal;
+        @media (${DESKTOP}) {
+          .posts {
+            grid-template-columns: 4fr 1fr;
+          }
+
+          ul {
+            justify-self: right;
+            margin-top: 0;
+          }
+        }
+
+        li {
+          margin-bottom: 10px;
         }
 
         li:first-letter {
           text-transform: uppercase;
+        }
+
+        h4 {
+          font-weight: normal;
+          margin-top: 0;
         }
       `}</style>
     </Page>

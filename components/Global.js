@@ -2,6 +2,7 @@
 import Head from "next/head";
 
 // internal
+import { TABLET, DESKTOP } from "../lib/breakpoints";
 import { themed } from "../providers/Theme";
 
 export default themed(({ theme }) => (
@@ -32,7 +33,7 @@ export default themed(({ theme }) => (
       width: 100%;
     }
 
-    @media (min-width: 426px) {
+    @media (${TABLET}) {
       .app {
         margin: 0 auto;
         padding: 4rem;
@@ -55,8 +56,6 @@ export default themed(({ theme }) => (
     a {
       color: ${theme.global.anchors};
       text-decoration: none;
-      padding-bottom: 5px;
-      line-height: 30px;
     }
 
     a:focus,
@@ -93,8 +92,22 @@ export default themed(({ theme }) => (
     /* CLASSES */
     .grid {
       display: grid;
-      grid-gap: 30px;
+      grid-gap: 20px;
       margin: 30px 0;
+    }
+
+    @media (${TABLET}) {
+      .grid {
+        grid-gap: 30px;
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (${DESKTOP}) {
+      .grid {
+        grid-gap: 30px;
+        grid-template-columns: 1fr 1fr 1fr;
+      }
     }
   `}</style>
 ));

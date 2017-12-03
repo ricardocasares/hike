@@ -8,7 +8,6 @@ import Title from "../components/Title";
 import Subtitle from "../components/Subtitle";
 import Chart from "../components/Chart";
 import { Card, CardTitle } from "../components/Card";
-import P from "../components/Paragraph";
 import { light, dark } from "../lib/themes";
 import { ThemeProvider } from "../providers/Theme";
 
@@ -90,28 +89,6 @@ const Index = () => (
           ]}
         />
       </section>
-      <style jsx>{`
-        .intro,
-        .charts {
-          margin-bottom: 30px;
-        }
-
-        .charts {
-          grid-template-columns: 1fr;
-        }
-
-        @media (min-width: 600px) {
-          .charts {
-            grid-template-columns: repeat(2, 1fr);
-          }
-        }
-
-        @media (min-width: 1024px) {
-          .charts {
-            grid-template-columns: repeat(3, 1fr);
-          }
-        }
-      `}</style>
     </Page>
   </ThemeProvider>
 );

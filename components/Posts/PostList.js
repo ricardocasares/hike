@@ -1,23 +1,20 @@
 // external
-import ago from "s-ago";
 import React from "react";
 
 // internal
-import Link from "./Link";
-import { slug } from "../lib/util";
+import Link from "../Link";
+import Time from "../Time";
+import { slug } from "../../lib/util";
 
-export default ({ posts }) => (
+export default ({ theme, posts }) => (
   <section>
     {posts.map(({ title, number, created_at }) => {
-      const date = new Date(created_at);
-      const relative = ago(date);
-
       return (
         <h3 key={number}>
           <Link prefetch route={`/changelog/${number}/${slug(title)}`}>
             {title}
+            <Time date={new Date(created_at)} />
           </Link>
-          <time title={date.toString()}>{relative}</time>
         </h3>
       );
     })}
@@ -25,10 +22,13 @@ export default ({ posts }) => (
       h3 {
         font-size: 1.6rem;
         font-weight: 400;
+        margin: 0;
+        padding: 15px 0;
+        border-bottom: 1px solid ${theme.posts.list};
       }
 
-      time {
-        margin-left: 10px;
+      h3:last-child {
+        border: 0;
       }
     `}</style>
   </section>

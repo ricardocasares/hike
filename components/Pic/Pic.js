@@ -1,6 +1,7 @@
+// external
 import React from "react";
 
-export default ({ link, images, location }) => (
+export default ({ theme, link, images, location }) => (
   <div data-location={location.name}>
     <a href={link}>
       <img src={images.low_resolution.url} />
@@ -8,11 +9,16 @@ export default ({ link, images, location }) => (
     <style jsx>{`
       img {
         margin: 0;
+        position: relative;
         border-radius: 3px;
       }
 
       div {
         position: relative;
+        min-height: 100px;
+        border-radius: 3px;
+        background: ${theme.pic.background};
+        animation: Back 1.5s ease infinite;
       }
 
       div::before {
@@ -26,6 +32,7 @@ export default ({ link, images, location }) => (
         opacity: 0;
         transition: opacity 0.2s;
         text-shadow: 1px 1px 1px #000;
+        z-index: 1;
       }
 
       div:hover::before {
@@ -34,6 +41,20 @@ export default ({ link, images, location }) => (
 
       div a {
         line-height: 0;
+        display: block;
+        padding: 0;
+      }
+
+      @keyframes Back {
+        0% {
+          background: rgba(52, 58, 64, 1);
+        }
+        50% {
+          background: rgba(52, 58, 64, 0.5);
+        }
+        100% {
+          background: rgba(52, 58, 64, 1);
+        }
       }
     `}</style>
   </div>

@@ -1,6 +1,7 @@
-import Kard from "./Card";
-import Title from "./Title";
+// internal
+import CardComponent from "./Card";
+import CardTitleComponent from "./CardTitle";
 import { themed } from "../../providers/Theme";
 
-export const Card = themed(Kard);
-export const CardTitle = themed(Title);
+export const Card = themed(CardComponent);
+export const CardTitle = themed(CardTitleComponent);

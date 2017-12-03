@@ -1,5 +1,6 @@
-import { Component, Children } from "react";
+// external
 import PropTypes from "prop-types";
+import { Component, Children } from "react";
 
 export class ThemeProvider extends Component {
   static propTypes = {

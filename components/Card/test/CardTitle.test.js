@@ -3,7 +3,7 @@ import renderer from "react-test-renderer";
 
 // internal
 import { dark } from "../../../lib/themes";
-import CardTitle from "../Title";
+import CardTitle from "../CardTitle";
 
 it("CardTitle", () => {
   const title = renderer

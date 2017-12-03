@@ -1,6 +1,9 @@
+// external
+import renderer from "react-test-renderer";
+
+// internal
 import Card from "../Card";
 import { dark } from "../../../lib/themes";
-import renderer from "react-test-renderer";
 
 describe("Carding", () => {
   it("Card", () => {

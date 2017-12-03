@@ -2,10 +2,9 @@
 import React from "react";
 
 // internal
-import { Card, CardTitle } from "./Card";
-import { themed } from "../providers/Theme";
+import { Card, CardTitle } from "../Card";
 
-export default themed(({ title, data, theme }) => {
+export default ({ title, data, theme }) => {
   const total = data.reduce((acc, point) => (acc = acc + point.value), 0);
   const percentages = data.map((d, idx) => ({
     ...d,
@@ -87,4 +86,4 @@ export default themed(({ title, data, theme }) => {
       `}</style>
     </Card>
   );
-});
+};
