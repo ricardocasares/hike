@@ -18,6 +18,11 @@ export default () => (
           Changelog
         </Link>
       </li>
+      <li>
+        <Link prefetch route="/photos">
+          Photos
+        </Link>
+      </li>
     </ul>
     <style jsx>{`
       nav {

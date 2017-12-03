@@ -32,7 +32,7 @@ export default themed(({ theme }) => (
       width: 100%;
     }
 
-    @media (min-width: 425px) {
+    @media (min-width: 426px) {
       .app {
         margin: 0 auto;
         padding: 4rem;
@@ -94,6 +94,7 @@ export default themed(({ theme }) => (
     .grid {
       display: grid;
       grid-gap: 30px;
+      margin: 30px 0;
     }
   `}</style>
 ));

@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon server -w server.js -w routes.js",
-    "dev:tdd": "run-p dev test:watch",
+    "dev:tdd": "run-p dev test:tdd",
     "test": "jest",
-    "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage",
+    "test:tdd": "jest --watch",
+    "test:cover": "jest --coverage",
     "build": "next build",
     "start": "node server"
   },
@@ -16,6 +16,7 @@
   "author": "Ricardo Casares <ricardocasares@gmail.com> (http://analogic.al/)",
   "license": "MIT",
   "dependencies": {
+    "babel-plugin-transform-inline-environment-variables": "^0.2.0",
     "isomorphic-unfetch": "^2.0.0",
     "next": "^4.1.4",
     "next-routes": "^1.1.0",
@@ -45,7 +46,6 @@
   },
   "devDependencies": {
     "babel-plugin-inline-dotenv": "^1.1.1",
-    "babel-plugin-transform-inline-environment-variables": "^0.2.0",
     "babel-preset-env": "^1.6.1",
     "jest": "^21.2.1",
     "nodemon": "^1.12.1",
