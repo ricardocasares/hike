@@ -2,9 +2,9 @@
 import React from "react";
 
 // internal
-import { withTheme } from "../providers/Theme";
+import { themed } from "../providers/Theme";
 
-export default withTheme(({ theme, color, size }) => (
+export default themed(({ theme, color, size }) => (
   <svg
     className="logo"
     viewBox="0 0 32 32"

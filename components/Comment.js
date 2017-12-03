@@ -6,9 +6,9 @@ import Markdown from "react-markdown";
 import Subtitle from "./Subtitle";
 import { Link } from "../routes";
 import { slug } from "../lib/util";
-import { withTheme } from "../providers/Theme";
+import { themed } from "../providers/Theme";
 
-export default withTheme(({ theme, user, body, created_at }) => (
+export default themed(({ theme, user, body, created_at }) => (
   <article>
     <h4 title={created_at}>
       <svg

@@ -19,7 +19,7 @@ export class ThemeProvider extends Component {
   }
 }
 
-export const withTheme = Cmp =>
+export const themed = Cmp =>
   class Themed extends Component {
     static contextTypes = {
       theme: PropTypes.object.isRequired

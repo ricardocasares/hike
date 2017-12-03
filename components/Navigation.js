@@ -9,12 +9,14 @@ export default () => (
         </Link>
       </li>
       <li>
-        <Link prefetch route="/changelog">
-          Changelog
+        <Link prefetch route="work">
+          Work
         </Link>
       </li>
       <li>
-        <a href="https://github.com/ricardocasares">Github</a>
+        <Link prefetch route="/changelog">
+          Changelog
+        </Link>
       </li>
     </ul>
     <style jsx>{`

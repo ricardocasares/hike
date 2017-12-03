@@ -2,9 +2,10 @@
 import React from "react";
 
 // internal
-import { withTheme } from "../providers/Theme";
+import { Card, CardTitle } from "./Card";
+import { themed } from "../providers/Theme";
 
-export default withTheme(({ title, data, theme }) => {
+export default themed(({ title, data, theme }) => {
   const total = data.reduce((acc, point) => (acc = acc + point.value), 0);
   const percentages = data.map((d, idx) => ({
     ...d,
@@ -13,8 +14,8 @@ export default withTheme(({ title, data, theme }) => {
   }));
 
   return (
-    <div className="chart">
-      <h4>{title}</h4>
+    <Card>
+      <CardTitle>{title}</CardTitle>
       <div className="percentages">
         {percentages.map((p, idx) => (
           <div
@@ -36,20 +37,6 @@ export default withTheme(({ title, data, theme }) => {
         ))}
       </ul>
       <style jsx>{`
-        .chart {
-          padding: 2rem;
-          border: .1rem solid ${theme.chart.border};
-          border-radius: .3rem;
-          width: 100%;
-        }
-
-        h4 {
-          color: ${theme.chart.title};
-          margin-top: 0;
-          font-weight: 400;
-          font-size: 1.4rem;
-        }
-
         .percentages {
           margin-bottom: 1rem;
         }
@@ -61,11 +48,11 @@ export default withTheme(({ title, data, theme }) => {
         }
 
         .percentage:first-child {
-          border-radius: .3rem 0 0 .3rem;
+          border-radius: 0.3rem 0 0 0.3rem;
         }
 
         .percentage:last-child {
-          border-radius: 0 .3rem .3rem 0;
+          border-radius: 0 0.3rem 0.3rem 0;
         }
 
         .legend {
@@ -76,7 +63,7 @@ export default withTheme(({ title, data, theme }) => {
 
         .label {
           margin-right: 1.5rem;
-          margin-bottom: .5rem;
+          margin-bottom: 0.5rem;
           font-size: 1.2rem;
         }
 
@@ -91,13 +78,13 @@ export default withTheme(({ title, data, theme }) => {
         }
 
         .color {
-          height: .8rem;
-          width: .8rem;
-          margin-right: .5rem;
+          height: 0.8rem;
+          width: 0.8rem;
+          margin-right: 0.5rem;
           display: inline-block;
           border-radius: 50%;
         }
       `}</style>
-    </div>
+    </Card>
   );
 });

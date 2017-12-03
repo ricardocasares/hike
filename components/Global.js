@@ -2,9 +2,9 @@
 import Head from "next/head";
 
 // internal
-import { withTheme } from "../providers/Theme";
+import { themed } from "../providers/Theme";
 
-export default withTheme(({ theme }) => (
+export default themed(({ theme }) => (
   <style jsx global>{`
     /* RESETS */
     html,
@@ -36,7 +36,7 @@ export default withTheme(({ theme }) => (
       .app {
         margin: 0 auto;
         padding: 4rem;
-        max-width: 80;
+        max-width: 90%;
       }
     }
 
@@ -91,5 +91,9 @@ export default withTheme(({ theme }) => (
     }
 
     /* CLASSES */
+    .grid {
+      display: grid;
+      grid-gap: 30px;
+    }
   `}</style>
 ));

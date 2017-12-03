@@ -2,7 +2,7 @@
 import NProgress from "nprogress";
 
 // internal
-import { withTheme } from "../providers/Theme";
+import { themed } from "../providers/Theme";
 import { Router } from "../routes";
 
 NProgress.configure({ showSpinner: false });
@@ -10,7 +10,7 @@ Router.onRouteChangeError = () => NProgress.done();
 Router.onRouteChangeStart = () => NProgress.start();
 Router.onRouteChangeComplete = () => NProgress.done();
 
-export default withTheme(({ theme }) => (
+export default themed(({ theme }) => (
   <style global jsx>{`
     #nprogress {
       pointer-events: none;

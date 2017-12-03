@@ -7,11 +7,11 @@ import Subtitle from "./Subtitle";
 import { Link } from "../routes";
 import { slug } from "../lib/util";
 
-export default ({ number, title = "", author, body, comments }) => (
+export default ({ number, title, author, body, comments }) => (
   <article>
     <header>
       <Subtitle>
-        <Link prefetch route={`/changelog/${slug(title)}/${number}`}>
+        <Link prefetch route={`/changelog/${number}/${slug(title)}`}>
           <a>{title}</a>
         </Link>
       </Subtitle>

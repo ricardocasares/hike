@@ -6,12 +6,12 @@ import Page from "../components/Page";
 import Post from "../components/Post";
 import Comment from "../components/Comment";
 import Subtitle from "../components/Subtitle";
-import { light } from "../lib/themes";
+import { dark } from "../lib/themes";
 import { ThemeProvider } from "../providers/Theme";
 import { getIssue, getComments } from "../lib/api";
 
 const Article = ({ issue, comments }) => (
-  <ThemeProvider theme={light}>
+  <ThemeProvider theme={dark}>
     <Page title="analogic.al">
       <Post {...issue} />
       <section className="comments">

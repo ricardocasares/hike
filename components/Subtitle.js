@@ -2,9 +2,9 @@
 import React from "react";
 
 // internal
-import { withTheme } from "../providers/Theme";
+import { themed } from "../providers/Theme";
 
-export default withTheme(({ children, theme }) => (
+export default themed(({ children, theme }) => (
   <h3>
     {children}
     <style jsx>{`
