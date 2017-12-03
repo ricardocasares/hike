@@ -4,13 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon server -w server.js -w routes.js",
-    "tdd": "run-p dev test:watch",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "build": "next build",
-    "start": "node server"
+    "tdd": "run-p dev test:watch",
+    "now-build": "next build",
+    "now-start": "node server",
+    "start": "nodemon server -w server.js -w routes.js"
   },
   "keywords": [],
   "author": "Ricardo Casares <ricardocasares@gmail.com> (http://analogic.al/)",
