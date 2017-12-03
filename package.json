@@ -13,7 +13,6 @@
   "license": "MIT",
   "dependencies": {
     "isomorphic-unfetch": "^2.0.0",
-    "ms": "^2.1.1",
     "next": "^4.1.4",
     "next-routes": "^1.1.0",
     "nprogress": "^0.2.0",
@@ -27,20 +26,12 @@
   "babel": {
     "env": {
       "development": {
-        "presets": [
-          "next/babel"
-        ],
-        "plugins": [
-          "inline-dotenv"
-        ]
+        "presets": ["next/babel"],
+        "plugins": ["inline-dotenv"]
       },
       "production": {
-        "presets": [
-          "next/babel"
-        ],
-        "plugins": [
-          "transform-inline-environment-variables"
-        ]
+        "presets": ["next/babel"],
+        "plugins": ["transform-inline-environment-variables"]
       }
     }
   },
@@ -51,10 +42,7 @@
     "nodemon": "^1.12.1"
   },
   "now": {
-    "alias": [
-      "analogic.al",
-      "www.analogic.al"
-    ],
+    "alias": ["analogic.al", "www.analogic.al"],
     "dotenv": ".env.production"
   }
 }
