@@ -4,7 +4,6 @@ import React from "react";
 // internal
 import Page from "../components/Page";
 import Post from "../components/Post";
-import Comment from "../components/Comment";
 import Subtitle from "../components/Subtitle";
 import { dark } from "../lib/themes";
 import { ThemeProvider } from "../providers/Theme";
@@ -14,10 +13,6 @@ const Article = ({ issue, comments }) => (
   <ThemeProvider theme={dark}>
     <Page title="analogic.al">
       <Post {...issue} />
-      <section className="comments">
-        <Subtitle>Comments</Subtitle>
-        {comments.map(comment => <Comment key={comment.id} {...comment} />)}
-      </section>
     </Page>
   </ThemeProvider>
 );
