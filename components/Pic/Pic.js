@@ -1,44 +1,44 @@
 // external
 import React from "react";
+import css from "styled-jsx/css";
 
 export default ({ theme, link, images, location }) => (
-  <div data-location={location.name}>
-    <a href={link}>
+  <div className="pic" style={{ animation: "Back 1.5s ease infinite" }}>
+    <a href={images.standard_resolution.url}>
       <img src={images.low_resolution.url} />
     </a>
+    <div className="location">{location.name}</div>
     <style jsx>{`
       img {
         margin: 0;
         border-radius: 3px;
       }
 
-      div {
+      .pic {
         position: relative;
-        min-height: 100px;
         border-radius: 3px;
         background: ${theme.pic.background};
         animation: Back 1.5s ease infinite;
+        min-height: 150px;
       }
 
-      div::before {
-        content: attr(data-location);
+      .pic:hover .location {
+        opacity: 0;
+      }
+
+      .location {
         font-size: 1.4rem;
         color: white;
         position: absolute;
         bottom: 0;
         left: 0;
-        padding: 20px;
         opacity: 1;
+        padding: 10px;
         transition: opacity 0.2s;
         text-shadow: 1px 1px 1px #000;
-        z-index: 1;
       }
 
-      div:hover::before {
-        opacity: 0;
-      }
-
-      div a {
+      .pic a {
         line-height: 0;
         display: block;
         padding: 0;
