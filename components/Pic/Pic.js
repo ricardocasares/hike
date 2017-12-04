@@ -1,6 +1,5 @@
 // external
 import React from "react";
-import css from "styled-jsx/css";
 
 export default ({ theme, link, images, location }) => (
   <div className="pic" style={{ animation: "Back 1.5s ease infinite" }}>
