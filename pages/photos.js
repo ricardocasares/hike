@@ -9,11 +9,11 @@ import Pic from "../components/Pic";
 import { Card, CardTitle } from "../components/Card";
 import { TABLET, DESKTOP } from "../lib/breakpoints";
 import { getLatestPhotos } from "../lib/api";
-import { light, dark } from "../lib/themes";
+import { dark, blue } from "../lib/themes";
 import { ThemeProvider } from "../providers/Theme";
 
 const Photos = ({ pics }) => (
-  <ThemeProvider theme={dark}>
+  <ThemeProvider theme={{ ...dark, ...blue }}>
     <Page title="analogic.al">
       <Title>Photos</Title>
       <Subtitle>Latest pics posted on Instagram</Subtitle>

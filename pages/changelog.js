@@ -7,13 +7,13 @@ import Title from "../components/Title";
 import Subtitle from "../components/Subtitle";
 import { PostList } from "../components/Posts";
 import Link from "../components/Link";
-import { dark } from "../lib/themes";
+import { dark, teal } from "../lib/themes";
 import { getIssues, getLabels } from "../lib/api";
 import { DESKTOP } from "../lib/breakpoints";
 import { ThemeProvider } from "../providers/Theme";
 
 const Changelog = ({ labels, issues }) => (
-  <ThemeProvider theme={dark}>
+  <ThemeProvider theme={{ ...dark, ...teal }}>
     <Page title="analogic.al">
       <Title>Changelog entries</Title>
       <Subtitle>Because sometimes I like to write stuff</Subtitle>

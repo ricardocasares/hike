@@ -6,13 +6,13 @@ import { Activity } from "react-bytesize-icons";
 import Link from "./Link";
 import { themed } from "../providers/Theme";
 
-export default themed(({ theme, color, size }) => (
+export default themed(({ theme }) => (
   <div>
     <Link route="index">
       <Activity
-        width={theme.logo.size}
-        height={theme.logo.size}
-        color={theme.logo.color}
+        width={48}
+        height={48}
+        color={theme.logo}
         strokeWidth={"7%"}
         strokeLinecap="round"
         strokeLinejoin="round"
