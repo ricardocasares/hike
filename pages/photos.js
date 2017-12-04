@@ -12,7 +12,7 @@ import { getLatestPhotos } from "../lib/api";
 import { light, dark } from "../lib/themes";
 import { ThemeProvider } from "../providers/Theme";
 
-const Index = ({ pics }) => (
+const Photos = ({ pics }) => (
   <ThemeProvider theme={dark}>
     <Page title="analogic.al">
       <Title>Photos</Title>
@@ -38,10 +38,10 @@ const Index = ({ pics }) => (
   </ThemeProvider>
 );
 
-Index.getInitialProps = async () => {
+Photos.getInitialProps = async () => {
   const pics = await getLatestPhotos();
 
   return { pics };
 };
 
-export default Index;
+export default Photos;
