@@ -2,15 +2,15 @@
 import React from "react";
 
 // internal
-import Page from "../components/Page";
-import Title from "../components/Title";
-import Subtitle from "../components/Subtitle";
-import Pic from "../components/Pic";
-import { Card, CardTitle } from "../components/Card";
-import { TABLET, DESKTOP } from "../lib/breakpoints";
-import { getLatestPhotos } from "../lib/api";
-import { dark, blue } from "../lib/themes";
-import { ThemeProvider } from "../providers/Theme";
+import Page from "components/Page";
+import Title from "components/Title";
+import Subtitle from "components/Subtitle";
+import Pic from "components/Pic";
+import { Card, CardTitle } from "components/Card";
+import { TABLET, DESKTOP } from "lib/breakpoints";
+import { getLatestPhotos } from "lib/api";
+import { dark, blue } from "lib/themes";
+import { ThemeProvider } from "providers/Theme";
 
 const Photos = ({ pics }) => (
   <ThemeProvider theme={{ ...dark, ...blue }}>

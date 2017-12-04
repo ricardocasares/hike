@@ -2,12 +2,12 @@
 import React from "react";
 
 // internal
-import Page from "../components/Page";
-import Title from "../components/Title";
-import Subtitle from "../components/Subtitle";
-import Chart from "../components/Chart";
-import { dark } from "../lib/themes";
-import { ThemeProvider } from "../providers/Theme";
+import Page from "components/Page";
+import Title from "components/Title";
+import Subtitle from "components/Subtitle";
+import Chart from "components/Chart";
+import { dark } from "lib/themes";
+import { ThemeProvider } from "providers/Theme";
 
 const Index = () => (
   <ThemeProvider theme={dark}>

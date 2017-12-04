@@ -4,7 +4,7 @@ import { Activity } from "react-bytesize-icons";
 
 // internal
 import Link from "./Link";
-import { themed } from "../providers/Theme";
+import { themed } from "providers/Theme";
 
 export default themed(({ theme }) => (
   <div>

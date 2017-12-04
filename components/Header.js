@@ -4,7 +4,7 @@ import React from "react";
 // internal
 import Logo from "./Logo";
 import Navigation from "./Navigation";
-import { MOBILE } from "../lib/breakpoints";
+import { MOBILE } from "lib/breakpoints";
 
 export default () => (
   <header>

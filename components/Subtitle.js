@@ -2,7 +2,7 @@
 import React from "react";
 
 // internal
-import { themed } from "../providers/Theme";
+import { themed } from "providers/Theme";
 
 export default themed(({ children, theme }) => (
   <h3>

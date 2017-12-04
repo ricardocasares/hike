@@ -2,12 +2,12 @@
 import React from "react";
 
 // internal
-import Page from "../components/Page";
-import { Post } from "../components/Posts";
-import Subtitle from "../components/Subtitle";
-import { dark } from "../lib/themes";
-import { ThemeProvider } from "../providers/Theme";
-import { getIssue } from "../lib/api";
+import Page from "components/Page";
+import { Post } from "components/Posts";
+import Subtitle from "components/Subtitle";
+import { dark } from "lib/themes";
+import { ThemeProvider } from "providers/Theme";
+import { getIssue } from "lib/api";
 
 const Article = ({ issue }) => (
   <ThemeProvider theme={dark}>

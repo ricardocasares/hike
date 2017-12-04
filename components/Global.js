@@ -2,8 +2,8 @@
 import Head from "next/head";
 
 // internal
-import { TABLET, DESKTOP } from "../lib/breakpoints";
-import { themed } from "../providers/Theme";
+import { TABLET, DESKTOP } from "lib/breakpoints";
+import { themed } from "providers/Theme";
 
 export default themed(({ theme }) => (
   <style jsx global>{`

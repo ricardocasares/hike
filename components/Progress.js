@@ -2,7 +2,7 @@
 import NProgress from "nprogress";
 
 // internal
-import { themed } from "../providers/Theme";
+import { themed } from "providers/Theme";
 import { Router } from "../routes";
 
 NProgress.configure({ showSpinner: false });

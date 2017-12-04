@@ -2,15 +2,15 @@
 import React from "react";
 
 // external
-import Page from "../components/Page";
-import Title from "../components/Title";
-import Subtitle from "../components/Subtitle";
-import { PostList } from "../components/Posts";
-import Link from "../components/Link";
-import { dark, teal } from "../lib/themes";
-import { getIssues, getLabels } from "../lib/api";
-import { DESKTOP } from "../lib/breakpoints";
-import { ThemeProvider } from "../providers/Theme";
+import Page from "components/Page";
+import Title from "components/Title";
+import Subtitle from "components/Subtitle";
+import { PostList } from "components/Posts";
+import Link from "components/Link";
+import { dark, teal } from "lib/themes";
+import { getIssues, getLabels } from "lib/api";
+import { DESKTOP } from "lib/breakpoints";
+import { ThemeProvider } from "providers/Theme";
 
 const Changelog = ({ labels, issues }) => (
   <ThemeProvider theme={{ ...dark, ...teal }}>
