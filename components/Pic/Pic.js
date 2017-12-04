@@ -9,7 +9,6 @@ export default ({ theme, link, images, location }) => (
     <style jsx>{`
       img {
         margin: 0;
-        position: relative;
         border-radius: 3px;
       }
 
@@ -29,19 +28,18 @@ export default ({ theme, link, images, location }) => (
         bottom: 0;
         left: 0;
         padding: 20px;
-        opacity: 0;
+        opacity: 1;
         transition: opacity 0.2s;
         text-shadow: 1px 1px 1px #000;
         z-index: 1;
       }
 
       div:hover::before {
-        opacity: 1;
+        opacity: 0;
       }
 
       div a {
         line-height: 0;
-        display: block;
         padding: 0;
       }
 
