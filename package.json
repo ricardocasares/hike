@@ -16,6 +16,7 @@
   "author": "Ricardo Casares <ricardocasares@gmail.com> (http://analogic.al/)",
   "license": "MIT",
   "dependencies": {
+    "babel-plugin-module-resolver": "^3.0.0",
     "babel-plugin-transform-inline-environment-variables": "^0.2.0",
     "fast-memoize": "^2.2.8",
     "isomorphic-unfetch": "^2.0.0",
@@ -31,14 +32,25 @@
     "s-ago": "^1.1.0"
   },
   "babel": {
+    "plugins": [[
+      "module-resolver",
+      {
+        "root": [
+          "./"
+        ],
+        "alias": {
+          "lib": "./lib",
+          "providers": "./providers",
+          "components": "./components"
+        }
+      }
+    ]],
     "env": {
       "development": {
         "presets": [
           "next/babel"
         ],
-        "plugins": [
-          "inline-dotenv"
-        ]
+        "plugins": ["inline-dotenv"]
       },
       "production": {
         "presets": [
@@ -53,8 +65,7 @@
           "inline-dotenv"
         ],
         "presets": [
-          [
-            "env",
+          ["env",
             {
               "modules": "commonjs"
             }

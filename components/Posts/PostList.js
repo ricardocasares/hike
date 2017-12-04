@@ -4,7 +4,7 @@ import React from "react";
 // internal
 import Link from "../Link";
 import Time from "../Time";
-import { slug } from "../../lib/util";
+import { slug } from "lib/util";
 
 export default ({ theme, posts }) => (
   <section>

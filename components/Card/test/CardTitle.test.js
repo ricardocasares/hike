@@ -2,7 +2,7 @@
 import renderer from "react-test-renderer";
 
 // internal
-import { dark } from "../../../lib/themes";
+import { dark } from "lib/themes";
 import CardTitle from "../CardTitle";
 
 describe("CardTitle", () => {

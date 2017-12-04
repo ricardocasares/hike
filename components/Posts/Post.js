@@ -6,7 +6,7 @@ import Markdown from "react-markdown";
 import Time from "../Time";
 import Title from "../Title";
 import { Link } from "../../routes";
-import { slug } from "../../lib/util";
+import { slug } from "lib/util";
 
 export default ({ number, title, created_at, author, body, comments }) => (
   <article>
