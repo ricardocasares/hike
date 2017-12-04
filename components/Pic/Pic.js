@@ -40,6 +40,7 @@ export default ({ theme, link, images, location }) => (
 
       div a {
         line-height: 0;
+        display: block;
         padding: 0;
       }
 
