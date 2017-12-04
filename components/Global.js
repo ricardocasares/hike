@@ -85,8 +85,20 @@ export default themed(({ theme }) => (
       text-align: center;
     }
 
+    code {
+      color: ${theme.global.code};
+      font-family: ${theme.type.fonts.mono};
+    }
+
     del {
       color: ${theme.type.muted};
+    }
+
+    blockquote {
+      border-left: 4px solid ${theme.global.blockquote};
+
+      padding: 5px 20px;
+      margin: 0;
     }
 
     /* CLASSES */
