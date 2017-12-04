@@ -50,7 +50,8 @@ export default themed(({ theme }) => (
 
     p {
       font-size: 1.6rem;
-      line-height: 25px;
+      line-height: 28px;
+      margin-bottom: 2.4rem;
     }
 
     a {
@@ -69,15 +70,16 @@ export default themed(({ theme }) => (
     pre {
       font-size: 14px;
       padding: 2rem;
+      margin: 3rem 0;
       width: 100%;
       overflow-x: scroll;
       font-family: ${theme.type.fonts.mono};
       color: ${theme.codeblock.color};
-      border-left: 4px solid ${theme.codeblock.border};
+      background: ${theme.codeblock.border};
+      border-radius: 3px;
     }
 
     img {
-      min-width: 100%;
       width: 100%;
     }
 
@@ -106,6 +108,7 @@ export default themed(({ theme }) => (
       display: grid;
       grid-gap: 20px;
       margin: 30px 0;
+      grid-template-columns: 1fr;
     }
 
     @media (${TABLET}) {

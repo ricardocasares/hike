@@ -2,7 +2,7 @@
 import React from "react";
 
 export default ({ theme, link, images, location }) => (
-  <div className="pic" style={{ animation: "Back 1.5s ease infinite" }}>
+  <div className="pic">
     <a href={images.standard_resolution.url}>
       <img src={images.low_resolution.url} />
     </a>
@@ -11,18 +11,20 @@ export default ({ theme, link, images, location }) => (
       img {
         margin: 0;
         border-radius: 3px;
+        display: block;
+        min-width: 100px;
       }
 
       .pic {
         position: relative;
         border-radius: 3px;
         background: ${theme.pic.background};
-        animation: Back 1.5s ease infinite;
-        min-height: 150px;
+        animation: Back 1s ease infinite;
+        min-height: 100px;
       }
 
       .pic:hover .location {
-        opacity: 0;
+        opacity: 1;
       }
 
       .location {
@@ -31,16 +33,10 @@ export default ({ theme, link, images, location }) => (
         position: absolute;
         bottom: 0;
         left: 0;
-        opacity: 1;
+        opacity: 0;
         padding: 10px;
         transition: opacity 0.2s;
         text-shadow: 1px 1px 1px #000;
-      }
-
-      .pic a {
-        line-height: 0;
-        display: block;
-        padding: 0;
       }
 
       @keyframes Back {

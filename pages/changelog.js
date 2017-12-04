@@ -8,7 +8,7 @@ import Subtitle from "components/Subtitle";
 import { PostList } from "components/Posts";
 import Link from "components/Link";
 import { dark, teal } from "lib/themes";
-import { getIssues, getLabels } from "lib/api";
+import { getIssues, getLabels } from "api";
 import { DESKTOP } from "lib/breakpoints";
 import { ThemeProvider } from "providers/Theme";
 

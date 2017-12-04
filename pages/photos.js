@@ -8,7 +8,7 @@ import Subtitle from "components/Subtitle";
 import Pic from "components/Pic";
 import { Card, CardTitle } from "components/Card";
 import { TABLET, DESKTOP } from "lib/breakpoints";
-import { getLatestPhotos } from "lib/api";
+import { getLatestPhotos } from "api";
 import { dark, blue } from "lib/themes";
 import { ThemeProvider } from "providers/Theme";
 

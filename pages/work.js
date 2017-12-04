@@ -7,7 +7,7 @@ import Page from "components/Page";
 import Title from "components/Title";
 import Subtitle from "components/Subtitle";
 import { Card, CardTitle } from "components/Card";
-import { getLatestRepos } from "lib/api";
+import { getLatestRepos } from "api";
 import { dark, cyan } from "lib/themes";
 import { ThemeProvider } from "providers/Theme";
 
