@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CardTitle 1`] = `
+exports[`CardTitle CardTitle 1`] = `
 <h4
   className="jsx-3680783396"
 >

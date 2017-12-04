@@ -5,10 +5,12 @@ import renderer from "react-test-renderer";
 import { dark } from "../../../lib/themes";
 import CardTitle from "../CardTitle";
 
-it("CardTitle", () => {
-  const title = renderer
-    .create(<CardTitle theme={dark}>Hello</CardTitle>)
-    .toJSON();
+describe("CardTitle", () => {
+  it("CardTitle", () => {
+    const title = renderer
+      .create(<CardTitle theme={dark}>Hello</CardTitle>)
+      .toJSON();
 
-  expect(title).toMatchSnapshot();
+    expect(title).toMatchSnapshot();
+  });
 });
