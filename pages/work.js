@@ -43,7 +43,7 @@ const Index = ({ repos }) => (
 );
 
 Index.getInitialProps = async () => {
-  const repos = await getLatestRepos();
+  const repos = await getLatestRepos(6);
 
   return { repos };
 };
