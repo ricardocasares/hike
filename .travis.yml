@@ -9,13 +9,21 @@ jobs:
     - script:
         - npm run test
     - stage: staging
-      if: type in (pull_request)
       script:
         - export NOW_ALIAS=$ALIAS_DEV
         - now-travis
+    - stage: clean
+      script:
+        - now rm $NOW_NAME -y -s -t $NOW_TOKEN
     - stage: deploy
-      if: branch = master
       script:
         - export NOW_ALIAS=$ALIAS_PROD
         - now-travis
 
+stages:
+  - name: staging
+    if: type IS pull_request
+  - name: clean
+    if: type IS pull_request
+  - name: deploy
+    if: branch = master
