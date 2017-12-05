@@ -8,7 +8,7 @@ jobs:
   include:
     - script:
         - npm run test
-        - yarn add now-travis
+        - yarn global add now-travis
     - stage: staging
       script:
         - export NOW_ALIAS=$ALIAS_DEV
