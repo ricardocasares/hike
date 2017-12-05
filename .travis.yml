@@ -7,7 +7,7 @@ cache: yarn
 
 stages:
   - name: staging
-    if: type IS pull_request
+    if: type = pull_request
   - name: deploy
     if: branch = master
 
