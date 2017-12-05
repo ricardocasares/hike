@@ -8,10 +8,6 @@ after_success:
 deploy:
 deploy:
   - provider: script
-    script: now --token $NOW_TOKEN --npm && now alias --token $NOW_TOKEN
-    on:
-      branch: master
-  - provider: script
     script: now --token $NOW_TOKEN --npm && now alias some-alias-123123 --token $NOW_TOKEN
     on:
       condition: "$ON_PULL = yes"
