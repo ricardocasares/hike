@@ -11,7 +11,7 @@ script:
 after_success:
   - yarn global add now-travis
   - export NOW_ALIAS=$ALIAS_DEV
-  - 'if [ "$TRAVIS_PULL_REQUEST" != "false" ]; now-travis; fi' 
+  - if [[ $TRAVIS_PULL_REQUEST != 'false' ]]; now-travis; fi
   - now rm -y -s -t $NOW_TOKEN
 
 deploy:
