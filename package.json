@@ -10,9 +10,7 @@
     "test:tdd": "jest --watch",
     "test:cover": "jest --coverage",
     "build": "next build",
-    "start": "node server",
-    "alias": "now alias --token $NOW_TOKEN",
-    "deploy": "now -e NODE_ENV=production --token $NOW_TOKEN --npm"
+    "start": "node server"
   },
   "keywords": [],
   "author": "Ricardo Casares <ricardocasares@gmail.com> (http://analogic.al/)",
@@ -38,9 +36,7 @@
       [
         "module-resolver",
         {
-          "root": [
-            "./"
-          ],
+          "root": ["./"],
           "alias": {
             "api": "./api",
             "lib": "./lib",
@@ -52,25 +48,15 @@
     ],
     "env": {
       "development": {
-        "presets": [
-          "next/babel"
-        ],
-        "plugins": [
-          "inline-dotenv"
-        ]
+        "presets": ["next/babel"],
+        "plugins": ["inline-dotenv"]
       },
       "production": {
-        "presets": [
-          "next/babel"
-        ],
-        "plugins": [
-          "transform-inline-environment-variables"
-        ]
+        "presets": ["next/babel"],
+        "plugins": ["transform-inline-environment-variables"]
       },
       "test": {
-        "plugins": [
-          "inline-dotenv"
-        ],
+        "plugins": ["inline-dotenv"],
         "presets": [
           [
             "env",
@@ -88,14 +74,11 @@
     "babel-preset-env": "^1.6.1",
     "jest": "^21.2.1",
     "nodemon": "^1.12.1",
-    "now": "^8.5.4",
     "npm-run-all": "^4.1.2",
     "react-test-renderer": "^16.2.0"
   },
   "jest": {
-    "testMatch": [
-      "**/?(*.)(spec|test).js?(x)"
-    ],
+    "testMatch": ["**/?(*.)(spec|test).js?(x)"],
     "coverageDirectory": ".coverage",
     "coverageThreshold": {
       "global": {
@@ -108,10 +91,7 @@
   },
   "now": {
     "name": "analogical",
-    "alias": [
-      "analogic.al",
-      "www.analogic.al"
-    ],
+    "alias": ["analogic.al", "www.analogic.al"],
     "dotenv": ".env.production"
   }
 }
