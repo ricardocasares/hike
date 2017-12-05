@@ -13,15 +13,17 @@ stages:
 
 jobs:
   include:
+
     - stage: staging
-      - script:
+      script:
         - yarn global add now commit-status
         - commit-status pending stage "Deploying to Δ Now ..."
         - now -t $NOW_TOKEN > url
         - commit-status success stage "Deploy is ready!" $(<url)
         - now rm $NOW_NAME -y -s -t $NOW_TOKEN
+    
     - stage: production
-      - script:
+      script:
         - yarn global add now commit-status
         - commit-status pending production "Deploying to Δ Now ..."
         - now -t $NOW_TOKEN > url
