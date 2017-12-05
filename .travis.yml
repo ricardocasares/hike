@@ -3,28 +3,21 @@ language: node_js
 node_js:
   - node
 
-jobs:
-  fast_finish: true
-  include:
-    - script:
-        - npm run test
-        - yarn global add now-travis
-    - stage: staging
-      script:
-        - export NOW_ALIAS=$ALIAS_DEV
-        - now-travis
-    - stage: clean
-      script:
-        - now rm $NOW_NAME -y -s -t $NOW_TOKEN
-    - stage: deploy
-      script:
-        - export NOW_ALIAS=$ALIAS_PROD
-        - now-travis
+cache: yarn
 
-stages:
-  - name: staging
-    if: type IS pull_request
-  - name: clean
-    if: type IS pull_request
-  - name: deploy
-    if: branch = master
+script:
+  - npm run test
+
+after_success:
+  - yarn global add now-travis
+  - export NOW_ALIAS=$ALIAS_DEV
+  - now-travis
+  - now rm $NOW_NAME -y -s -t $NOW_TOKEN
+
+deploy:
+  provider: script
+  script:
+    - NOW_ALIAS=$ALIAS_PROD now-travis
+  on:
+    branch: master
+
