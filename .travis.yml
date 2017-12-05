@@ -3,21 +3,19 @@ language: node_js
 node_js:
   - node
 
-cache: yarn
-
-script:
-  - npm run test
-
-after_success:
-  - yarn global add now-travis
-  - export NOW_ALIAS=$ALIAS_DEV
-  - if [[ $TRAVIS_PULL_REQUEST != 'false' ]]; now-travis; fi
-  - now rm $NOW_NAME -y -s -t $NOW_TOKEN
-
-deploy:
-  provider: script
-  script:
-    - NOW_ALIAS=$ALIAS_PROD now-travis
-  on:
-    branch: master
+jobs:
+  fast_finish: true
+  include:
+    - script:
+        - npm run test
+    - stage: staging
+      if: type in (pull_request)
+      script:
+        - export NOW_ALIAS=$ALIAS_DEV
+        - now-travis
+    - stage: deploy
+      if: branch = master
+      script:
+        - export NOW_ALIAS=$ALIAS_PROD
+        - now-travis
 
