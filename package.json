@@ -10,7 +10,9 @@
     "test:tdd": "jest --watch",
     "test:cover": "jest --coverage",
     "build": "next build",
-    "start": "node server"
+    "start": "node server",
+    "alias": "now alias --token $NOW_TOKEN",
+    "deploy": "now -e NODE_ENV=production --token $NOW_TOKEN --npm"
   },
   "keywords": [],
   "author": "Ricardo Casares <ricardocasares@gmail.com> (http://analogic.al/)",
@@ -90,6 +92,7 @@
     }
   },
   "now": {
+    "name": "analogical",
     "alias": ["analogic.al", "www.analogic.al"],
     "dotenv": ".env.production"
   }
