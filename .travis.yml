@@ -9,15 +9,19 @@ script:
   - npm run test
 
 after_success:
-  - yarn global add now-travis
+  - yarn global add now commit-status
   - export NOW_ALIAS=$ALIAS_DEV
-  - now-travis
+  - commit-status pending stage "Deploying to Δ Now ..."
+  - now -t $NOW_TOKEN > url
+  - commit-status success stage "Deploy is ready!" $(<url)
   - now rm $NOW_NAME -y -s -t $NOW_TOKEN
+  if: type IS pull_request
 
 deploy:
   provider: script
   script:
-    - NOW_ALIAS=$ALIAS_PROD now-travis
+    - now alias -t $NOW_TOKEN
   on:
     branch: master
+
 
