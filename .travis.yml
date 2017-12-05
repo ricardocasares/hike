@@ -11,7 +11,7 @@ script:
 
 after_success:
   - yarn global add now
-  - now alias $ALIAS -t $NOW_TOKEN
+  - now alias $NOW_ALIAS -t $NOW_TOKEN
   - now rm $NOW_NAME -s -y -t $NOW_TOKEN
 
 deploy:
