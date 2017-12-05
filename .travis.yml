@@ -10,15 +10,9 @@ script:
 
 after_success:
   - yarn global add now
-  - echo $TRAVIS_PULL_REQUEST
-  - echo $TRAVIS_BUILD_NUMBER
-  - if [[ "$TRAVIS_PULL_REQUEST" != "false" ]]; then
-      export ALIAS_NAME="$NOW_ALIAS-$TRAVIS_PULL_REQUEST";
-    else
-      export ALIAS_NAME="$NOW_ALIAS-$TRAVIS_BUILD_NUMBER";
-    fi
-  - now alias $ALIAS_NAME -t $NOW_TOKEN;
-  - now rm $NOW_ALIAS -s -y -t $NOW_TOKEN;
+  - now -t $NOW_TOKEN
+  - now alias $NOW_ALIAS -t $NOW_TOKEN
+  - now rm $NOW_NAME -s -y -t $NOW_TOKEN
 
 deploy:
   provider: script
