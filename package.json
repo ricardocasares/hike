@@ -31,6 +31,14 @@
     "react-markdown": "^3.0.2",
     "s-ago": "^1.1.0"
   },
+  "devDependencies": {
+    "babel-plugin-inline-dotenv": "^1.1.1",
+    "babel-preset-env": "^1.6.1",
+    "jest": "^21.2.1",
+    "nodemon": "^1.12.1",
+    "npm-run-all": "^4.1.2",
+    "react-test-renderer": "^16.2.0"
+  },
   "babel": {
     "plugins": [
       [
@@ -68,14 +76,6 @@
         ]
       }
     }
-  },
-  "devDependencies": {
-    "babel-plugin-inline-dotenv": "^1.1.1",
-    "babel-preset-env": "^1.6.1",
-    "jest": "^21.2.1",
-    "nodemon": "^1.12.1",
-    "npm-run-all": "^4.1.2",
-    "react-test-renderer": "^16.2.0"
   },
   "jest": {
     "testMatch": ["**/?(*.)(spec|test).js?(x)"],
