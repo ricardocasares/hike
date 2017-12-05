@@ -5,11 +5,12 @@ script:
   - npm run test
 after_success:
   - yarn global add now
-  - now --token $NOW_TOKEN --npm
-  - now alias $NOW_ALIAS-$TRAVIS_BRANCH --token $NOW_TOKEN --npm
+  - now -n $NOW_ALIAS -t $NOW_TOKEN --npm
+  - now alias $NOW_ALIAS-$TRAVIS_BRANCH -t $NOW_TOKEN --npm
+  - now rm $NOW_ALIAS -s -t $NOW_TOKEN
 deploy:
   provider: script
-  script: now alias --token $NOW_TOKEN
+  script: now alias -t $NOW_TOKEN
   on:
     branch: master
 env:
