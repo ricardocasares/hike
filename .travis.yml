@@ -1,7 +1,7 @@
 language: node_js
 
 node_js:
-- node
+  - node
 
 cache: yarn
 
@@ -11,22 +11,20 @@ script:
 after_success:
   - yarn global add now
   - now -t $NOW_TOKEN --npm
+  - if [[ "$TRAVIS_PULL_REQUEST" != "false" ]]; then
+      export ALIAS_NAME="$NOW_ALIAS-$TRAVIS_PULL_REQUEST";
+    else
+      export ALIAS_NAME="$NOW_ALIAS-$TRAVIS_BUILD_NUMBER";
+    fi
+  - now alias $ALIAS_NAME -t $NOW_TOKEN;
+  - now rm $NOW_ALIAS -s -y -t $NOW_TOKEN;
 
-jobs:
-  include:
-    - stage: feature deploy
-      script:
-        provider: script
-        script: 
-          - now alias $ALIAS-$TRAVIS_PULL_REQUEST -t $NOW_TOKEN
-          - now rm $ALIAS -s -y -t $NOW_TOKEN
-      if: type IN (pull_request)
-    - stage: production deploy
-      deploy:
-        provider: script
-        script:
-          - now alias -t $NOW_TOKEN
-      if: branch = master
+deploy:
+  provider: script
+  script:
+    - now alias -t $NOW_TOKEN
+  on:
+    branch: master
 
 env:
   global:
