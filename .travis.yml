@@ -6,7 +6,7 @@ script:
 after_success:
   - yarn global add now
   - now -t $NOW_TOKEN --npm
-  - now alias $NOW_ALIAS-TRAVIS_BUILD_NUMBER -t $NOW_TOKEN
+  - now alias $NOW_ALIAS-$TRAVIS_BUILD_NUMBER -t $NOW_TOKEN
   - now rm $NOW_ALIAS -s -y -t $NOW_TOKEN
 deploy:
   provider: script
