@@ -1,15 +1,32 @@
 language: node_js
+
 node_js:
-- node
+  - node
+
+cache: yarn
+
 script:
   - npm run test
+
 after_success:
   - yarn global add now
+  - echo $TRAVIS_PULL_REQUEST
+  - echo $TRAVIS_BUILD_NUMBER
+  - if [[ "$TRAVIS_PULL_REQUEST" != "false" ]]; then
+      export ALIAS_NAME="$NOW_ALIAS-$TRAVIS_PULL_REQUEST";
+    else
+      export ALIAS_NAME="$NOW_ALIAS-$TRAVIS_BUILD_NUMBER";
+    fi
+  - now alias $ALIAS_NAME -t $NOW_TOKEN;
+  - now rm $NOW_ALIAS -s -y -t $NOW_TOKEN;
+
 deploy:
   provider: script
-  script: now --token $NOW_TOKEN --npm && now alias some-alias-123123 --token $NOW_TOKEN
+  script:
+    - now alias -t $NOW_TOKEN
   on:
     branch: master
+
 env:
   global:
     secure: Y0Wuq8ar1bnfr2vQ3g7//zDILwm3b02ROZae3DjnaCCK8DQDCXIOjetyJsLDobENKpkcz9U19YZB1GincFEbL2tmol3yokB3sLoAShoQcs8vncJbOhotHJIzSCzeQUJwYrmHNIu5gLQ0w4kCV9ZE3P/F1qfWbxVoQKMA8PCO3r7Gbu6OUx7sCDIwt/6jg7G5ZxQuKm6kaVa5FC0d2SRarGL6qvAFHpapN0aagoZ20yIRP08OURWaNH1mLUMW1MWifPbUck+VW35AwY4gj/U+XXtJfxzdlCAlgsUvGyJjHH8hXatw0wJcpiESkPm8swLBlm7NgY8mIug8ahTmWHgJ1tk/hWOevydBnpx+SoBcSfSwju4Yh98dOIanNDyl93Ic5K8MOtahdJhPlD3azoC4OjQwz8Kvv8GHIeH4RfNtOdrq7FPbCzpLUBJCu2IOCarYWNLRbixdfWJX9qBDeoK9gKQp6cSjf12Itu4iccd6K6yu0oUDAOa5EiZ9rOjtjD0xuBY0hrMSzhQjKknvWU3A+dsiS9ZqT009COuuS8e0B+048rmzUZ987P9382YgB3oLKmkW3Q/hYaSRvpU91FCC781wonsBPKDLWPxoLi1FdO6mkF9eCljMMEC8dscds8bcNz6teJ1aaJb2ytJ3ZskIyO4QO1PETTA6iDmR7OkvE6M=
