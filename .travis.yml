@@ -6,11 +6,11 @@ node_js:
 cache: yarn
 
 script:
-  - echo $ALIAS
   - npm run test
 
 after_success:
   - yarn global add now
+  - now -t $NOW_TOKEN
   - now alias $NOW_ALIAS -t $NOW_TOKEN
   - now rm $NOW_NAME -s -y -t $NOW_TOKEN
 
