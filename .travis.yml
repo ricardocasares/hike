@@ -6,21 +6,21 @@ node_js:
 cache: yarn
 
 stages:
-  - name: stage
+  - name: staging
     if: type IS pull_request
   - name: deploy
     if: branch = master
 
 jobs:
   include:
-    - stage: stage
+    - stage: staging
       - script:
         - yarn global add now commit-status
         - commit-status pending stage "Deploying to Δ Now ..."
         - now -t $NOW_TOKEN > url
         - commit-status success stage "Deploy is ready!" $(<url)
         - now rm $NOW_NAME -y -s -t $NOW_TOKEN
-    - stage: deploy
+    - stage: production
       - script:
         - yarn global add now commit-status
         - commit-status pending production "Deploying to Δ Now ..."
