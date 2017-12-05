@@ -5,9 +5,9 @@ script:
   - npm run test
 after_success:
   - yarn global add now
-  - now -n $NOW_ALIAS -t $NOW_TOKEN --npm
+  - now -n $NOW_ALIAS-$TRAVIS_BRANCH -t $NOW_TOKEN --npm
   - now alias $NOW_ALIAS-$TRAVIS_BRANCH -t $NOW_TOKEN
-  - now rm $NOW_ALIAS -s -t $NOW_TOKEN
+  - now rm $NOW_ALIAS-$TRAVIS_BRANCH -s -y -t $NOW_TOKEN
 deploy:
   provider: script
   script: now alias -t $NOW_TOKEN
