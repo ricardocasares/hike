@@ -5,6 +5,9 @@ node_js:
 
 cache: false
 
+script:
+  - npm test
+
 jobs:
   fast_finish: true
   include:
@@ -17,10 +20,10 @@ jobs:
         - now -t $NOW_TOKEN > url
         - now alias $NOW_STAGE_URL -t $NOW_TOKEN
         - now rm $NOW_APP -y -s -t $NOW_TOKEN
-        - commit-status success staging "Deploy is ready!" $NOW_STAGE_URL
+        - commit-status success staging "Deploy is ready!" https://$NOW_STAGE_URL
     
     - stage: production
-      if: branch = "master"
+      if: branch = master
       script:
         - yarn global add now commit-status
         - commit-status pending production "Deploying to Δ Now ..."
