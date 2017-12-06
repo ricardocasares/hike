@@ -13,7 +13,7 @@ jobs:
   include:
 
     - stage: staging
-      if: type = pull_request
+      if: type in (pull_request)
       script:
         - yarn global add now commit-status
         - commit-status pending staging "Deploying to Δ Now ..."
@@ -23,7 +23,7 @@ jobs:
         - commit-status success staging "Deploy is ready!" https://$NOW_STAGE_URL
     
     - stage: production
-      if: branch = master
+      if: branch in (master)
       script:
         - yarn global add now commit-status
         - commit-status pending production "Deploying to Δ Now ..."
