@@ -5,12 +5,12 @@ node_js:
 
 cache: false
 
-script:
-  - npm test
-
 jobs:
   fast_finish: true
   include:
+    - stage: testing
+      script:
+        - npm run test:cover
     - stage: staging
       if: type in (pull_request)
       script:
