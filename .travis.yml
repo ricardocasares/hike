@@ -10,7 +10,9 @@ jobs:
   include:
     - stage: testing
       script:
+        - yarn add codecov
         - npm run test:cover
+        - codecov
     - stage: staging
       if: type in (pull_request)
       script:

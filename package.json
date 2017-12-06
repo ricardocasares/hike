@@ -80,6 +80,7 @@
   "jest": {
     "testMatch": ["**/?(*.)(spec|test).js?(x)"],
     "coverageDirectory": ".coverage",
+    "collectCoverage": true,
     "coverageThreshold": {
       "global": {
         "branches": 80,
