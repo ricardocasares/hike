@@ -3,9 +3,10 @@ language: node_js
 node_js:
   - node
 
-cache: yarn
+cache: false
 
 jobs:
+  fast_finish: true
   include:
 
     - stage: staging
@@ -19,10 +20,14 @@ jobs:
         - commit-status success staging "Deploy is ready!" $NOW_STAGE_URL
     
     - stage: production
-      if: branch = master
+      if: branch = "master"
       script:
         - yarn global add now commit-status
         - commit-status pending production "Deploying to Δ Now ..."
         - now -t $NOW_TOKEN
         - commit-status success production "Deploy is ready!"
         - now alias -t $NOW_TOKEN
+
+notifications:
+  email:
+    on_success: never
