@@ -15,17 +15,19 @@ export default ({ title, data, theme }) => {
   return (
     <Card>
       <CardTitle>{title}</CardTitle>
-      <div className="percentages">
-        {percentages.map((p, idx) => (
-          <div
-            key={idx}
-            className="percentage"
-            style={{
-              width: `${p.value}%`,
-              background: p.color
-            }}
-          />
-        ))}
+      <div className="percentages-container">
+        <div className="percentages">
+          {percentages.map((p, idx) => (
+            <div
+              key={idx}
+              className="percentage"
+              style={{
+                width: `${p.value}%`,
+                background: p.color
+              }}
+            />
+          ))}
+        </div>
       </div>
       <ul className="legend">
         {percentages.map((p, idx) => (
@@ -36,14 +38,23 @@ export default ({ title, data, theme }) => {
         ))}
       </ul>
       <style jsx>{`
+        .percentages-container {
+          height: 1.5rem;
+          border: 1px solid ${theme.chart.border};
+          border-radius: 3px;
+          margin-bottom: 1.5rem;
+        }
+        
         .percentages {
-          margin-bottom: 1rem;
+          animation: Grow 0.3s ease-in;
+          animation-delay: 0.9s;
+          animation-fill-mode: forwards;
+          visibility: hidden;
         }
 
         .percentage {
           height: 1.5rem;
           display: inline-block;
-          position: relative;
         }
 
         .percentage:first-child {
@@ -82,6 +93,19 @@ export default ({ title, data, theme }) => {
           margin-right: 0.5rem;
           display: inline-block;
           border-radius: 50%;
+        }
+
+        @keyframes Grow {
+          0% {
+            transform: scaleX(0);
+            transform-origin: top left;
+            visibility: visible;
+          }
+          100% {
+            transform: scaleX(100%);
+            transform-origin: 0 0;
+            visibility: visible;
+          }
         }
       `}</style>
     </Card>
