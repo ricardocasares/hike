@@ -6,8 +6,8 @@ node_js:
 cache: yarn
 
 script:
-  - if [[ "$TRAVIS_BRANCH" == "master" ]]; then echo "MASTER WORKS"; fi
-  - if [[ "$TRAVIS_PULL_REQUEST" != "false" ]]; then echo "PR WORKS"; fi
+  - if [[ $TRAVIS_BRANCH" == "master" ]]; then echo "MASTER WORKS"; fi
+  - if [[ $TRAVIS_PULL_REQUEST != "false" ]]; then echo "PR WORKS"; fi
 
 # after_success:
 #   - yarn global add now
