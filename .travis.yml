@@ -11,7 +11,6 @@ script:
 jobs:
   fast_finish: true
   include:
-
     - stage: staging
       if: type in (pull_request)
       script:
@@ -21,7 +20,6 @@ jobs:
         - now alias $NOW_STAGE_URL -t $NOW_TOKEN
         - now rm $NOW_APP -y -s -t $NOW_TOKEN
         - commit-status success staging "Deploy is ready!" https://$NOW_STAGE_URL
-    
     - stage: production
       if: branch in (master)
       script:
