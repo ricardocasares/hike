@@ -20,7 +20,8 @@ jobs:
         - commit-status pending stage "Deploying to Δ Now ..."
         - now -t $NOW_TOKEN > url
         - commit-status success stage "Deploy is ready!" $(<url)
-        - now rm $NOW_NAME -y -s -t $NOW_TOKEN
+        - now alias $NOW_STAGE_URL -t $NOW_TOKEN
+        - now rm $NOW_APP -y -s -t $NOW_TOKEN
     
     - stage: production
       script:
