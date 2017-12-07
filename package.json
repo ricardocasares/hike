@@ -92,6 +92,15 @@
   "now": {
     "name": "analogical",
     "alias": ["analogic.al", "www.analogic.al"],
-    "dotenv": ".env.production"
+    "env": {
+      "NODE_ENV": "@analogic-env",
+      "INSTA_API": "@analogic-insta-api",
+      "INSTA_TOKEN": "@analogic-insta-token",
+      "INSTA_USER": "@analogic-insta-user",
+      "GITHUB_API": "@analogic-github-api",
+      "GITHUB_USER": "@analogic-github-user",
+      "GITHUB_REPO": "@analogic-github-repo",
+      "GITHUB_TOKEN": "@analogic-github-token"
+    }
   }
 }
