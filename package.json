@@ -23,7 +23,7 @@
     "next": "^4.2.1",
     "next-routes": "^1.1.0",
     "nprogress": "^0.2.0",
-    "open-color": "^1.5.1",
+    "open-color": "^1.6.1",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-bytesize-icons": "^0.8.0",
