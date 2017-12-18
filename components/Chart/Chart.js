@@ -13,21 +13,19 @@ export default ({ title, data, theme }) => {
   }));
 
   return (
-    <Card>
-      <CardTitle>{title}</CardTitle>
-      <div className="percentages-container">
-        <div className="percentages">
-          {percentages.map((p, idx) => (
-            <div
-              key={idx}
-              className="percentage"
-              style={{
-                width: `${p.value}%`,
-                background: p.color
-              }}
-            />
-          ))}
-        </div>
+    <div className="chart">
+      <h4>{title}</h4>
+      <div className="percentages">
+        {percentages.map((p, idx) => (
+          <div
+            key={idx}
+            className="percentage"
+            style={{
+              width: `${p.value}%`,
+              background: p.color
+            }}
+          />
+        ))}
       </div>
       <ul className="legend">
         {percentages.map((p, idx) => (
@@ -38,18 +36,14 @@ export default ({ title, data, theme }) => {
         ))}
       </ul>
       <style jsx>{`
-        .percentages-container {
-          height: 1.5rem;
-          border: 1px solid ${theme.chart.border};
-          border-radius: 3px;
-          margin-bottom: 1.5rem;
+        h4 {
+          color: ${theme.chart.title};
+          font-size: 2rem;
+          font-weight: 600;
         }
-        
+
         .percentages {
-          animation: Grow 0.3s ease-in;
-          animation-delay: 0.9s;
-          animation-fill-mode: forwards;
-          visibility: hidden;
+          margin-bottom: 1rem;
         }
 
         .percentage {
@@ -74,7 +68,7 @@ export default ({ title, data, theme }) => {
         .label {
           margin-right: 1.5rem;
           margin-bottom: 0.5rem;
-          font-size: 1.2rem;
+          font-size: 1.6rem;
         }
 
         @media (min-width: 600px) {
@@ -92,22 +86,11 @@ export default ({ title, data, theme }) => {
           width: 0.8rem;
           margin-right: 0.5rem;
           display: inline-block;
+          position: relative;
+          bottom: 2px;
           border-radius: 50%;
         }
-
-        @keyframes Grow {
-          0% {
-            transform: scaleX(0);
-            transform-origin: top left;
-            visibility: visible;
-          }
-          100% {
-            transform: scaleX(100%);
-            transform-origin: 0 0;
-            visibility: visible;
-          }
-        }
       `}</style>
-    </Card>
+    </div>
   );
 };

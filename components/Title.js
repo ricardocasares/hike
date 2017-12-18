@@ -9,8 +9,8 @@ export default themed(({ children, theme }) => (
     {children}
     <style jsx>{`
       h2 {
-        font-size: 2.2rem;
-        font-weight: 400;
+        font-size: 4.2rem;
+        font-weight: 600;
         color: ${theme.type.title};
       }
     `}</style>

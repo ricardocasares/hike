@@ -5,14 +5,15 @@ import React from "react";
 import { themed } from "providers/Theme";
 
 export default themed(({ children, theme }) => (
-  <h3>
+  <p>
     {children}
     <style jsx>{`
-      h3 {
-        color: ${theme.type.subtitle};
-        font-size: 3.8rem;
+      p {
+        color: ${theme.type.lead};
+        font-size: 2.5rem;
+        line-height: 3.5rem;
         font-weight: 400;
       }
     `}</style>
-  </h3>
+  </p>
 ));

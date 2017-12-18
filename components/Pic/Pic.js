@@ -19,7 +19,7 @@ export default ({ theme, link, images, location }) => (
         position: relative;
         border-radius: 3px;
         background: ${theme.pic.background};
-        animation: Back 1s ease infinite;
+        animation: Back 1.5s ease infinite;
         min-height: 100px;
       }
 
@@ -41,13 +41,13 @@ export default ({ theme, link, images, location }) => (
 
       @keyframes Back {
         0% {
-          background: rgba(52, 58, 64, 1);
+          background: ${theme.pic.loading[0]};
         }
         50% {
-          background: rgba(52, 58, 64, 0.5);
+          background: ${theme.pic.loading[1]};
         }
         100% {
-          background: rgba(52, 58, 64, 1);
+          background: ${theme.pic.loading[0]};
         }
       }
     `}</style>

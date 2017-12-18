@@ -5,6 +5,7 @@ import React from "react";
 import Page from "components/Page";
 import Title from "components/Title";
 import Subtitle from "components/Subtitle";
+import Lead from "components/Lead";
 import Chart from "components/Chart";
 import { dark } from "lib/themes";
 import { ThemeProvider } from "providers/Theme";
@@ -20,11 +21,11 @@ const Index = () => (
           <strong>software developer</strong>.
         </Subtitle>
 
-        <p>
+        <Lead>
           With over <strong>+10 years experience</strong> building on the web, I
           move around as a fullstack developer, but nowadays I specialize in
           building UI components.
-        </p>
+        </Lead>
       </section>
 
       <section className="grid charts">
@@ -43,8 +44,6 @@ const Index = () => (
             { label: "JavaScript", value: 80 },
             { label: "PHP", value: 50 },
             { label: "TypeScript", value: 70 },
-            { label: "HTML", value: 100 },
-            { label: "CSS", value: 90 },
             { label: "SASS", value: 90 }
           ]}
         />
@@ -52,10 +51,9 @@ const Index = () => (
         <Chart
           title={"Frameworks"}
           data={[
-            { label: "AngularJS", value: 80 },
-            { label: "Angular", value: 50 },
-            { label: "React", value: 80 },
-            { label: "Hyperapp", value: 50 }
+            { label: "AngularJS", value: 50 },
+            { label: "Angular", value: 20 },
+            { label: "React", value: 30 }
           ]}
         />
 
@@ -70,7 +68,7 @@ const Index = () => (
         />
 
         <Chart
-          title={"Miscellaneous"}
+          title={"Networking"}
           data={[
             { label: "CCNA", value: 100 },
             { label: "Cisco IOS", value: 100 },
@@ -87,6 +85,11 @@ const Index = () => (
           ]}
         />
       </section>
+      <style jsx>{`
+        .charts {
+          grid-gap: 30px 80px;
+        }
+      `}</style>
     </Page>
   </ThemeProvider>
 );
