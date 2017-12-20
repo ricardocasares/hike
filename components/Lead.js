@@ -10,9 +10,13 @@ export default themed(({ children, theme }) => (
     <style jsx>{`
       p {
         color: ${theme.type.lead};
-        font-size: 2.5rem;
-        line-height: 3.5rem;
-        font-weight: 400;
+        font-size: 1.8rem;
+        line-height: 3rem;
+        font-weight: 300;
+      }
+
+      :global(strong) {
+        font-weight: 500;
       }
     `}</style>
   </p>

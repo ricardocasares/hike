@@ -20,14 +20,14 @@
     "babel-plugin-transform-inline-environment-variables": "^0.2.0",
     "fast-memoize": "^2.2.8",
     "isomorphic-unfetch": "^2.0.0",
-    "next-routes": "^1.2.0",
-    "next": "^4.2.1",
+    "next-routes": "latest",
+    "next": "latest",
     "nprogress": "^0.2.0",
     "open-color": "^1.6.1",
     "prop-types": "^15.6.0",
-    "react": "^16.2.0",
+    "react": "latest",
     "react-bytesize-icons": "^0.8.0",
-    "react-dom": "^16.2.0",
+    "react-dom": "latest",
     "react-markdown": "^3.1.3",
     "s-ago": "^1.1.0"
   },
@@ -36,9 +36,7 @@
       [
         "module-resolver",
         {
-          "root": [
-            "./"
-          ],
+          "root": ["./"],
           "alias": {
             "api": "./api",
             "lib": "./lib",
@@ -50,25 +48,15 @@
     ],
     "env": {
       "development": {
-        "presets": [
-          "next/babel"
-        ],
-        "plugins": [
-          "inline-dotenv"
-        ]
+        "presets": ["next/babel"],
+        "plugins": ["inline-dotenv"]
       },
       "production": {
-        "presets": [
-          "next/babel"
-        ],
-        "plugins": [
-          "transform-inline-environment-variables"
-        ]
+        "presets": ["next/babel"],
+        "plugins": ["transform-inline-environment-variables"]
       },
       "test": {
-        "plugins": [
-          "inline-dotenv"
-        ],
+        "plugins": ["inline-dotenv"],
         "presets": [
           [
             "env",
@@ -90,9 +78,7 @@
     "react-test-renderer": "^16.2.0"
   },
   "jest": {
-    "testMatch": [
-      "**/?(*.)(spec|test).js?(x)"
-    ],
+    "testMatch": ["**/?(*.)(spec|test).js?(x)"],
     "coverageDirectory": ".coverage",
     "coverageThreshold": {
       "global": {
@@ -105,10 +91,7 @@
   },
   "now": {
     "name": "analogical",
-    "alias": [
-      "analogic.al",
-      "www.analogic.al"
-    ],
+    "alias": ["analogic.al", "www.analogic.al"],
     "dotenv": ".env.production"
   }
 }

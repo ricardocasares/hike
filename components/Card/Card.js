@@ -1,21 +1,24 @@
 // external
 import React from "react";
 
-export default ({ theme, children }) => (
-  <div>
+export default ({ theme, href, children }) => (
+  <a href={href}>
     {children}
     <style jsx>{`
-      div {
+      a {
+        color: ${theme.global.text};
         padding: 2rem;
-        border: 0.1rem solid ${theme.card.border};
         border-radius: 0.3rem;
-        width: 100%;
-        transition: border-color 0.2s;
+        border: 0.1rem solid ${theme.card.border};
+        display: block;
+        transition: border-color 1s;
+        font-size: 1.4rem;
+        font-weight: 300;
       }
 
-      div:hover {
+      a:hover {
         border-color: ${theme.card.hover};
       }
     `}</style>
-  </div>
+  </a>
 );

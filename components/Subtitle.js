@@ -10,7 +10,7 @@ export default themed(({ children, theme }) => (
     <style jsx>{`
       h3 {
         color: ${theme.type.subtitle};
-        font-size: 3.8rem;
+        font-size: 2.4rem;
         font-weight: 400;
       }
     `}</style>

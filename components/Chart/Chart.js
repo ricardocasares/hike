@@ -4,17 +4,18 @@ import React from "react";
 // internal
 import { Card, CardTitle } from "../Card";
 
-export default ({ title, data, theme }) => {
+export default ({ title, subtitle, data, theme }) => {
   const total = data.reduce((acc, point) => (acc = acc + point.value), 0);
   const percentages = data.map((d, idx) => ({
     ...d,
-    value: (d.value / total * 100).toFixed(2),
+    value: (d.value / total * 100).toFixed(4),
     color: theme.chart.colors[idx]
   }));
 
   return (
     <div className="chart">
       <h4>{title}</h4>
+      <h5>{subtitle}</h5>
       <div className="percentages">
         {percentages.map((p, idx) => (
           <div
@@ -37,9 +38,17 @@ export default ({ title, data, theme }) => {
       </ul>
       <style jsx>{`
         h4 {
-          color: ${theme.chart.title};
-          font-size: 2rem;
-          font-weight: 600;
+          font-size: 1.4rem;
+          font-weight: 300;
+          margin: 0;
+          margin-bottom: 0.5rem;
+        }
+
+        h5 {
+          margin: 0;
+          margin-bottom: 1rem;
+          font-weight: 300;
+          color: ${theme.chart.subtitle};
         }
 
         .percentages {
@@ -47,16 +56,16 @@ export default ({ title, data, theme }) => {
         }
 
         .percentage {
-          height: 1.5rem;
+          height: 1rem;
           display: inline-block;
         }
 
         .percentage:first-child {
-          border-radius: 0.3rem 0 0 0.3rem;
+          border-radius: 1rem 0 0 1rem;
         }
 
         .percentage:last-child {
-          border-radius: 0 0.3rem 0.3rem 0;
+          border-radius: 0 1rem 1rem 0;
         }
 
         .legend {
@@ -66,15 +75,9 @@ export default ({ title, data, theme }) => {
         }
 
         .label {
-          margin-right: 1.5rem;
-          margin-bottom: 0.5rem;
-          font-size: 1.6rem;
-        }
-
-        @media (min-width: 600px) {
-          .label {
-            display: inline-block;
-          }
+          margin-bottom: 1rem;
+          font-size: 1.2rem;
+          font-weight: 300;
         }
 
         .label:last-child {
@@ -84,10 +87,10 @@ export default ({ title, data, theme }) => {
         .color {
           height: 0.8rem;
           width: 0.8rem;
-          margin-right: 0.5rem;
+          margin-right: 1rem;
           display: inline-block;
           position: relative;
-          bottom: 2px;
+          bottom: 1px;
           border-radius: 50%;
         }
       `}</style>

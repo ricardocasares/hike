@@ -29,30 +29,22 @@ export default themed(({ theme }) => (
     }
 
     /* LAYOUT */
-    .app {
-      padding: 2rem;
+    section {
       width: 100%;
     }
 
-    @media (${TABLET}) {
-      .app {
-        margin: 0 auto;
-        padding: 4rem;
-        max-width: 90%;
-      }
-    }
-
-    /* STYLING */
+    /* STYLES */
     body {
-      color: ${theme.type.paragraph};
+      color: ${theme.global.text};
       background: ${theme.global.background};
       font-family: ${theme.type.fonts.sans};
     }
 
     p {
-      font-size: 1.6rem;
-      line-height: 28px;
+      font-size: 1.8rem;
+      line-height: 3rem;
       margin-bottom: 2.4rem;
+      font-weight: 300;
     }
 
     a {
@@ -60,12 +52,9 @@ export default themed(({ theme }) => (
       text-decoration: none;
     }
 
-    a:focus,
-    a:hover {
-    }
-
     strong {
-      font-weight: 600;
+      font-weight: 400;
+      color: ${theme.global.strong};
     }
 
     pre {
@@ -102,28 +91,6 @@ export default themed(({ theme }) => (
 
       padding: 5px 20px;
       margin: 0;
-    }
-
-    /* CLASSES */
-    .grid {
-      display: grid;
-      grid-gap: 20px;
-      margin: 30px 0;
-      grid-template-columns: 1fr;
-    }
-
-    @media (${TABLET}) {
-      .grid {
-        grid-gap: 30px;
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    @media (${DESKTOP}) {
-      .grid {
-        grid-gap: 30px;
-        grid-template-columns: 1fr 1fr 1fr;
-      }
     }
   `}</style>
 ));

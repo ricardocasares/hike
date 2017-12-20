@@ -7,14 +7,14 @@ import Time from "../Time";
 import { slug } from "lib/util";
 
 export default ({ theme, posts }) => (
-  <section>
+  <section className="postList">
     {posts.map(({ title, number, created_at }) => {
       return (
         <h3 key={number}>
           <Link prefetch route={`/changelog/${number}/${slug(title)}`}>
             {title}
-            <Time date={new Date(created_at)} />
           </Link>
+          <Time date={new Date(created_at)} />
         </h3>
       );
     })}
@@ -23,12 +23,16 @@ export default ({ theme, posts }) => (
         font-size: 1.6rem;
         font-weight: 400;
         margin: 0;
-        padding: 15px 0;
-        border-bottom: 1px solid ${theme.posts.list};
+        padding: 10px 0;
       }
 
       h3:last-child {
         border: 0;
+      }
+
+      .postList :global(a) {
+        color: $theme.post.list;
+        font-weight: normal;
       }
     `}</style>
   </section>

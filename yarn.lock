@@ -3823,13 +3823,13 @@ netrc@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/netrc/-/netrc-0.1.4.tgz#6be94fcaca8d77ade0a9670dc460914c94472444"
 
-next-routes@^1.2.0:
+next-routes@latest:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/next-routes/-/next-routes-1.2.0.tgz#be10cd2f3c90421610977e4a12640e2cc75774f4"
   dependencies:
     path-to-regexp "^2.1.0"
 
-next@^4.2.1:
+next@latest:
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/next/-/next-4.2.1.tgz#37b5637050235b92a487ca484e20088ace7e37fe"
   dependencies:
@@ -4584,7 +4584,7 @@ react-dom@^15.3.0:
     object-assign "^4.1.0"
     prop-types "^15.5.10"
 
-react-dom@^16.2.0:
+react-dom@latest:
   version "16.2.0"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.2.0.tgz#69003178601c0ca19b709b33a83369fe6124c044"
   dependencies:
@@ -4637,7 +4637,7 @@ react@^15.3.0:
     object-assign "^4.1.0"
     prop-types "^15.5.10"
 
-react@^16.2.0:
+react@latest:
   version "16.2.0"
   resolved "https://registry.yarnpkg.com/react/-/react-16.2.0.tgz#a31bd2dab89bff65d42134fa187f24d054c273ba"
   dependencies:
