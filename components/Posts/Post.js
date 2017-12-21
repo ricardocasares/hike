@@ -4,9 +4,10 @@ import Markdown from "react-markdown";
 
 // internal
 import Time from "../Time";
+import Title from "../Title";
 import Subtitle from "../Subtitle";
 import Measure from "../Measure";
-import { Link } from "../../routes";
+import Link from "components/Link";
 import { slug } from "lib/util";
 import { TABLET } from "lib/breakpoints";
 
@@ -21,6 +22,11 @@ export default ({
 }) => (
   <article>
     <header>
+      <Title>
+        <Link route={"/"}>
+          <span className="back">⇠</span>
+        </Link>
+      </Title>
       <Subtitle>{title}</Subtitle>
       <h4>
         <Time date={new Date(created_at)} />
@@ -32,6 +38,9 @@ export default ({
     </div>
 
     <style jsx>{`
+      .back {
+        font-size: 4rem;
+      }
       article {
         margin-top: 2rem;
         margin-bottom: 6rem;
