@@ -8,12 +8,12 @@ import Subtitle from "components/Subtitle";
 import Measure from "components/Measure";
 import Lead from "components/Lead";
 import Chart from "components/Chart";
+import Gallery from "components/Gallery";
 import { Card, CardTitle } from "components/Card";
 import { GitHub } from "react-bytesize-icons";
 import Screen from "components/Screen";
 import { PostList } from "components/Posts";
-import { getLatestRepos } from "api";
-import { getIssues, getLabels } from "api";
+import { getIssues, getLatestRepos, getLatestPhotos } from "api";
 import { dark } from "lib/themes";
 import { TABLET, DESKTOP } from "lib/breakpoints";
 import { ThemeProvider } from "providers/Theme";
@@ -30,39 +30,10 @@ const Index = ({ repos, issues }) => (
             </p>
             <p>
               With over <strong>+10 years experience</strong> building on the
-              web, I moved around as a fullstack developer, but nowadays I
-              specialize in building UI components & single page applications.
+              web, I move around between the back & front-end, but also
+              specialize in building UI components and single page applications.
             </p>
           </Measure>
-        </section>
-      </Screen>
-      <Screen>
-        <section>
-          <Subtitle>The changelog</Subtitle>
-          <Measure>
-            <p>Because sometimes I like to write stuff.</p>
-            <PostList posts={issues} />
-          </Measure>
-        </section>
-      </Screen>
-      <Screen>
-        <section>
-          <Subtitle>Recent work</Subtitle>
-          <Measure>
-            <p>
-              I spend a good part of my time writing different kinds of stuff
-              while contributing to the <strong>open source</strong> software
-              world. I find this world particularly fascinating.
-            </p>
-          </Measure>
-          <div className="grid">
-            {repos.map(repo => (
-              <Card key={repo.id} href={repo.html_url}>
-                <CardTitle>{repo.name}</CardTitle>
-                {repo.description}
-              </Card>
-            ))}
-          </div>
         </section>
       </Screen>
       <Screen>
@@ -70,10 +41,9 @@ const Index = ({ repos, issues }) => (
           <Subtitle>Experience</Subtitle>
           <Measure>
             <p>
-              While nowadays I'm focusing mostly on web development and the
-              processes around it, I have my{" "}
-              <strong>dark networking past</strong>, which allowed me to deeply
-              understand the web.
+              While nowadays I focus on web development and the processes around
+              it, I have my <strong>dark networking past</strong>, which allows
+              me to deeply understand the web.
             </p>
           </Measure>
 
@@ -121,6 +91,35 @@ const Index = ({ repos, issues }) => (
                 { label: "Jest", value: 20 }
               ]}
             />
+          </div>
+        </section>
+      </Screen>
+      <Screen>
+        <section>
+          <Subtitle>The changelog</Subtitle>
+          <Measure>
+            <p>Because sometimes I like to write stuff.</p>
+          </Measure>
+          <PostList posts={issues} />
+        </section>
+      </Screen>
+      <Screen>
+        <section>
+          <Subtitle>Recent work</Subtitle>
+          <Measure>
+            <p>
+              I spend a good part of my time writing different kinds of stuff
+              while contributing to the <strong>open source</strong> software
+              world. I find this world particularly fascinating.
+            </p>
+          </Measure>
+          <div className="grid">
+            {repos.map(repo => (
+              <Card key={repo.id} href={repo.html_url}>
+                <CardTitle>{repo.name}</CardTitle>
+                {repo.description}
+              </Card>
+            ))}
           </div>
         </section>
       </Screen>

@@ -8,7 +8,7 @@ export default ({ theme, date }) => (
     <style jsx>{`
       time {
         color: ${theme.global.time};
-        margin-left: 5px;
+        font-weight: 300;
       }
     `}</style>
   </time>

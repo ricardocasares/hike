@@ -3,6 +3,7 @@ import React from "react";
 
 // internal
 import Page from "components/Page";
+import Screen from "components/Screen";
 import { Post } from "components/Posts";
 import Subtitle from "components/Subtitle";
 import { dark } from "lib/themes";

@@ -4,9 +4,11 @@ import Markdown from "react-markdown";
 
 // internal
 import Time from "../Time";
-import Title from "../Title";
+import Subtitle from "../Subtitle";
+import Measure from "../Measure";
 import { Link } from "../../routes";
 import { slug } from "lib/util";
+import { TABLET } from "lib/breakpoints";
 
 export default ({
   theme,
@@ -19,16 +21,29 @@ export default ({
 }) => (
   <article>
     <header>
-      <Title>
-        {title} <Time date={new Date(created_at)} />
-      </Title>
-      <div className="markdown">
-        <Markdown>{body}</Markdown>
-      </div>
+      <Subtitle>{title}</Subtitle>
+      <h4>
+        <Time date={new Date(created_at)} />
+      </h4>
     </header>
+
+    <div className="markdown">
+      <Markdown>{body}</Markdown>
+    </div>
+
     <style jsx>{`
       article {
+        margin-top: 2rem;
         margin-bottom: 6rem;
+        padding: 0 2rem;
+      }
+
+      @media (${TABLET}) {
+        article {
+          margin-top: 8rem;
+          margin-bottom: 6rem;
+          padding: 0 10rem;
+        }
       }
 
       .markdown :global(h1),
@@ -53,6 +68,10 @@ export default ({
         content: "-";
         margin-right: 1rem;
         color: ${theme.type.title};
+      }
+
+      .markdown :global(pre code) {
+        color: ${theme.codeblock.color};
       }
     `}</style>
   </article>

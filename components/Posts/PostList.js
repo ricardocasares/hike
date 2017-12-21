@@ -13,7 +13,7 @@ export default ({ theme, posts }) => (
         <h3 key={number}>
           <Link prefetch route={`/changelog/${number}/${slug(title)}`}>
             {title}
-          </Link>
+          </Link>{" "}
           <Time date={new Date(created_at)} />
         </h3>
       );

@@ -11,9 +11,10 @@ export default ({ theme, href, children }) => (
         border-radius: 0.3rem;
         border: 0.1rem solid ${theme.card.border};
         display: block;
-        transition: border-color 1s;
+        transition: border-color 0.3s;
         font-size: 1.4rem;
         font-weight: 300;
+        background: ${theme.card.background};
       }
 
       a:hover {

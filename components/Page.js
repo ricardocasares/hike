@@ -4,9 +4,9 @@ import Head from "next/head";
 
 // internal
 import Global from "./Global";
-import Header from "./Header";
 import Footer from "./Footer";
 import Progress from "./Progress";
+import Ribbon from "./Ribbon";
 
 export default ({ children, title, theme }) => (
   <div className="app">
@@ -15,7 +15,10 @@ export default ({ children, title, theme }) => (
     <Head>
       <title>{title}</title>
       <meta charSet="utf-8" />
-      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      <meta
+        name="viewport"
+        content="initial-scale=1.0, width=device-width, user-scalable=no"
+      />
       <link
         rel="apple-touch-icon"
         sizes="180x180"
@@ -43,6 +46,8 @@ export default ({ children, title, theme }) => (
     </Head>
     {/* Header and navigation */}
     <Progress />
+    <Ribbon />
+
     {/* Main content */}
     {children}
   </div>

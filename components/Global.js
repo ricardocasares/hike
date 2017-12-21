@@ -25,7 +25,7 @@ export default themed(({ theme }) => (
       padding: 0;
       margin: 0;
       font-size: 1.6rem;
-      text-rendering: optimizeLegibility;
+      font-weight: 300;
     }
 
     /* LAYOUT */
@@ -57,6 +57,11 @@ export default themed(({ theme }) => (
       color: ${theme.global.strong};
     }
 
+    code {
+      color: ${theme.global.code};
+      font-family: ${theme.type.fonts.mono};
+    }
+
     pre {
       font-size: 14px;
       padding: 2rem;
@@ -65,8 +70,12 @@ export default themed(({ theme }) => (
       overflow-x: scroll;
       font-family: ${theme.type.fonts.mono};
       color: ${theme.codeblock.color};
-      background: ${theme.codeblock.border};
+      background: ${theme.codeblock.background};
       border-radius: 3px;
+    }
+
+    pre code {
+      color: ${theme.codeblock.color};
     }
 
     img {
@@ -75,11 +84,6 @@ export default themed(({ theme }) => (
 
     footer {
       text-align: center;
-    }
-
-    code {
-      color: ${theme.global.code};
-      font-family: ${theme.type.fonts.mono};
     }
 
     del {
