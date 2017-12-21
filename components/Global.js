@@ -50,6 +50,7 @@ export default themed(({ theme }) => (
     a {
       color: ${theme.global.anchors};
       text-decoration: none;
+      font-weight: 500;
     }
 
     strong {

@@ -29,11 +29,6 @@ export default ({ theme, posts }) => (
       h3:last-child {
         border: 0;
       }
-
-      .postList :global(a) {
-        color: $theme.post.list;
-        font-weight: normal;
-      }
     `}</style>
   </section>
 );
