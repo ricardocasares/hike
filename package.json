@@ -23,7 +23,7 @@
     "next-routes": "latest",
     "next": "latest",
     "nprogress": "^0.2.0",
-    "open-color": "^1.6.1",
+    "open-color": "^1.6.2",
     "prop-types": "^15.6.0",
     "react": "latest",
     "react-dom": "latest",
