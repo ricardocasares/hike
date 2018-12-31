@@ -9,6 +9,7 @@ install:
 script:
   - npm t
   - npm run build
+after_success:
   - npx codecov
 deploy:
   - provider: script
@@ -18,7 +19,7 @@ deploy:
       all_branches: true
       master: false
   - provider: script
-    script: npx now --token $NOW_TOKEN && now alias --token $NOW_TOKEN
+    script: npx now --token $NOW_TOKEN && npx now alias --token $NOW_TOKEN
     skip_cleanup: true
     on:
       master: true
