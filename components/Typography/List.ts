@@ -20,7 +20,7 @@ export const HorizontalList = styled(Unstyled)`
 
 export const NavList = styled(HorizontalList)`
   a {
-    color: ${themeGet("colors.light.3")};
+    color: ${themeGet("colors.light.2")};
     text-decoration: none;
     text-transform: lowercase;
     transition: color 1s;
