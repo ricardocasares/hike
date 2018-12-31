@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - "node"
+  - "10"
 cache:
   directories:
     - "node_modules"
@@ -14,13 +14,13 @@ script:
   - npx codecov
 deploy:
   - provider: script
-    script: now --token $NOW_TOKEN
+    script: npx now --token $NOW_TOKEN
     skip_cleanup: true
     on:
       all_branches: true
       master: false
   - provider: script
-    script: now --token $NOW_TOKEN && now alias --token $NOW_TOKEN
+    script: npx now --token $NOW_TOKEN && now alias --token $NOW_TOKEN
     skip_cleanup: true
     on:
       master: true
