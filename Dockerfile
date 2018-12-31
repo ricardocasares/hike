@@ -3,7 +3,6 @@ WORKDIR /app
 COPY package*.json /app/
 RUN npm ci
 ADD . /app
-RUN npm t
 RUN npm run build
 RUN npm ci --prod
 
