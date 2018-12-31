@@ -20,6 +20,18 @@ export const Lead = styled.p`
   line-height: 1.2em;
 `;
 
+export const Code = styled.code`
+  font-family: monospace;
+`;
+
+export const Pre = styled.pre`
+  color: ${themeGet("colors.light.0")};
+  padding: 20px 0;
+  font-size: 14px;
+  font-family: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+`;
+
 export const Measure: FunctionComponent = ({ children }) => (
   <Box maxWidth={["100%", "70%", "60%"]}>{children}</Box>
 );

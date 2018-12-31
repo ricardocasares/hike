@@ -1,10 +1,15 @@
+import styled from "@app/lib/styled";
 import HorizontalScroll from "@app/components/Scroller";
 import { NavList } from "@app/components/Typography/List";
 import Github from "@app/components/Icons/Github";
 import Twitter from "@app/components/Icons/Twitter";
 
+const Footer = styled.footer`
+  margin-top: 40px;
+`;
+
 export const Navigation = () => (
-  <footer>
+  <Footer>
     <HorizontalScroll>
       <nav>
         <NavList>
@@ -21,7 +26,7 @@ export const Navigation = () => (
         </NavList>
       </nav>
     </HorizontalScroll>
-  </footer>
+  </Footer>
 );
 
 export default Navigation;

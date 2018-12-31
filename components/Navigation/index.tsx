@@ -14,6 +14,11 @@ export const Navigation = () => (
             </a>
           </Link>
         </li>
+        <li>
+          <Link href="/changelog" partial>
+            <a>Changelog</a>
+          </Link>
+        </li>
       </NavList>
     </nav>
   </HorizontalScroll>
