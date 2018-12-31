@@ -26,11 +26,12 @@
     "emotion-theming": "^10.0.5",
     "graphql-request": "^1.8.2",
     "next": "^7.0.2",
-    "next-routes": "^1.4.2",
     "next-size": "^1.0.1",
+    "polka": "^0.5.1",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-markdown": "^4.0.4",
+    "slugo": "^0.2.3",
     "styled-system": "^3.1.11"
   },
   "devDependencies": {
