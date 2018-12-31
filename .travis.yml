@@ -19,9 +19,14 @@ deploy:
       all_branches: true
       master: false
   - provider: script
+    script: npx now --token $NOW_TOKEN && npx now alias dev.analogic.al --token $NOW_TOKEN
+    skip_cleanup: true
+    on:
+      branch: development
+  - provider: script
     script: npx now --token $NOW_TOKEN && npx now alias --token $NOW_TOKEN
     skip_cleanup: true
     on:
-      master: true
+      branch: master
 notifications:
   email: false
