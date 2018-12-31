@@ -11,5 +11,6 @@ WORKDIR /app
 ENV NODE_ENV="production"
 COPY --from=build /app/.next ./.next
 COPY --from=build /app/static ./static
+COPY --from=build /app/server ./server
 COPY --from=build /app/node_modules ./node_modules
 CMD node server/index.js
