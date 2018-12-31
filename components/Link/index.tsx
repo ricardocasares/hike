@@ -6,7 +6,7 @@ interface ActiveLink extends LinkProps, WithRouterProps {
   partial?: boolean;
 }
 
-const match = (exact: boolean) => (href: string, pathname: string) => {
+export const match = (exact: boolean) => (href: string, pathname: string) => {
   if (exact) return pathname.includes(href);
   return href === pathname;
 };
