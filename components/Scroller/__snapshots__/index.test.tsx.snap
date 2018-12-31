@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders with correct styles 1`] = `
+.emotion-0 {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+.emotion-0::-webkit-scrollbar {
+  display: none;
+}
+
+<div
+  className="emotion-0"
+>
+  <a>
+    hello world
+  </a>
+</div>
+`;

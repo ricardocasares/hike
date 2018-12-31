@@ -4,6 +4,7 @@
   "description": "Personal website",
   "scripts": {
     "dev": "next",
+    "test": "jest",
     "start": "next start",
     "build": "next build"
   },
@@ -30,10 +31,16 @@
     "styled-system": "^3.1.11"
   },
   "devDependencies": {
+    "@types/jest": "^23.3.10",
     "@types/next": "^7.0.6",
     "@types/react": "^16.7.18",
+    "@types/react-test-renderer": "^16.0.3",
     "@types/styled-system": "^3.1.0",
     "babel-plugin-emotion": "^10.0.5",
+    "babel-plugin-module-resolver": "^3.1.1",
+    "jest": "^23.6.0",
+    "jest-emotion": "^10.0.5",
+    "react-test-renderer": "^16.7.0",
     "typescript": "^3.2.2"
   }
 }

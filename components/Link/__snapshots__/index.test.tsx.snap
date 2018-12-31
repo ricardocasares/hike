@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders partial with correct styles 1`] = `
+<a
+  className={null}
+  href="/"
+  onClick={[Function]}
+>
+  hello world
+</a>
+`;
+
+exports[`renders with correct styles 1`] = `
+<a
+  className={null}
+  href="/"
+  onClick={[Function]}
+>
+  hello world
+</a>
+`;
