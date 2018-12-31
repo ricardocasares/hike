@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { themeGet } from "styled-system";
 
 export const Unstyled = styled.ul`
   margin: 0;
@@ -19,7 +20,7 @@ export const HorizontalList = styled(Unstyled)`
 
 export const NavList = styled(HorizontalList)`
   a {
-    color: rgba(255, 255, 255, 0.5);
+    color: ${themeGet("colors.light.3")};
     text-decoration: none;
     text-transform: lowercase;
     transition: color 1s;
@@ -28,7 +29,7 @@ export const NavList = styled(HorizontalList)`
     &:focus,
     &:hover,
     &.active {
-      color: rgba(255, 255, 255, 1);
+      color: ${themeGet("colors.light.0")};
     }
   }
 `;

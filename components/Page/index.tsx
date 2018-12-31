@@ -4,7 +4,13 @@ import Footer from "@app/components/Footer";
 import Navigation from "@app/components/Navigation";
 
 export const Page: FunctionComponent = ({ children }) => (
-  <Box p={[3, 5]} display={["flex"]} flexDirection="column" minHeight={"100%"}>
+  <Box
+    p={[3, 5]}
+    display="flex"
+    flexDirection="column"
+    minHeight="100%"
+    bg="dark.0"
+  >
     <Box as="header">
       <Navigation />
     </Box>

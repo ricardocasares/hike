@@ -2,7 +2,9 @@ import React from "react";
 import Head from "next/head";
 import App, { Container } from "next/app";
 import { Global } from "@emotion/core";
+import { ThemeProvider } from "emotion-theming";
 import css from "@app/lib/reset";
+import theme from "@app/lib/theme";
 
 export default class MyApp extends App {
   render() {
@@ -21,7 +23,9 @@ export default class MyApp extends App {
         </Head>
 
         <Global styles={css} />
-        <Component {...pageProps} />
+        <ThemeProvider theme={theme}>
+          <Component {...pageProps} />
+        </ThemeProvider>
       </Container>
     );
   }

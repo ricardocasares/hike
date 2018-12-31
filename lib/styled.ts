@@ -1,9 +1,10 @@
 import styled, { CreateStyled } from "@emotion/styled";
 
-export type Theme = {
+export type ITheme = {
   colors: {
-    gray: string[];
+    dark: string[];
+    light: string[];
   };
 };
 
-export default styled as CreateStyled<Theme>;
+export default styled as CreateStyled<ITheme>;
