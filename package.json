@@ -1,96 +1,38 @@
 {
   "name": "analogical",
   "version": "0.0.1",
-  "description": "",
-  "main": "server.js",
+  "description": "Personal website",
   "scripts": {
-    "dev": "nodemon server -w server.js -w routes.js",
-    "dev:tdd": "run-p dev test:tdd",
-    "test": "jest",
-    "test:tdd": "jest --watch",
-    "test:cover": "jest --coverage",
-    "build": "next build",
-    "start": "node server"
+    "dev": "next",
+    "start": "next start",
+    "build": "next build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ricardocasares/analogical.git"
   },
   "keywords": [],
-  "author": "Ricardo Casares <ricardocasares@gmail.com> (http://analogic.al/)",
+  "author": "",
   "license": "MIT",
-  "dependencies": {
-    "babel-plugin-module-resolver": "^3.0.0",
-    "babel-plugin-transform-inline-environment-variables": "^0.2.0",
-    "fast-memoize": "^2.2.8",
-    "isomorphic-unfetch": "^2.0.0",
-    "next-routes": "latest",
-    "next": "latest",
-    "nprogress": "^0.2.0",
-    "open-color": "^1.6.2",
-    "prop-types": "^15.6.0",
-    "react": "latest",
-    "react-dom": "latest",
-    "react-markdown": "^3.1.4",
-    "s-ago": "^1.1.0"
+  "bugs": {
+    "url": "https://github.com/ricardocasares/analogical/issues"
   },
-  "babel": {
-    "plugins": [
-      [
-        "module-resolver",
-        {
-          "root": ["./"],
-          "alias": {
-            "api": "./api",
-            "lib": "./lib",
-            "providers": "./providers",
-            "components": "./components"
-          }
-        }
-      ]
-    ],
-    "env": {
-      "development": {
-        "presets": ["next/babel"],
-        "plugins": ["inline-dotenv"]
-      },
-      "production": {
-        "presets": ["next/babel"],
-        "plugins": ["transform-inline-environment-variables"]
-      },
-      "test": {
-        "plugins": ["inline-dotenv"],
-        "presets": [
-          [
-            "env",
-            {
-              "modules": "commonjs"
-            }
-          ],
-          "next/babel"
-        ]
-      }
-    }
+  "homepage": "https://github.com/ricardocasares/analogical#readme",
+  "dependencies": {
+    "@emotion/core": "^10.0.5",
+    "@emotion/styled": "^10.0.5",
+    "@zeit/next-typescript": "^1.1.1",
+    "next": "^7.0.2",
+    "next-size": "^1.0.1",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "styled-system": "^3.1.11"
   },
   "devDependencies": {
-    "babel-plugin-inline-dotenv": "^1.1.2",
-    "babel-preset-env": "^1.6.1",
-    "jest": "^22.0.4",
-    "nodemon": "^1.14.8",
-    "npm-run-all": "^4.1.2",
-    "react-test-renderer": "^16.2.0"
-  },
-  "jest": {
-    "testMatch": ["**/?(*.)(spec|test).js?(x)"],
-    "coverageDirectory": ".coverage",
-    "coverageThreshold": {
-      "global": {
-        "branches": 80,
-        "functions": 80,
-        "lines": 80,
-        "statements": 80
-      }
-    }
-  },
-  "now": {
-    "name": "analogical",
-    "alias": ["analogic.al", "www.analogic.al"],
-    "dotenv": ".env.production"
+    "@types/next": "^7.0.6",
+    "@types/react": "^16.7.18",
+    "@types/styled-system": "^3.1.0",
+    "babel-plugin-emotion": "^10.0.5",
+    "typescript": "^3.2.2"
   }
 }

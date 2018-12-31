@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Carding Card 1`] = `
-<div
-  className="jsx-3259594531"
->
-  Hello
-</div>
-`;
