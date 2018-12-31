@@ -14,7 +14,7 @@ const Text = styled.span<Logo>`
 
 export const Logo: FunctionComponent<Logo> = props => (
   <Text {...props}>
-    <strong>⨳</strong> <Box display={["none", "inline"]}>analogical</Box>
+    𝌺 <Box display={["none", "inline"]}>analogic.al</Box>
   </Text>
 );
 

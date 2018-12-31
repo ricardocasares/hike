@@ -68,10 +68,7 @@ exports[`renders with correct styles 1`] = `
           <span
             className="emotion-1"
           >
-            <strong>
-              ⨳
-            </strong>
-             
+            𝌺 
             <div
               className="emotion-0"
               display={
@@ -81,7 +78,7 @@ exports[`renders with correct styles 1`] = `
                 ]
               }
             >
-              analogical
+              analogic.al
             </div>
           </span>
         </a>

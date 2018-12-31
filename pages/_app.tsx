@@ -20,6 +20,24 @@ export default class MyApp extends App {
             content="width=device-width, initial-scale=1.0"
           />
           <meta name="theme-color" content="#000000" />
+          <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/static/ico/apple-touch-icon.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/static/ico/favicon-32x32.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/static/ico/favicon-16x16.png"
+          />
+          <link rel="manifest" href="/static/ico/site.webmanifest" />
         </Head>
 
         <Global styles={css} />
