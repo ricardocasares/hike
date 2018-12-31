@@ -9,6 +9,6 @@ const client = new GraphQLClient(GITHUB_GQL_ENDPOINT, {
   }
 });
 
-export async function request<T>(query: string, variables: any) {
+export async function request<T>(query: string, variables?: any) {
   return client.request<T>(query, variables);
 }
