@@ -12,4 +12,4 @@ ENV NODE_ENV="production"
 COPY --from=build /app/.next ./.next
 COPY --from=build /app/static ./static
 COPY --from=build /app/node_modules ./node_modules
-CMD node node_modules/.bin/next start
+CMD node server/index.js
