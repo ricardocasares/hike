@@ -5,5 +5,9 @@
   "features": {
     "cloud": "v2"
   },
-  "alias": ["analogic.al", "www.analogic.al"]
+  "alias": ["analogic.al", "www.analogic.al"],
+  "env": {
+    "GITHUB_TOKEN": "@github-token",
+    "GITHUB_GQL_ENDPOINT": "@github-gql-endpoint"
+  }
 }
