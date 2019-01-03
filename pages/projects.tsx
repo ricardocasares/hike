@@ -24,7 +24,7 @@ export const Projects: FunctionComponent<{ projects: Post[] }> = ({
     <article>
       <header>
         <Lead as="h2">
-          Where I've been <Strong>pushing</Strong> recently.
+          Code I've been <Strong>pushing</Strong> recently.
         </Lead>
       </header>
 

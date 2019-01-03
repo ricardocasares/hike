@@ -25,10 +25,14 @@ export const Strong = styled.strong`
 `;
 
 export const Lead: FunctionComponent<{ as?: string }> = styled.p`
-  color: ${themeGet("colors.light.1")};
+  color: ${themeGet("colors.light.3")};
   font-weight: 300;
   font-size: 24px;
   line-height: 1.2em;
+
+  strong {
+    color: ${themeGet("colors.light.1")};
+  }
 `;
 
 export const Code = styled.code`

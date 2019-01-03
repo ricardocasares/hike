@@ -42,7 +42,7 @@ export const PROJECTS_QUERY = gql`
   query {
     user(login: "ricardocasares") {
       repositories(
-        first: 9
+        first: 6
         orderBy: { field: PUSHED_AT, direction: DESC }
         isFork: false
       ) {
