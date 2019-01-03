@@ -8,8 +8,8 @@ install:
   - npm ci
 script:
   - npm t
-  - npm run size
   - npm run build
+  - npm run size
 after_success:
   - npx codecov
 deploy:
