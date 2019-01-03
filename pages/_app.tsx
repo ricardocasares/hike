@@ -3,11 +3,13 @@ import Head from "next/head";
 import App, { Container } from "next/app";
 import { Global } from "@emotion/core";
 import { ThemeProvider } from "emotion-theming";
+import Router from "next/router";
+import withGA from "next-ga";
 import css from "@app/lib/reset";
 import theme from "@app/lib/theme";
 import configureProgressBar from "@app/lib/progress";
 
-export default class MyApp extends App {
+export class MyApp extends App {
   componentDidMount() {
     configureProgressBar();
   }
@@ -53,3 +55,5 @@ export default class MyApp extends App {
     );
   }
 }
+
+export default withGA(process.env.GA_ID, Router)(MyApp);
