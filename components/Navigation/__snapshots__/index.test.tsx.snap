@@ -92,6 +92,15 @@ exports[`renders with correct styles 1`] = `
           Changelog
         </a>
       </li>
+      <li>
+        <a
+          className={null}
+          href="/projects"
+          onClick={[Function]}
+        >
+          Projects
+        </a>
+      </li>
     </ul>
   </nav>
 </div>
