@@ -13,7 +13,7 @@ app.prepare().then(() =>
     .get("/", render("/"))
     .get("/changelog", render("/changelog"))
     .get("/changelog/:id/:slug", render("/post"))
-    .get("*", (req, res) => handle(req, res))
+    .get("*", handle)
     .listen(port, err => {
       if (err) throw err;
       console.log(`> Ready on http://localhost:${port}`);
