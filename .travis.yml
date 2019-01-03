@@ -15,7 +15,7 @@ after_success:
 deploy:
   - provider: script
     skip_cleanup: true
-    script: npx release
+    script: npx semantic-release
     on:
       branch: master
   - provider: script
