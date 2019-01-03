@@ -1,7 +1,14 @@
 {
   "name": "analogical",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "description": "Personal website",
+  "author": "Ricardo Casares",
+  "license": "MIT",
+  "homepage": "https://github.com/ricardocasares/analogical#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ricardocasares/analogical.git"
+  },
   "scripts": {
     "dev": "node server",
     "test": "jest",
@@ -9,17 +16,6 @@
     "build": "next build",
     "size": "npx bundlesize"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ricardocasares/analogical.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ricardocasares/analogical/issues"
-  },
-  "homepage": "https://github.com/ricardocasares/analogical#readme",
   "dependencies": {
     "@emotion/core": "^10.0.5",
     "@emotion/styled": "^10.0.5",
@@ -65,5 +61,13 @@
       "path": "./.next/static/*[123456789]*/pages/*.js",
       "maxSize": "25 kB"
     }
+  ],
+  "keywords": [
+    "blog",
+    "next",
+    "zeit",
+    "docker",
+    "analogical",
+    "analogic.al"
   ]
 }
