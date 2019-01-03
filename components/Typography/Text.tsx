@@ -5,7 +5,7 @@ import Box from "@app/components/Box";
 
 export const A = styled.a`
   color: ${themeGet("colors.light.0")};
-  border-bottom: 2px solid ${themeGet("colors.light.3")};
+  border-bottom: 2px solid ${themeGet("colors.light.5")};
   text-decoration: none;
   transition: border-color 0.5s;
 
@@ -14,13 +14,8 @@ export const A = styled.a`
   }
 `;
 
-export const Time = styled.time`
-  color: ${themeGet("colors.light.3")};
-  font-size: 14px;
-`;
-
 export const P = styled.p`
-  color: ${themeGet("colors.light.1")};
+  color: ${themeGet("colors.light.2")};
   line-height: 1.8em;
 `;
 
@@ -46,6 +41,12 @@ export const Pre = styled.pre`
   font-size: 14px;
   font-family: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono",
     "Courier New", monospace;
+`;
+
+export const Meta = styled.span`
+  color: ${themeGet("colors.light.5")};
+  font-size: 14px;
+  line-height: 0;
 `;
 
 export const Measure: FunctionComponent = ({ children }) => (

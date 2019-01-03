@@ -2,8 +2,12 @@ import styled from "@app/lib/styled";
 import {
   alignItems,
   AlignItemsProps,
-  borders,
+  border,
   BorderProps,
+  borderColor,
+  BorderColorProps,
+  borderRadius,
+  BorderRadiusProps,
   boxShadow,
   BoxShadowProps,
   color,
@@ -28,12 +32,22 @@ import {
   FlexProps,
   flexDirection,
   FlexDirectionProps,
+  flexWrap,
+  FlexWrapProps,
+  gridGap,
+  GridGapProps,
+  gridTemplateColumns,
+  GridTemplatesColumnsProps,
+  gridTemplateRows,
+  GridTemplatesRowsProps,
   position,
   PositionProps
 } from "styled-system";
 
 export type Box = AlignItemsProps &
   BorderProps &
+  BorderColorProps &
+  BorderRadiusProps &
   BoxShadowProps &
   ColorProps &
   DisplayProps &
@@ -46,6 +60,10 @@ export type Box = AlignItemsProps &
   SizeProps &
   FlexProps &
   FlexDirectionProps &
+  FlexWrapProps &
+  GridGapProps &
+  GridTemplatesColumnsProps &
+  GridTemplatesRowsProps &
   PositionProps & {
     as?: string;
   };
@@ -53,12 +71,18 @@ export type Box = AlignItemsProps &
 // @ts-ignore
 export const Box = styled.div<Box>`
   ${alignItems}
-  ${borders}
+  ${border}
+  ${borderColor}
+  ${borderRadius}
   ${boxShadow}
   ${color}
   ${display}
   ${flex}
   ${flexDirection}
+  ${flexWrap}
+  ${gridGap}
+  ${gridTemplateColumns}
+  ${gridTemplateRows}
   ${maxHeight}
   ${minHeight}
   ${maxWidth}

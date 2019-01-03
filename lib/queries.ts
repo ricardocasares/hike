@@ -37,3 +37,24 @@ export const POSTS_QUERY = gql`
     }
   }
 `;
+
+export const PROJECTS_QUERY = gql`
+  query {
+    user(login: "ricardocasares") {
+      repositories(
+        first: 9
+        orderBy: { field: PUSHED_AT, direction: DESC }
+        isFork: false
+      ) {
+        nodes {
+          name
+          url
+          description
+          stargazers {
+            totalCount
+          }
+        }
+      }
+    }
+  }
+`;

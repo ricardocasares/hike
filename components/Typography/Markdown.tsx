@@ -40,8 +40,13 @@ const CodeBlock: FunctionComponent<MarkdownProps> = ({ value }) => (
   </HorizontalScroller>
 );
 
+const StyledUl = styled.ul`
+  padding: 0;
+  margin-left: 25px;
+`;
+
 const StyledLi = styled.li`
-  color: ${themeGet("colors.light.1")};
+  color: ${themeGet("colors.light.2")};
   list-style: none;
   margin-bottom: 5px;
   line-height: 1.5em;
@@ -49,11 +54,11 @@ const StyledLi = styled.li`
   &::before {
     content: "-";
     margin-right: 10px;
-    color: ${themeGet("colors.light.3")};
+    color: ${themeGet("colors.light.4")};
   }
 `;
 
-const Ul: FunctionComponent = ({ children }) => <Unstyled>{children}</Unstyled>;
+const Ul: FunctionComponent = ({ children }) => <StyledUl>{children}</StyledUl>;
 const Li: FunctionComponent = ({ children }) => <StyledLi>{children}</StyledLi>;
 
 const Heading: FunctionComponent<{ level: string }> = ({ level, children }) => (

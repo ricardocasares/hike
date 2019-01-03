@@ -19,6 +19,11 @@ export const Navigation = () => (
             <a>Changelog</a>
           </Link>
         </li>
+        <li>
+          <Link href="/projects" prefetch>
+            <a>Projects</a>
+          </Link>
+        </li>
       </NavList>
     </nav>
   </HorizontalScroll>
