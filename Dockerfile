@@ -1,5 +1,6 @@
 FROM mhart/alpine-node:latest AS build
 WORKDIR /app
+ARG GA_ID
 ARG GITHUB_TOKEN
 ARG GITHUB_GQL_ENDPOINT
 COPY package*.json /app/
