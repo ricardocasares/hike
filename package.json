@@ -1,6 +1,6 @@
 {
   "name": "analogical",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Personal website",
   "author": "Ricardo Casares",
   "license": "MIT",
@@ -50,8 +50,20 @@
   },
   "release": {
     "plugins": [
-      "@semantic-release/github",
-      "@semantic-release/release-notes-generator"
+      "@semantic-release/release-notes-generator",
+      [
+        "@semantic-release/npm",
+        {
+          "npmPublish": false,
+          "tarballDir": "dist"
+        }
+      ],
+      [
+        "@semantic-release/github",
+        {
+          "assets": "dist/*.tgz"
+        }
+      ]
     ]
   },
   "bundlesize": [

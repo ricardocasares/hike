@@ -1,4 +1,5 @@
 .env
 .next
+dist
 coverage
 node_modules
