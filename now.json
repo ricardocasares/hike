@@ -8,6 +8,7 @@
   "alias": ["analogic.al", "www.analogic.al"],
   "build": {
     "env": {
+      "GA_ID": "@ga-id",
       "GITHUB_TOKEN": "@github-token",
       "GITHUB_GQL_ENDPOINT": "@github-gql-endpoint"
     }
