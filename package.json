@@ -6,7 +6,8 @@
     "dev": "node server",
     "test": "jest",
     "start": "node server",
-    "build": "next build"
+    "build": "next build",
+    "size": "npx bundlesize"
   },
   "repository": {
     "type": "git",
@@ -48,8 +49,21 @@
     "babel-plugin-module-resolver": "^3.1.1",
     "jest": "^23.6.0",
     "jest-emotion": "^10.0.5",
-    "next-size": "^1.0.1",
     "react-test-renderer": "^16.7.0",
     "typescript": "^3.2.2"
-  }
+  },
+  "bundlesize": [
+    {
+      "path": "./.next/**/commons*.js",
+      "maxSize": "80 kB"
+    },
+    {
+      "path": "./.next/**/runtime/main-*.js",
+      "maxSize": "7 kB"
+    },
+    {
+      "path": "./.next/static/*[123456789]*/pages/*.js",
+      "maxSize": "25 kB"
+    }
+  ]
 }
