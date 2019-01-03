@@ -3,6 +3,22 @@ import { themeGet } from "styled-system";
 import styled from "@app/lib/styled";
 import Box from "@app/components/Box";
 
+export const A = styled.a`
+  color: ${themeGet("colors.light.0")};
+  border-bottom: 2px solid ${themeGet("colors.light.3")};
+  text-decoration: none;
+  transition: border-color 0.5s;
+
+  &:hover {
+    border-color: ${themeGet("colors.light.2")};
+  }
+`;
+
+export const Time = styled.time`
+  color: ${themeGet("colors.light.3")};
+  font-size: 14px;
+`;
+
 export const P = styled.p`
   color: ${themeGet("colors.light.1")};
   line-height: 1.8em;
@@ -13,7 +29,7 @@ export const Strong = styled.strong`
   font-weight: 500;
 `;
 
-export const Lead = styled.p`
+export const Lead: FunctionComponent<{ as?: string }> = styled.p`
   color: ${themeGet("colors.light.1")};
   font-weight: 300;
   font-size: 24px;

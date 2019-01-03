@@ -8,14 +8,14 @@ export const Navigation = () => (
     <nav>
       <NavList>
         <li>
-          <Link href="/">
+          <Link href="/" prefetch>
             <a>
               <Logo />
             </a>
           </Link>
         </li>
         <li>
-          <Link href="/changelog" partial>
+          <Link href="/changelog" partial prefetch>
             <a>Changelog</a>
           </Link>
         </li>

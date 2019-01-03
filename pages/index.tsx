@@ -5,21 +5,19 @@ import { H1, P, Lead, Strong, Measure } from "@app/components/Typography";
 
 export const Index: FunctionComponent = () => (
   <Page>
-    <Box display="flex" flex="1" alignItems="center">
-      <main>
-        <Measure>
-          <H1>Hi</H1>
+    <Box as="main" display="flex" flex="1" alignItems="center">
+      <Measure>
+        <H1>Hi</H1>
 
-          <Lead>
-            I'm Ricardo, a <Strong>creative software developer</Strong>.
-          </Lead>
-          <P>
-            With over <Strong>+10 years experience</Strong> building on the web,
-            I move around between the back & front-end, but also specialize in
-            building UI components and single page applications.
-          </P>
-        </Measure>
-      </main>
+        <Lead>
+          I'm Ricardo, a <Strong>creative software developer</Strong>.
+        </Lead>
+        <P>
+          With over <Strong>+10 years experience</Strong> building on the web, I
+          move around between the back & front-end, but also specialize in
+          building UI components and single page applications.
+        </P>
+      </Measure>
     </Box>
   </Page>
 );

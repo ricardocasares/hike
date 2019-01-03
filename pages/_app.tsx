@@ -5,8 +5,13 @@ import { Global } from "@emotion/core";
 import { ThemeProvider } from "emotion-theming";
 import css from "@app/lib/reset";
 import theme from "@app/lib/theme";
+import configureProgressBar from "@app/lib/progress";
 
 export default class MyApp extends App {
+  componentDidMount() {
+    configureProgressBar();
+  }
+
   render() {
     // @ts-ignore
     const { Component, pageProps } = this.props;

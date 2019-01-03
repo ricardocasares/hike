@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { themeGet } from "styled-system";
 
-export const H1 = styled.h1`
+export const H1 = styled.h1<{ as?: string }>`
   color: ${themeGet("colors.light.0")};
   font-weight: 300;
 `;

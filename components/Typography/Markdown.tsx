@@ -1,21 +1,30 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, ImgHTMLAttributes } from "react";
+import Markdown from "react-markdown";
 import { themeGet } from "styled-system";
 import styled from "@app/lib/styled";
-import { P } from "./Text";
+import HorizontalScroller from "@app/components/Scroller";
+import { A, P } from "./Text";
+import { H1 } from "./Headings";
+import { Img } from "./Image";
+import { Unstyled } from "./List";
 
-export type MarkdownProps = {
+type MarkdownProps = {
   value: string;
 };
 
-export const Paragraph: FunctionComponent<MarkdownProps> = ({ children }) => (
+const Paragraph: FunctionComponent<MarkdownProps> = ({ children }) => (
   <P>{children}</P>
 );
 
-export const Code = styled.code`
+const Anchor: FunctionComponent = ({ children, ...props }) => (
+  <A {...props}>{children}</A>
+);
+
+const Code = styled.code`
   font-family: monospace;
 `;
 
-export const Pre = styled.pre`
+const Pre = styled.pre`
   color: ${themeGet("colors.light.0")};
   padding: 20px 0;
   font-size: 14px;
@@ -23,12 +32,49 @@ export const Pre = styled.pre`
     "Courier New", monospace;
 `;
 
-export type CodeBlock = {
-  value: string;
-};
+const CodeBlock: FunctionComponent<MarkdownProps> = ({ value }) => (
+  <HorizontalScroller>
+    <Pre>
+      <Code>{value}</Code>
+    </Pre>
+  </HorizontalScroller>
+);
 
-export const CodeBlock: FunctionComponent<CodeBlock> = ({ value }) => (
-  <Pre>
-    <Code>{value}</Code>
-  </Pre>
+const StyledLi = styled.li`
+  color: ${themeGet("colors.light.1")};
+  list-style: none;
+  margin-bottom: 5px;
+  line-height: 1.5em;
+
+  &::before {
+    content: "-";
+    margin-right: 10px;
+    color: ${themeGet("colors.light.3")};
+  }
+`;
+
+const Ul: FunctionComponent = ({ children }) => <Unstyled>{children}</Unstyled>;
+const Li: FunctionComponent = ({ children }) => <StyledLi>{children}</StyledLi>;
+
+const Heading: FunctionComponent<{ level: string }> = ({ level, children }) => (
+  <H1 as={`h${level}`}>{children}</H1>
+);
+
+const Image: FunctionComponent<ImgHTMLAttributes<Element>> = props => (
+  <Img {...props} />
+);
+
+export const Md: FunctionComponent<{ body: string }> = ({ body }) => (
+  <Markdown
+    source={body}
+    renderers={{
+      paragraph: Paragraph,
+      code: CodeBlock,
+      link: Anchor,
+      list: Ul,
+      image: Image,
+      heading: Heading,
+      listItem: Li
+    }}
+  />
 );

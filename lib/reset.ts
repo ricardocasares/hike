@@ -18,4 +18,17 @@ export default css`
       "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
       "Helvetica Neue", sans-serif;
   }
+
+  #nprogress {
+    pointer-events: none;
+  }
+  #nprogress .bar {
+    background: white;
+    position: fixed;
+    z-index: 1031;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+  }
 `;

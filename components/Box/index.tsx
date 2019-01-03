@@ -46,7 +46,9 @@ export type Box = AlignItemsProps &
   SizeProps &
   FlexProps &
   FlexDirectionProps &
-  PositionProps;
+  PositionProps & {
+    as?: string;
+  };
 
 // @ts-ignore
 export const Box = styled.div<Box>`

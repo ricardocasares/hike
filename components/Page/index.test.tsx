@@ -2,6 +2,7 @@ import React from "react";
 import renderer from "react-test-renderer";
 import serializer from "jest-emotion";
 import Page from "@app/components/Page";
+import "../__mocks__/router";
 
 expect.addSnapshotSerializer(serializer);
 

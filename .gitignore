@@ -1,4 +1,4 @@
+.env
 .next
 coverage
 node_modules
-now-secrets.json
