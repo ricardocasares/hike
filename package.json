@@ -48,6 +48,12 @@
     "react-test-renderer": "^16.7.0",
     "typescript": "^3.2.2"
   },
+  "release": {
+    "plugins": [
+      "@semantic-release/github",
+      "@semantic-release/release-notes-generator"
+    ]
+  },
   "bundlesize": [
     {
       "path": "./.next/**/commons*.js",
