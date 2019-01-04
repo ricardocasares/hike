@@ -50,18 +50,8 @@
   },
   "release": {
     "plugins": [
-      "@semantic-release/release-notes-generator",
-      [
-        "@semantic-release/github",
-        {
-          "assets": [
-            {
-              "label": "Built application",
-              "path": "analogical.tar.gz"
-            }
-          ]
-        }
-      ]
+      "@semantic-release/github",
+      "@semantic-release/release-notes-generator"
     ]
   },
   "bundlesize": [
