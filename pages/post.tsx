@@ -1,9 +1,11 @@
 import { FunctionComponent } from "react";
+import dynamic from "next/dynamic";
 import Page from "@app/components/Page";
 import { H1, H2, Measure } from "@app/components/Typography";
-import { Md } from "@app/components/Typography/Markdown";
 import { client } from "@app/lib/github";
 import { POST_QUERY } from "@app/lib/queries";
+// @ts-ignore
+const Md = dynamic(() => import("@app/components/Typography/Markdown"));
 
 export interface Post {
   id: string;

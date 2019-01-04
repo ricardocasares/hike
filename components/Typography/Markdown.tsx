@@ -83,3 +83,5 @@ export const Md: FunctionComponent<{ body: string }> = ({ body }) => (
     }}
   />
 );
+
+export default Md;
