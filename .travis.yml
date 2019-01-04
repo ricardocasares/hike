@@ -12,6 +12,7 @@ script:
   - npm run size
 after_success:
   - npx codecov
+  - npm ci --prod
 deploy:
   - provider: script
     skip_cleanup: true

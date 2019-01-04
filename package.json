@@ -50,8 +50,22 @@
   },
   "release": {
     "plugins": [
-      "@semantic-release/github",
-      "@semantic-release/release-notes-generator"
+      "@semantic-release/release-notes-generator",
+      [
+        "@semantic-release/github",
+        {
+          "assets": [
+            {
+              "label": "Built assets",
+              "path": [
+                ".next/**/*",
+                "server/**/*",
+                "node_modules/**/*"
+              ]
+            }
+          ]
+        }
+      ]
     ]
   },
   "bundlesize": [
