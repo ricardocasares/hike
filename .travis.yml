@@ -10,9 +10,9 @@ script:
   - npm t
   - npm run build
   - npm run size
+  - npm ci --prod
 after_success:
   - npx codecov
-  - npm ci --prod
 deploy:
   - provider: script
     skip_cleanup: true
