@@ -11,6 +11,7 @@ script:
   - npm run build
   - npm run size
   - npm ci --prod
+  - tar czf analogical.tar.gz .next node_modules server
 after_success:
   - npx codecov
 deploy:

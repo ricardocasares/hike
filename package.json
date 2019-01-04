@@ -56,12 +56,8 @@
         {
           "assets": [
             {
-              "label": "Built assets",
-              "path": [
-                ".next/**/*",
-                "server/**/*",
-                "node_modules/**/*"
-              ]
+              "label": "Built application",
+              "path": "analogical.tar.gz"
             }
           ]
         }

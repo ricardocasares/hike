@@ -2,8 +2,8 @@ import fetch from "isomorphic-unfetch";
 import memoize from "memoize-promise";
 
 const EXPIRE = 600000;
-const GITHUB_TOKEN = process.env.GITHUB_TOKEN || "";
-const GITHUB_GQL_ENDPOINT = process.env.GITHUB_GQL_ENDPOINT || "";
+const GITHUB_TOKEN = process.env.APP_GITHUB_TOKEN || "";
+const GITHUB_GQL_ENDPOINT = process.env.APP_GITHUB_GQL_ENDPOINT || "";
 
 export const client = memoize(
   (query: string, variables: Object) =>

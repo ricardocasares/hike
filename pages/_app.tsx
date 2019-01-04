@@ -56,4 +56,4 @@ export class MyApp extends App {
   }
 }
 
-export default withGA(process.env.GA_ID, Router)(MyApp);
+export default withGA(process.env.APP_GA_ID, Router)(MyApp);

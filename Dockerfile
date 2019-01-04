@@ -1,8 +1,8 @@
 FROM mhart/alpine-node:latest AS build
 WORKDIR /app
-ARG GA_ID
-ARG GITHUB_TOKEN
-ARG GITHUB_GQL_ENDPOINT
+ARG APP_GA_ID
+ARG APP_GITHUB_TOKEN
+ARG APP_GITHUB_GQL_ENDPOINT
 COPY package*.json /app/
 RUN npm ci
 ADD . /app
