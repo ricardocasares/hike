@@ -1,21 +1,19 @@
-const polka = require("polka");
 const next = require("next");
+const polka = require("polka");
 
-const port = parseInt(process.env.PORT, 10) || 3000;
-const dev = process.env.NODE_ENV !== "production";
-const app = next({ dev });
-const handle = app.getRequestHandler();
-const render = name => (req, res) =>
-  app.render(req, res, name, { ...req.query, ...req.params });
+const { PORT = 3000, NODE_ENV } = process.env;
+const app = next({ dev: NODE_ENV !== "production" });
+const props = ({ query, params }) => ({ ...query, ...params });
+const render = name => (req, res) => app.render(req, res, name, props(req));
 
 app.prepare().then(() =>
   polka()
     .get("/", render("/"))
     .get("/changelog", render("/changelog"))
     .get("/changelog/:id/:slug", render("/post"))
-    .get("*", handle)
-    .listen(port, err => {
+    .get("*", app.getRequestHandler())
+    .listen(PORT, err => {
       if (err) throw err;
-      console.log(`> Ready on http://localhost:${port}`);
+      console.log(`> Ready on http://localhost:${PORT}`);
     })
 );
