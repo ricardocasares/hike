@@ -4,8 +4,11 @@ import Page from "@app/components/Page";
 import { H1, H2, Measure } from "@app/components/Typography";
 import { client } from "@app/lib/github";
 import { POST_QUERY } from "@app/lib/queries";
+import Progress from "@app/components/Progress";
 // @ts-ignore
-const Md = dynamic(() => import("@app/components/Typography/Markdown"));
+const Md = dynamic(() => import("@app/components/Typography/Markdown"), {
+  loading: () => <Progress />
+});
 
 export interface Post {
   id: string;
