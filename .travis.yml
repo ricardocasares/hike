@@ -23,12 +23,13 @@ deploy:
     skip_cleanup: true
     on:
       master: false
+      develop: false
       all_branches: true
   - provider: script
     script: npx now --token $NOW_TOKEN && npx now alias dev.analogic.al --token $NOW_TOKEN
     skip_cleanup: true
     on:
-      branch: development
+      branch: develop
   - provider: script
     script: npx now --token $NOW_TOKEN && npx now alias --token $NOW_TOKEN
     skip_cleanup: true
