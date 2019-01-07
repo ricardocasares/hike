@@ -14,24 +14,24 @@ after_success:
   - npx codecov
 deploy:
   - provider: script
-    skip_cleanup: true
-    script: npx semantic-release
-    on:
-      branch: master
-  - provider: script
-    script: npx now --token $NOW_TOKEN
+    script: npm run deploy
     skip_cleanup: true
     on:
       master: false
       develop: false
       all_branches: true
   - provider: script
-    script: npx now --token $NOW_TOKEN && npx now alias dev.analogic.al --token $NOW_TOKEN
+    script: npm run deploy:dev
     skip_cleanup: true
     on:
       branch: develop
   - provider: script
-    script: npx now --token $NOW_TOKEN && npx now alias --token $NOW_TOKEN
+    skip_cleanup: true
+    script: npm run release
+    on:
+      branch: master
+  - provider: script
+    script: npm run deploy:prod
     skip_cleanup: true
     on:
       branch: master

@@ -14,7 +14,7 @@ export const Index: FunctionComponent = () => (
         </Lead>
         <P>
           With over <Strong>+10 years experience</Strong> building on the web, I
-          move around between the back & front-end, but also specialize in
+          move around between the back and the frontend, but specialize in
           building UI components and single page applications.
         </P>
       </Measure>
