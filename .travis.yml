@@ -29,6 +29,12 @@ deploy:
   - provider: script
     script:
       - npm run release
+    skip_cleanup: true
+    on:
+      branch: master
+
+  - provider: script
+    script:
       - npm run deploy:prod
     skip_cleanup: true
     on:
