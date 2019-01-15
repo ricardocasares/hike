@@ -1,12 +1,18 @@
+import memo from "memoize-promise";
 import fetch from "isomorphic-unfetch";
+
+const EXPIRES = 60000;
 
 export const compose = <T>(...fns: Function[]) => (x: any) =>
   fns.reduceRight<T>((a, fn) => fn(a), x);
 
-export const request = async <T>(endpoint: string) =>
-  fetch(endpoint)
-    .then(checkResponse)
-    .then<T>(res => res.json());
+export const request = memo(
+  async <T>(endpoint: string) =>
+    fetch(endpoint)
+      .then(checkResponse)
+      .then<T>(res => res.json()),
+  EXPIRES
+);
 
 function checkResponse(res: Response): Response {
   if (!res.ok) {
