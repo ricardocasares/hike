@@ -9,8 +9,7 @@
   "build": {
     "env": {
       "APP_GA_ID": "@ga-id",
-      "APP_GITHUB_TOKEN": "@github-token",
-      "APP_GITHUB_GQL_ENDPOINT": "@github-gql-endpoint"
+      "APP_GITHUB_API": "@github-api"
     }
   }
 }
