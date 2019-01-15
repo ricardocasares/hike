@@ -1,41 +1,31 @@
-import fetch from "isomorphic-unfetch";
-import memoize from "memoize-promise";
+import { stringify } from "querystring";
+// internal
+import { compose, request } from "./utils";
+import { Issue, Repository } from "./types";
 
-const EXPIRE = 600000;
-const GITHUB_TOKEN = process.env.APP_GITHUB_TOKEN || "";
-const GITHUB_GQL_ENDPOINT = process.env.APP_GITHUB_GQL_ENDPOINT || "";
+const GITHUB_API = process.env.APP_GITHUB_API || "";
+const ISSUES_API = "repos/ricardocasares/analogical/issues";
+const REPOSITORIES_API = "users/ricardocasares/repos";
 
-export const client = memoize(
-  (query: string, variables: Object) =>
-    request(query, variables, GITHUB_TOKEN, GITHUB_GQL_ENDPOINT),
-  EXPIRE
+const endpoint = (x: string) => `${GITHUB_API}${x}`;
+const resource = (res: string, sep = "/") => (x: string) => `${res}${sep}${x}`;
+
+export const issue = compose<Promise<Issue>>(
+  request,
+  endpoint,
+  resource(ISSUES_API)
 );
 
-export const request = async (
-  query = "",
-  variables = {},
-  token = GITHUB_TOKEN,
-  endpoint = GITHUB_GQL_ENDPOINT
-) =>
-  await fetch(endpoint, {
-    method: "POST",
-    body: JSON.stringify({
-      query,
-      variables
-    }),
+export const issues = compose<Promise<Issue[]>>(
+  request,
+  endpoint,
+  resource(ISSUES_API, "?"),
+  stringify
+);
 
-    headers: {
-      authorization: `Bearer ${token}`
-    }
-  })
-    .then(checkResponse)
-    .then(res => res.json())
-    .then(({ data }) => data);
-
-function checkResponse(res: Response): Response {
-  if (!res.ok) {
-    throw new Error(`Code: ${res.status}`);
-  }
-
-  return res;
-}
+export const repositories = compose<Promise<Repository[]>>(
+  request,
+  endpoint,
+  resource(REPOSITORIES_API, "?"),
+  stringify
+);

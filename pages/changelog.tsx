@@ -3,16 +3,14 @@ import slug from "slugo";
 import Page from "@app/components/Page";
 import { A, H1, H3, Lead, Strong } from "@app/components/Typography";
 import Link from "@app/components/Link";
-import { client } from "@app/lib/github";
-import { POSTS_QUERY } from "@app/lib/queries";
+import { issues } from "@app/lib/github";
+import { Issue } from "@app/lib/types";
 
-export type Post = {
-  number: number;
-  title: string;
-  createdAt: string;
-};
+export interface Changelog {
+  posts: Issue[];
+}
 
-export const Changelog: FunctionComponent<{ posts: Post[] }> = ({ posts }) => (
+export const Changelog: FunctionComponent<Changelog> = ({ posts }) => (
   <Page as="main">
     <H1>The changelog</H1>
     <article>
@@ -23,7 +21,7 @@ export const Changelog: FunctionComponent<{ posts: Post[] }> = ({ posts }) => (
       </header>
       {posts.map(post => (
         <section key={post.number}>
-          <H3 title={post.createdAt}>
+          <H3 title={post.created_at}>
             <Link
               href={`/post?id=${post.number}&slug=${slug(post.title)}`}
               as={`/changelog/${post.number}/${slug(post.title)}`}
@@ -39,13 +37,8 @@ export const Changelog: FunctionComponent<{ posts: Post[] }> = ({ posts }) => (
 );
 
 // @ts-ignore
-Changelog.getInitialProps = async () => {
-  const data = await client(POSTS_QUERY, {
-    owner: "ricardocasares",
-    name: "analogical"
-  });
-
-  return { posts: data.repository.issues.nodes };
-};
+Changelog.getInitialProps = async () => ({
+  posts: await issues({ status: "open" })
+});
 
 export default Changelog;
