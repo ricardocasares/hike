@@ -12,6 +12,7 @@ install:
 
 script:
   - npm t
+  - npm run size
 
 after_success:
   - npx codecov
