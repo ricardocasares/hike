@@ -20,7 +20,7 @@
     "alias": "npx now alias --token $NOW_TOKEN",
     "deploy:prod": "npx npm-run-all -s deploy alias",
     "deploy:dev": "npx npm-run-all -s deploy alias:dev",
-    "alias:dev": "npx now alias dev-torrent-gql.analogic.al --token $NOW_TOKEN"
+    "alias:dev": "npx now alias dev.analogic.al --token $NOW_TOKEN"
   },
   "dependencies": {
     "@emotion/core": "^10.0.5",
