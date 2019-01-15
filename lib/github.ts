@@ -7,7 +7,7 @@ const GITHUB_API = process.env.APP_GITHUB_API || "";
 const ISSUES_API = "repos/ricardocasares/analogical/issues";
 const REPOSITORIES_API = "users/ricardocasares/repos";
 
-const endpoint = (x: string) => `${GITHUB_API}${x}`;
+const endpoint = (x: string) => `${GITHUB_API}/${x}`;
 const resource = (res: string, sep = "/") => (x: string) => `${res}${sep}${x}`;
 
 export const issue = compose<Promise<Issue>>(
