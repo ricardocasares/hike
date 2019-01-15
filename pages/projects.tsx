@@ -2,23 +2,16 @@ import { FunctionComponent } from "react";
 import Box from "@app/components/Box";
 import Page from "@app/components/Page";
 import { A, P, H1, H3, Lead, Strong, Meta } from "@app/components/Typography";
-import { client } from "@app/lib/github";
-import { PROJECTS_QUERY } from "@app/lib/queries";
+import { repositories } from "@app/lib/github";
 import { Card } from "@app/components/Card";
 import Github from "@app/components/Icons/Github";
+import { Repository } from "@app/lib/types";
 
-export type Post = {
-  url: string;
-  name: string;
-  description: string;
-  stargazers: {
-    totalCount: number;
-  };
-};
+export interface Projects {
+  projects: Repository[];
+}
 
-export const Projects: FunctionComponent<{ projects: Post[] }> = ({
-  projects
-}) => (
+export const Projects: FunctionComponent<Projects> = ({ projects }) => (
   <Page as="main">
     <H1>Projects</H1>
     <article>
@@ -38,11 +31,11 @@ export const Projects: FunctionComponent<{ projects: Post[] }> = ({
         {projects.map(project => (
           <Card>
             <H3>
-              <A href={project.url}>{project.name}</A>
+              <A href={project.html_url}>{project.name}</A>
             </H3>
             <P>{project.description}</P>
             <Meta>
-              <Github size={12} /> {project.stargazers.totalCount}
+              <Github size={12} /> {project.stargazers_count}
             </Meta>
           </Card>
         ))}
@@ -52,10 +45,8 @@ export const Projects: FunctionComponent<{ projects: Post[] }> = ({
 );
 
 // @ts-ignore
-Projects.getInitialProps = async () => {
-  const data = await client(PROJECTS_QUERY);
-
-  return { projects: data.user.repositories.nodes };
-};
+Projects.getInitialProps = async () => ({
+  projects: await repositories({ sort: "pushed" })
+});
 
 export default Projects;
