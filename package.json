@@ -40,7 +40,7 @@
     "styled-system": "^3.2.1"
   },
   "devDependencies": {
-    "@types/jest": "^23.3.12",
+    "@types/jest": "^23.3.13",
     "@types/next": "^7.0.6",
     "@types/nprogress": "0.0.29",
     "@types/react": "^16.7.20",
