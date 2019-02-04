@@ -41,7 +41,7 @@
   },
   "devDependencies": {
     "@types/jest": "^23.3.13",
-    "@types/next": "^7.0.7",
+    "@types/next": "^7.0.8",
     "@types/nprogress": "0.0.29",
     "@types/react": "^16.8.1",
     "@types/react-test-renderer": "^16.0.3",
