@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "@emotion/core": "^10.0.5",
-    "@emotion/styled": "^10.0.5",
+    "@emotion/styled": "^10.0.7",
     "@zeit/next-typescript": "^1.1.1",
     "emotion-theming": "^10.0.6",
     "isomorphic-unfetch": "^3.0.0",
