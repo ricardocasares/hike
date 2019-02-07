@@ -43,7 +43,7 @@
     "@types/jest": "^23.3.13",
     "@types/next": "^7.0.9",
     "@types/nprogress": "0.0.29",
-    "@types/react": "^16.8.1",
+    "@types/react": "^16.8.2",
     "@types/react-test-renderer": "^16.8.0",
     "@types/styled-system": "^3.2.0",
     "babel-plugin-emotion": "^10.0.7",
