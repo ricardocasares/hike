@@ -29,7 +29,7 @@ export const Projects: FunctionComponent<Projects> = ({ projects }) => (
         maxWidth={["100%", "100%", "75%", "70%"]}
       >
         {projects.map(project => (
-          <Card>
+          <Card key={project.id}>
             <H3>
               <A href={project.html_url}>{project.name}</A>
             </H3>
