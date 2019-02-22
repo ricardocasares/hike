@@ -52,7 +52,7 @@
     "jest": "^24.1.0",
     "jest-emotion": "^10.0.7",
     "react-test-renderer": "^16.8.3",
-    "typescript": "^3.3.3"
+    "typescript": "^3.3.3333"
   },
   "release": {
     "plugins": [
