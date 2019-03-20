@@ -14,7 +14,7 @@
     "start": "node server",
     "build": "next build",
     "size": "npx bundlesize",
-    "release": "npx semantic-release"
+    "release": "npx semantic-release@beta"
   },
   "dependencies": {
     "@emotion/core": "^10.0.7",
