@@ -1,0 +1,5 @@
+.env*
+.next
+server
+coverage
+node_modules
