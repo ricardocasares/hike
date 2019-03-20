@@ -10,17 +10,11 @@
     "url": "https://github.com/ricardocasares/analogical.git"
   },
   "scripts": {
-    "dev": "node server",
     "test": "jest",
     "start": "node server",
     "build": "next build",
     "size": "npx bundlesize",
-    "release": "npx semantic-release",
-    "deploy": "npx now --token $NOW_TOKEN",
-    "alias": "npx now alias --token $NOW_TOKEN",
-    "deploy:prod": "npx npm-run-all -s deploy alias",
-    "deploy:dev": "npx npm-run-all -s deploy alias:dev",
-    "alias:dev": "npx now alias dev.analogic.al --token $NOW_TOKEN"
+    "release": "npx semantic-release"
   },
   "dependencies": {
     "@emotion/core": "^10.0.7",
@@ -32,7 +26,6 @@
     "next": "^8.0.1",
     "next-ga": "^2.3.4",
     "nprogress": "^0.2.0",
-    "polka": "^0.5.2",
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
     "react-markdown": "^4.0.6",
@@ -51,6 +44,7 @@
     "babel-plugin-module-resolver": "^3.2.0",
     "jest": "^24.1.0",
     "jest-emotion": "^10.0.7",
+    "polka": "^0.5.2",
     "react-test-renderer": "^16.8.2",
     "typescript": "^3.3.3"
   },
