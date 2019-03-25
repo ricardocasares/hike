@@ -27,7 +27,7 @@
     "next-ga": "^2.3.4",
     "nprogress": "^0.2.0",
     "react": "^16.8.5",
-    "react-dom": "^16.8.2",
+    "react-dom": "^16.8.5",
     "react-markdown": "^4.0.6",
     "slugo": "^0.2.3",
     "styled-system": "^4.0.8"
