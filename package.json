@@ -17,7 +17,7 @@
     "release": "npx semantic-release@beta"
   },
   "dependencies": {
-    "@emotion/core": "^10.0.7",
+    "@emotion/core": "^10.0.10",
     "@emotion/styled": "^10.0.7",
     "@zeit/next-typescript": "^1.1.1",
     "emotion-theming": "^10.0.7",
