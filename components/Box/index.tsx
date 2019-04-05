@@ -22,8 +22,6 @@ import {
   MaxWidthProps,
   minWidth,
   MinWidthProps,
-  ratio,
-  RatioProps,
   space,
   SpaceProps,
   size,
@@ -55,7 +53,6 @@ export type Box = AlignItemsProps &
   MinHeightProps &
   MaxWidthProps &
   MinWidthProps &
-  RatioProps &
   SpaceProps &
   SizeProps &
   FlexProps &
@@ -87,7 +84,6 @@ export const Box = styled.div<Box>`
   ${minHeight}
   ${maxWidth}
   ${minWidth}
-  ${ratio}
   ${size}
   ${space}
   ${position}
