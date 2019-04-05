@@ -56,20 +56,24 @@
   },
   "bundlesize": [
     {
-      "path": "./.next/**/commons*.js",
-      "maxSize": "80 kB"
+      "path": "./.next/serverless/**/*.js",
+      "maxSize": "155 kB"
     },
     {
       "path": "./.next/**/runtime/main-*.js",
       "maxSize": "7 kB"
     },
     {
-      "path": "./.next/static/chunks/[123456789].*.js",
+      "path": "./.next/static/chunks/!(commons)*.js",
       "maxSize": "25 kB"
     },
     {
+      "path": "./.next/static/chunks/commons.*.js",
+      "maxSize": "80 kB"
+    },
+    {
       "path": "./.next/static/*[123456789]*/pages/*.js",
-      "maxSize": "25 kB"
+      "maxSize": "15 kB"
     }
   ],
   "keywords": [
