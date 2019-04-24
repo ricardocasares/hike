@@ -23,22 +23,22 @@
     "emotion-theming": "^10.0.10",
     "isomorphic-unfetch": "^3.0.0",
     "memoize-promise": "^0.2.2",
-    "next": "^8.0.4",
+    "next": "^8.1.0",
     "next-ga": "^2.3.4",
     "nprogress": "^0.2.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-markdown": "^4.0.6",
+    "react-markdown": "^4.0.8",
     "slugo": "^0.2.3",
     "styled-system": "^4.1.0"
   },
   "devDependencies": {
     "@types/jest": "^24.0.6",
-    "@types/next": "^8.0.1",
+    "@types/next": "^8.0.4",
     "@types/nprogress": "0.0.29",
-    "@types/react": "^16.8.12",
+    "@types/react": "^16.8.14",
     "@types/react-test-renderer": "^16.8.1",
-    "@types/styled-system": "^3.2.2",
+    "@types/styled-system": "^4.1.0",
     "babel-plugin-emotion": "^10.0.7",
     "babel-plugin-inline-dotenv": "^1.2.1",
     "babel-plugin-module-resolver": "^3.2.0",
@@ -46,7 +46,7 @@
     "jest-emotion": "^10.0.10",
     "polka": "^0.5.2",
     "react-test-renderer": "^16.8.6",
-    "typescript": "^3.4.1"
+    "typescript": "^3.4.5"
   },
   "release": {
     "plugins": [
