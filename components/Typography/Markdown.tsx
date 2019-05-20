@@ -6,7 +6,6 @@ import HorizontalScroller from "@app/components/Scroller";
 import { A, P } from "./Text";
 import { H1 } from "./Headings";
 import { Img } from "./Image";
-import { Unstyled } from "./List";
 
 type MarkdownProps = {
   value: string;
