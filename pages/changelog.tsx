@@ -38,7 +38,7 @@ export const Changelog: FunctionComponent<Changelog> = ({ posts }) => (
 
 // @ts-ignore
 Changelog.getInitialProps = async () => ({
-  posts: await issues({ status: "open" })
+  posts: await issues({ status: "open", labels: "published" })
 });
 
 export default Changelog;
