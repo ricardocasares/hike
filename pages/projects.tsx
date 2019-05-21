@@ -2,7 +2,7 @@ import { FunctionComponent } from "react";
 import Box from "@app/components/Box";
 import Page from "@app/components/Page";
 import { A, P, H1, H3, Lead, Strong, Meta } from "@app/components/Typography";
-import { repositories } from "@app/lib/github";
+import { getRepositories } from "@app/lib/github";
 import { Card } from "@app/components/Card";
 import Github from "@app/components/Icons/Github";
 import { Repository } from "@app/lib/types";
@@ -46,7 +46,7 @@ export const Projects: FunctionComponent<Projects> = ({ projects }) => (
 
 // @ts-ignore
 Projects.getInitialProps = async () => ({
-  projects: await repositories({ sort: "pushed" })
+  projects: await getRepositories({ sort: "pushed" })
 });
 
 export default Projects;

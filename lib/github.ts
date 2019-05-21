@@ -1,31 +1,37 @@
 import { stringify } from "querystring";
 // internal
-import { compose, request } from "./utils";
+import { compose, concat, request } from "./utils";
 import { Issue, Repository } from "./types";
 
 const GITHUB_API = process.env.APP_GITHUB_API || "";
 const ISSUES_API = "repos/ricardocasares/analogical/issues";
 const REPOSITORIES_API = "users/ricardocasares/repos";
 
-const endpoint = (x: string) => `${GITHUB_API}/${x}`;
-const resource = (res: string, sep = "/") => (x: string) => `${res}${sep}${x}`;
-
-export const issue = compose<Promise<Issue>>(
+const endpoint = compose<Promise<any>>(
   request,
-  endpoint,
-  resource(ISSUES_API)
+  concat(GITHUB_API),
+  concat("/")
 );
 
-export const issues = compose<Promise<Issue[]>>(
-  request,
-  endpoint,
-  resource(ISSUES_API, "?"),
+const withQuery = compose(
+  concat("?"),
   stringify
 );
 
-export const repositories = compose<Promise<Repository[]>>(
-  request,
+export const getIssue = compose<Promise<Issue[]>>(
   endpoint,
-  resource(REPOSITORIES_API, "?"),
-  stringify
+  concat(ISSUES_API),
+  concat("/")
+);
+
+export const getIssues = compose<Promise<Issue[]>>(
+  endpoint,
+  concat(ISSUES_API),
+  withQuery
+);
+
+export const getRepositories = compose<Promise<Repository[]>>(
+  endpoint,
+  concat(REPOSITORIES_API),
+  withQuery
 );
