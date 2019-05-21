@@ -2,7 +2,7 @@ import { FunctionComponent } from "react";
 import dynamic from "next/dynamic";
 import Page from "@app/components/Page";
 import { H1, H2, Measure } from "@app/components/Typography";
-import { issue } from "@app/lib/github";
+import { getIssue } from "@app/lib/github";
 import Progress from "@app/components/Progress";
 // @ts-ignore
 const Md = dynamic(() => import("@app/components/Typography/Markdown"), {
@@ -30,6 +30,6 @@ export const Post: FunctionComponent<Post> = ({ id, title, body }) => (
 );
 
 // @ts-ignore
-Post.getInitialProps = async ({ query }) => ({ ...(await issue(query.id)) });
+Post.getInitialProps = async ({ query }) => ({ ...(await getIssue(query.id)) });
 
 export default Post;

@@ -3,7 +3,9 @@ import fetch from "isomorphic-unfetch";
 
 const EXPIRES = 60000;
 
-export const compose = <T>(...fns: Function[]) => (x: any) =>
+export const concat = (x: string) => (y: string = "") => `${x}${y}`;
+
+export const compose = <T>(...fns: Function[]) => (x: any | undefined) =>
   fns.reduceRight<T>((a, fn) => fn(a), x);
 
 export const request = memo(
