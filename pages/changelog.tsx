@@ -3,7 +3,7 @@ import slug from "slugo";
 import Page from "@app/components/Page";
 import { A, H1, H3, Lead, Strong } from "@app/components/Typography";
 import Link from "@app/components/Link";
-import { issues } from "@app/lib/github";
+import { getIssues } from "@app/lib/github";
 import { Issue } from "@app/lib/types";
 
 export interface Changelog {
@@ -37,8 +37,8 @@ export const Changelog: FunctionComponent<Changelog> = ({ posts }) => (
 );
 
 // @ts-ignore
-Changelog.getInitialProps = async () => ({
-  posts: await issues({ status: "open", labels: "published" })
+Changelog.getInitialProps = async ({ query }) => ({
+  posts: await getIssues({ status: "open", labels: "published" })
 });
 
 export default Changelog;
