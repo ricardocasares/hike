@@ -30,7 +30,7 @@
     "react-dom": "^16.8.6",
     "react-markdown": "^4.0.8",
     "slugo": "^0.2.3",
-    "styled-system": "^4.1.0"
+    "styled-system": "^4.2.3"
   },
   "devDependencies": {
     "@types/jest": "^24.0.6",
