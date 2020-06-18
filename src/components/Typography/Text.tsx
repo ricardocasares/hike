@@ -3,19 +3,20 @@ import { FunctionComponent as F } from "react";
 import { Box } from "@/components/Box";
 
 export const A = styled.a`
-  color: #ffffff;
-  border-bottom: 2px solid #cccccc;
+  color: #fff;
   text-decoration: none;
   transition: border-color 0.5s;
+  padding-bottom: 2px;
+  border-bottom: 2px solid #0070f3;
 
   &:hover {
-    border-color: #eeeeee;
+    border-color: #666;
   }
 `;
 
 export const P = styled.p`
   color: #666;
-  line-height: 1.8em;
+  line-height: 1.5em;
 `;
 
 export const Strong = styled.strong`
@@ -27,7 +28,7 @@ export const Lead: F = styled.p`
   color: #666;
   font-weight: 300;
   font-size: 24px;
-  line-height: 1.2em;
+  line-height: 1.5em;
 
   strong {
     color: #ffffff;
@@ -50,6 +51,82 @@ export const Meta = styled.span`
   color: #cccccc;
   font-size: 14px;
   line-height: 0;
+`;
+
+export const Html = styled.div`
+  a {
+    color: #fff;
+    text-decoration: none;
+    transition: border-color 0.5s;
+    padding-bottom: 2px;
+    border-bottom: 2px solid #0070f3;
+
+    &:hover {
+      border-color: #666;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #ddd;
+    font-weight: normal;
+  }
+
+  p {
+    line-height: 1.5em;
+  }
+
+  p,
+  li {
+    color: #888;
+  }
+
+  ul {
+    margin: 40px 0;
+    padding-left: 20px;
+  }
+
+  li {
+    margin-bottom: 5px;
+    list-style: none;
+
+    &:before {
+      content: "→";
+      color: #333;
+      margin-right: 15px;
+    }
+  }
+
+  blockquote {
+    margin: 30px;
+    padding: 15px;
+    text-decoration: none;
+
+    p {
+      color: #fff;
+      font-size: 18px;
+    }
+  }
+
+  pre,
+  code,
+  .highlight {
+    color: #fff;
+    font-size: 15px;
+    font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
+  }
+
+  pre {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #222;
+    overflow: scroll;
+    margin: 40px 0;
+  }
 `;
 
 export const Measure: F<Box> = ({ children, ...props }) => (

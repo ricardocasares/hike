@@ -7,7 +7,7 @@ export const Layout: F<Box> = ({ children, ...props }) => (
   <Box
     as="main"
     padding={[20, 40]}
-    height="100vh"
+    minHeight="100%"
     display="flex"
     flexDirection="column"
     {...props}

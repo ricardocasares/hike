@@ -1,16 +1,16 @@
 import { NextPage, GetStaticProps, GetStaticPaths } from "next";
 import { Layout } from "@/components/Layout";
-import { H1, H2, Measure } from "@/components/Typography";
+import { H1, H2, Measure, Html } from "@/components/Typography";
 import { gql } from "@/data/api";
 import { ISSUE, LAST_ISSUES } from "@/data/queries";
 
 export const Changelog: NextPage<{ issue: any }> = ({ issue }) => (
   <Layout>
-    <Measure>
+    <Measure flex="1">
       <H1>Changelog</H1>
       {issue && <H2>{issue.title}</H2>}
       {issue && (
-        <div dangerouslySetInnerHTML={{ __html: issue.bodyHTML }}></div>
+        <Html dangerouslySetInnerHTML={{ __html: issue.bodyHTML }}></Html>
       )}
     </Measure>
   </Layout>
