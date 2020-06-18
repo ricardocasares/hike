@@ -1,5 +1,5 @@
 {
-  "name": "analogical",
+  "name": "analogic.al",
   "version": "0.0.1",
   "description": "Personal website",
   "author": "Ricardo Casares",
@@ -10,76 +10,35 @@
     "url": "https://github.com/ricardocasares/analogical.git"
   },
   "scripts": {
-    "test": "jest",
-    "start": "node server",
+    "dev": "next",
     "build": "next build",
-    "size": "npx bundlesize",
-    "release": "npx semantic-release@beta"
+    "start": "next start"
   },
   "dependencies": {
     "@emotion/core": "^10.0.10",
     "@emotion/styled": "^10.0.12",
-    "@zeit/next-typescript": "^1.1.1",
+    "@octokit/graphql": "^4.5.1",
+    "emotion-normalize": "^10.1.0",
     "emotion-theming": "^10.0.10",
-    "isomorphic-unfetch": "^3.0.0",
-    "memoize-promise": "^0.2.2",
-    "next": "^8.1.0",
-    "next-ga": "^2.3.4",
-    "nprogress": "^0.2.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-markdown": "^4.0.8",
-    "slugo": "^0.2.3",
-    "styled-system": "^4.1.0"
+    "next": "latest",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "slugo": "^0.3.1",
+    "slugster": "^1.1.1",
+    "styled-system": "^5.1.5"
   },
   "devDependencies": {
-    "@types/jest": "^24.0.6",
-    "@types/next": "^8.0.5",
-    "@types/nprogress": "0.2.0",
+    "@types/node": "^14.0.13",
     "@types/react": "^16.8.14",
-    "@types/react-test-renderer": "^16.8.1",
-    "@types/styled-system": "^4.1.0",
-    "babel-plugin-emotion": "^10.0.7",
-    "babel-plugin-inline-dotenv": "^1.3.3",
-    "babel-plugin-module-resolver": "^3.2.0",
-    "jest": "^24.8.0",
-    "jest-emotion": "^10.0.10",
-    "polka": "^0.5.2",
-    "react-test-renderer": "^16.8.6",
-    "typescript": "^3.4.5"
+    "@types/styled-system": "^5.1.5",
+    "babel-plugin-emotion": "^10.0.33",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "typescript": "latest"
   },
-  "release": {
-    "plugins": [
-      "@semantic-release/github",
-      "@semantic-release/release-notes-generator"
-    ]
-  },
-  "bundlesize": [
-    {
-      "path": "./.next/serverless/**/*.js",
-      "maxSize": "155 kB"
-    },
-    {
-      "path": "./.next/**/runtime/main-*.js",
-      "maxSize": "7 kB"
-    },
-    {
-      "path": "./.next/static/chunks/!(commons)*.js",
-      "maxSize": "25 kB"
-    },
-    {
-      "path": "./.next/static/chunks/commons.*.js",
-      "maxSize": "80 kB"
-    },
-    {
-      "path": "./.next/static/*[123456789]*/pages/*.js",
-      "maxSize": "15 kB"
-    }
-  ],
   "keywords": [
     "blog",
     "next",
-    "zeit",
+    "vercel",
     "docker",
     "analogical",
     "analogic.al"

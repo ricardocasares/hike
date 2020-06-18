@@ -2,19 +2,9 @@
   "version": 2,
   "name": "analogic.al",
   "alias": ["analogic.al", "www.analogic.al"],
-  "builds": [
-    { "src": "/static/*", "use": "@now/static" },
-    { "src": "package.json", "use": "@now/next" }
-  ],
-  "routes": [
-    { "src": "/static/(.*)", "dest": "/static/$1" },
-    { "src": "/changelog/(.*)/(.*)", "dest": "/post?id=$1" },
-    { "src": "/(.*)", "dest": "/$1" }
-  ],
   "build": {
     "env": {
-      "APP_GA_ID": "@ga-id",
-      "APP_GITHUB_API": "@github-api"
+      "GH_TOKEN": "@gh-token"
     }
   }
 }
