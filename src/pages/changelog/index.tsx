@@ -1,3 +1,4 @@
+import slug from "slugster";
 import Link from "next/link";
 import { NextPage, GetStaticProps } from "next";
 import { Stack } from "@/components/Stack";
@@ -17,7 +18,7 @@ export const Changelog: NextPage<{ issues: any }> = ({ issues }) => (
         {issues.map((issue: any) => (
           <li key={issue.id}>
             <Link
-              as={`/changelog/${issue.id}`}
+              as={`/changelog/${issue.id}/${slug(issue.title)}`}
               href={`/changelog/[...issue]`}
               passHref
             >

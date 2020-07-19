@@ -1,3 +1,4 @@
+import slug from "slugster";
 import { NextPage, GetStaticProps, GetStaticPaths } from "next";
 import { Layout } from "@/components/Layout";
 import { H1, H2, Measure, Html } from "@/components/Typography";
@@ -49,7 +50,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
     // @ts-ignore
     paths: data.repository.issues.edges.map(
       // @ts-ignore
-      ({ node: { number } }) => ({ params: { issue: [number] } })
+      ({ node: { title, number } }) => ({
+        params: { issue: [number, slug(title)] },
+      })
     ),
     fallback: true,
   };
