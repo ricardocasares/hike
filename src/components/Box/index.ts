@@ -3,6 +3,8 @@ import { As } from "@/types";
 import {
   flexbox,
   FlexboxProps,
+  grid,
+  GridProps,
   background,
   BackgroundProps,
   border,
@@ -15,6 +17,7 @@ import {
 } from "styled-system";
 
 export type Box = As &
+  GridProps &
   FlexboxProps &
   LayoutProps &
   BackgroundProps &
@@ -22,5 +25,5 @@ export type Box = As &
   SpaceProps;
 
 export const Box = styled.div<Box>(
-  compose(flexbox, layout, background, border, space)
+  compose(grid, flexbox, layout, background, border, space)
 );
