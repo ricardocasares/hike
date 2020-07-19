@@ -23,7 +23,7 @@ export const LAST_ISSUES = `query lastIssues($owner: String!, $repo: String!, $n
 
 export const LAST_REPOSITORIES = `query lastRepositories {
     viewer {
-      repositories(last: 20, isFork: false, orderBy: {field: PUSHED_AT, direction: ASC}) {
+      repositories(last: 16, isFork: false, orderBy: {field: PUSHED_AT, direction: ASC}) {
         nodes {
           id
           url
