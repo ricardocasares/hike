@@ -4,7 +4,7 @@ import { H1, P, Lead, Strong, Measure } from "@/components/Typography";
 
 export const Index: F = () => (
   <Layout>
-    <Measure flex="1">
+    <Measure css={{ flex: "1" }}>
       <H1>Hi</H1>
       <Lead>
         I'm Ricardo, a <Strong>creative software developer</Strong>.

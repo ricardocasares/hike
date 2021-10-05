@@ -1,15 +1,13 @@
+import "twin.macro";
 import { FunctionComponent as F } from "react";
 import { Box } from "@/components/Box";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 
-export const Layout: F<Box> = ({ children, ...props }) => (
+export const Layout: F = ({ children, ...props }) => (
   <Box
     as="main"
-    padding={[20, 40]}
-    minHeight="100%"
-    display="flex"
-    flexDirection="column"
+    tw="p-2 md:p-4 min-h-full flex flex-col"
     {...props}
   >
     <Navigation />

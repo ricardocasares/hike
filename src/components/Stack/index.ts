@@ -1,17 +1,21 @@
-import styled from "@emotion/styled";
-import { system } from "styled-system";
+import { styled } from "@/css";
 import { Box } from "@/components/Box";
 
-const space = system({
-  space: {
-    property: "marginTop",
+export const Stack = styled(Box, {
+  "> *:not(style) ~ *:not(style)": {
+    marginTop: "var(--stack-top)",
+  },
+  variants: {
+    space: {
+      sm: {
+        "--stack-top": "10px",
+      },
+      md: {
+        "--stack-top": "20px",
+      },
+    },
+  },
+  defaultVariants: {
+    space: "md",
   },
 });
-
-export type Stack = Box & { space?: number | number[] };
-
-export const Stack = styled(Box)<Stack>`
-  > *:not(style) ~ *:not(style) {
-    ${space}
-  }
-`;

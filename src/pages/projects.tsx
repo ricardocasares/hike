@@ -7,19 +7,22 @@ import { gql } from "@/data/api";
 import { LAST_REPOSITORIES as query } from "@/data/queries";
 import { Box } from "@/components/Box";
 
-export const Projects: NextPage<{ repos: any }> = ({ repos }) => (
+export const Projects: NextPage<{ repos: any; }> = ({ repos }) => (
   <Layout>
-    <Measure flex="1" as="section">
+    <Measure css={{ flex: 1 }} as="section">
       <H1>Projects</H1>
       <Lead>
         Code I've been <Strong>pushing</Strong> lately
       </Lead>
 
       <Box
-        as="div"
-        display="grid"
-        gridGap={15}
-        gridTemplateColumns={["1fr", "1fr 1fr", "1fr 1fr", "1fr 1fr 1fr"]}
+        css={{
+          display: "grid",
+          gridGap: 15,
+          gridTemplateColumns: "1fr",
+          md: { gridTemplateColumns: "1fr 1fr" },
+          lg: { gridTemplateColumns: "1fr 1fr 1fr" },
+        }}
       >
         {repos.map((repo: any) => (
           <Card key={repo.id} {...repo} />

@@ -1,29 +1,5 @@
-import styled from "@emotion/styled";
-import { As } from "@/types";
-import {
-  flexbox,
-  FlexboxProps,
-  grid,
-  GridProps,
-  background,
-  BackgroundProps,
-  border,
-  BorderProps,
-  compose,
-  space,
-  SpaceProps,
-  layout,
-  LayoutProps,
-} from "styled-system";
+import { ComponentProps } from "@stitches/react";
+import { styled } from "@/css";
 
-export type Box = As &
-  GridProps &
-  FlexboxProps &
-  LayoutProps &
-  BackgroundProps &
-  BorderProps &
-  SpaceProps;
-
-export const Box = styled.div<Box>(
-  compose(grid, flexbox, layout, background, border, space)
-);
+export const Box = styled("div", {});
+export type BoxProps = ComponentProps<typeof Box>;

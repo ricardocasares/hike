@@ -1,5 +1,3 @@
-export type As = { as?: string };
-
 export type Label = {
   id: number;
   name: string;

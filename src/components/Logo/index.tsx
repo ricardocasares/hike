@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import { styled } from "@/css";
 import { FunctionComponent as F } from "react";
 import { Box } from "@/components/Box";
 
@@ -6,14 +6,14 @@ export interface Logo {
   color?: string;
 }
 
-const Text = styled.span<Logo>`
-  font-weight: 500;
-  text-transform: lowercase;
-  color: ${({ color = "currentcolor" }) => color};
-`;
+const Text = styled('span', {
+  "fontWeight": 500,
+  "textTransform": "lowercase",
+  color: "$fg"
+});
 
 export const Logo: F<Logo> = (props) => (
   <Text {...props}>
-    𝌺 <Box display={["none", "inline"]}>analogic.al</Box>
+    𝌺 <Box css={{ display: "none", md: { display: "inline" } }}>analogic.al</Box>
   </Text>
 );

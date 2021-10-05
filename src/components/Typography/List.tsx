@@ -1,34 +1,29 @@
-import styled from "@emotion/styled";
+import { styled } from "@/css";
 
-export const UnstyledList = styled.ul`
-  margin: 0;
-  padding: 0;
-  list-style: none;
-`;
+export const UnstyledList = styled('ul', { margin: "0", padding: "0", listStyle: "none" });
 
-export const HorizontalList = styled(UnstyledList)`
-  li {
-    display: inline-block;
-    margin-right: 10px;
+export const HorizontalList = styled(UnstyledList, {
+  li: {
+    display: "inline-block",
+    marginRight: "10px",
+  },
+
+  "li:last-child": {
+    marginRight: 0
   }
+});
 
-  li:last-child {
-    margin-right: 0;
-  }
-`;
+export const NavList = styled(HorizontalList, {
+  a: {
+    color: "$fg",
+    textDecoration: "none",
+    textTransform: "lowercase",
+    transition: "color 1s",
+    fontSize: "16px",
 
-export const NavList = styled(HorizontalList)`
-  a {
-    color: #666;
-    text-decoration: none;
-    text-transform: lowercase;
-    transition: color 1s;
-    font-size: 16px;
 
-    &:focus,
-    &:hover,
-    &.active {
-      color: #ffffff;
+    "&:focus, &:hover, &.active": {
+      color: "#ffffff"
     }
   }
-`;
+});
