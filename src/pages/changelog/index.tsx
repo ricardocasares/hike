@@ -1,16 +1,15 @@
 import slug from "slugster";
 import Link from "next/link";
-import Head from "next/head";
 import { NextPage, GetStaticProps } from "next";
 import { Stack } from "@/components/Stack";
 import { Layout } from "@/components/Layout";
 import {
+  A,
   H1,
   Strong,
   Measure,
   Lead,
   UnstyledList,
-  A,
 } from "@/components/Typography";
 import { gql } from "@/data/api";
 import { LAST_ISSUES as query } from "@/data/queries";
