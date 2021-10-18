@@ -18,12 +18,10 @@ export const NavList = styled(HorizontalList, {
     color: "$fg",
     textDecoration: "none",
     textTransform: "lowercase",
-    transition: "color 1s",
-    fontSize: "16px",
+    fontSize: "$4",
 
-
-    "&:focus, &:hover, &.active": {
-      color: "#ffffff"
+    "&:focus, &:hover": {
+      color: "$accent"
     }
   }
 });

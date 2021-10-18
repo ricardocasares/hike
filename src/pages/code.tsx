@@ -1,5 +1,4 @@
 import { NextPage, GetStaticProps } from "next";
-
 import { Layout } from "@/components/Layout";
 import { Card } from "@/components/Card";
 import { H1, Strong, Measure, Lead } from "@/components/Typography";
@@ -9,19 +8,27 @@ import { Box } from "@/components/Box";
 
 export const Projects: NextPage<{ repos: any; }> = ({ repos }) => (
   <Layout>
-    <Measure css={{ flex: 1 }} as="section">
-      <H1>Projects</H1>
+    <Measure size={{ "@md": "md" }}>
+      <H1>Code</H1>
       <Lead>
-        Code I've been <Strong>pushing</Strong> lately
+        Things I've been <Strong>pushing</Strong> lately
       </Lead>
 
       <Box
         css={{
           display: "grid",
-          gridGap: 15,
-          gridTemplateColumns: "1fr",
-          md: { gridTemplateColumns: "1fr 1fr" },
-          lg: { gridTemplateColumns: "1fr 1fr 1fr" },
+          gridGap: "$4",
+          marginBottom: "$7",
+
+          "@sm": {
+            gridTemplateColumns: "1fr",
+          },
+          "@lg": {
+            gridTemplateColumns: "1fr 1fr",
+          },
+          "@xl": {
+            gridTemplateColumns: "1fr 1fr 1fr",
+          }
         }}
       >
         {repos.map((repo: any) => (
@@ -42,7 +49,7 @@ export const getStaticProps: GetStaticProps = async () => {
       // @ts-ignore
       repos: data.viewer.repositories.nodes.map(
         // @ts-ignore
-        ({ id, url, name, description, stargazers }) => ({
+        ({ id, url, name, description }) => ({
           id,
           url,
           name,

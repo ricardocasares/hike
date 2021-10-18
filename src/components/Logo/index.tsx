@@ -1,5 +1,5 @@
-import { styled } from "@/css";
 import { FunctionComponent as F } from "react";
+import { styled } from "@/css";
 import { Box } from "@/components/Box";
 
 export interface Logo {

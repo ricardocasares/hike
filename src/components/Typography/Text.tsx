@@ -1,10 +1,8 @@
-import { FunctionComponent as F } from "react";
 import { styled } from "@/css";
-import { Box, BoxProps } from "@/components/Box";
 
 export const A = styled('a', {
-  color: "$fg",
-  borderBottom: "1px solid $accent"
+  color: "$accent",
+  textDecoration: "none",
 });
 
 export const P = styled('p', {
@@ -13,11 +11,10 @@ export const P = styled('p', {
 });
 
 export const Strong = styled('strong', {
-  color: "$bg",
-  fontWeight: 400,
+  fontWeight: 500,
 });
 
-export const Lead: F = styled('p', {
+export const Lead = styled('p', {
   color: "$fg",
   fontWeight: 300,
   fontSize: "24px",
@@ -27,43 +24,41 @@ export const Lead: F = styled('p', {
 
 
 export const Html = styled('div', {
+  marginBottom: "50px",
   a: {
-    color: "$fg",
+    color: "$accent",
     textDecoration: "none",
-    transition: "border-color 0.5s",
-    paddingBottom: "2px",
-    borderBottom: "2px solid #0070f3",
-    "&:hover": { borderColor: "#666" }
   },
-  "h1,\n  h2,\n  h3,\n  h4,\n  h5,\n  h6": {
-    color: "#ddd",
-    fontWeight: "normal"
+  "h1, h2, h3, h4, h5, h6": {
+    color: "$fg",
+    fontWeight: 300
   },
-  p: { lineHeight: "1.5em" },
-  "p,\n  li": { color: "#888" },
+  p: { lineHeight: "1.5rem" },
+  "p, li": { color: "$slate11" },
   ul: { margin: "40px 0", paddingLeft: "20px" },
   li: {
     marginBottom: "5px",
     listStyle: "none",
-    "&:before": { content: '"→"', color: "#333", marginRight: "15px" }
+    "&:before": { content: '"-"', color: "$fg", marginRight: "15px" }
   },
   blockquote: {
     margin: "30px",
     padding: "15px",
     textDecoration: "none",
-    p: { color: "#fff", fontSize: "18px" }
+    p: { color: "$fg", fontSize: "18px" }
   },
-  "pre,\n  code,\n  .highlight": {
-    color: "#fff",
-    fontSize: "15px",
-    fontFamily: "SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace"
+  "pre, code, .highlight": {
+    fontSize: "$2",
+    fontFamily: "$mono"
   },
   pre: {
-    padding: "10px",
-    borderRadius: "5px",
-    border: "1px solid #222",
+    padding: "$2",
+    color: "$bg",
+    background: "$fg",
+    borderRadius: "$3",
+    border: "1px solid $bg",
     overflow: "scroll",
-    margin: "40px 0"
+    margin: "$5 0"
   }
 });
 
@@ -78,8 +73,5 @@ export const Measure = styled('div', {
         maxWidth: "60%"
       },
     }
-  },
-  defaultVariants: {
-
   }
 });

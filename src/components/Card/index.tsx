@@ -1,24 +1,21 @@
-import "twin.macro";
 import { FunctionComponent as F } from "react";
-import { Box } from "@/components/Box";
+import { Stack } from "@/components/Stack";
+import { A, P, H2 } from "@/components/Typography";
 
 export type Card = {
   id: string;
   url: string;
   name: string;
-  stars: number;
+  stargazers: number;
   description: string;
-} & typeof Box;
+};
 
-export const Card: F<Card> = ({ id, url, name, description, ...props }) => (
-  <Box
-    tw="border border-solid rounded p-2"
-    {...props}
-  >
-    <h4>
-      <a href={url}>{name}</a>
-    </h4>
+export const Card: F<Card> = ({ id, url, name, description, stargazers, ...props }) => (
+  <Stack {...props} css={{ border: "1px solid $slate6", borderRadius: "$2" }} pad="md">
+    <H2 as="h3">
+      <A href={url}>{name} {stargazers}</A>
+    </H2>
 
-    <p>{description}</p>
-  </Box>
+    <P css={{ color: "$slate10" }}>{description}</P>
+  </Stack>
 );

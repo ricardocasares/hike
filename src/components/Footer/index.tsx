@@ -1,24 +1,24 @@
-import { FunctionComponent as F } from "react";
+import Link from "next/link";
 import { Box } from "@/components/Box";
 import { GitHub } from "@/components/Icons/Github";
 import { Twitter } from "@/components/Icons/Twitter";
-import { NavList } from "@/components/Typography/List";
+import { A, NavList } from "@/components/Typography";
 import { HorizontalScroll } from "@/components/HorizontalScroll";
 
-export const Footer: F = () => (
-  <Box as="footer" marginTop="40px">
+export const Footer = () => (
+  <Box as="footer">
     <HorizontalScroll>
       <nav>
         <NavList>
           <li>
-            <a href="https://github.com/ricardocasares/analogical">
-              <GitHub size={12} /> Github
-            </a>
+            <Link href="https://github.com/ricardocasares/analogical" passHref>
+              <A><GitHub size={12} /> Github</A>
+            </Link>
           </li>
           <li>
-            <a href="https://twitter.com/ricardocasares">
-              <Twitter size={12} /> Twitter
-            </a>
+            <Link href="https://twitter.com/ricardocasares" passHref>
+              <A><Twitter size={12} /> Twitter</A>
+            </Link>
           </li>
         </NavList>
       </nav>

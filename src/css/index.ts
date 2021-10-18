@@ -1,17 +1,16 @@
 import { createStitches } from "@stitches/react";
-import { slate, slateDark, indigo, indigoDark } from "@radix-ui/colors";
+import { utils } from "@/css/utils";
+import { sizes } from "@/css/sizes";
+import { fonts } from "@/css/fonts";
+import { colors } from "@/css/colors";
 
 export const { css, styled, getCssText, globalCss, createTheme } =
   createStitches({
+    utils,
     theme: {
-      colors: {
-        ...slate,
-        ...indigo,
-
-        fg: "$slate1",
-        bg: "$slate12",
-        accent: "$indigo9",
-      },
+      fonts,
+      colors,
+      ...sizes,
     },
     media: {
       sm: "(max-width: 640px)",
@@ -20,10 +19,3 @@ export const { css, styled, getCssText, globalCss, createTheme } =
       xl: "(min-width: 1024px)",
     },
   });
-
-export const darkTheme = createTheme({
-  colors: {
-    ...slateDark,
-    ...indigoDark,
-  },
-});

@@ -1,15 +1,18 @@
 import slug from "slugster";
+import Head from "next/head";
 import { NextPage, GetStaticProps, GetStaticPaths } from "next";
 import { Layout } from "@/components/Layout";
-import { H1, H2, Measure, Html } from "@/components/Typography";
+import { H1, Measure, Html } from "@/components/Typography";
 import { gql } from "@/data/api";
 import { ISSUE, LAST_ISSUES } from "@/data/queries";
 
-export const Changelog: NextPage<{ issue: any }> = ({ issue }) => (
+export const Changelog: NextPage<{ issue: any; }> = ({ issue }) => (
   <Layout>
-    <Measure flex="1">
-      <H1>Changelog</H1>
-      {issue && <H2>{issue.title}</H2>}
+    <Head>
+      <title>{issue.title} @ analogic.al</title>
+    </Head>
+    <Measure size={{ "@md": "md" }}>
+      {issue && <H1>{issue.title}</H1>}
       {issue && (
         <Html dangerouslySetInnerHTML={{ __html: issue.bodyHTML }}></Html>
       )}
@@ -51,10 +54,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
     paths: data.repository.issues.edges.map(
       // @ts-ignore
       ({ node: { title, number } }) => ({
-        params: { issue: [number, slug(title)] },
+        params: { issue: [`${number}`, slug(title)] },
       })
     ),
-    fallback: true,
+    fallback: false,
   };
 };
 

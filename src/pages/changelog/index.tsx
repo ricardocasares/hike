@@ -1,20 +1,28 @@
 import slug from "slugster";
 import Link from "next/link";
+import Head from "next/head";
 import { NextPage, GetStaticProps } from "next";
 import { Stack } from "@/components/Stack";
 import { Layout } from "@/components/Layout";
-import { H1, Strong, Measure, A, Lead } from "@/components/Typography";
+import {
+  H1,
+  Strong,
+  Measure,
+  Lead,
+  UnstyledList,
+  A,
+} from "@/components/Typography";
 import { gql } from "@/data/api";
 import { LAST_ISSUES as query } from "@/data/queries";
 
 export const Changelog: NextPage<{ issues: any; }> = ({ issues }) => (
   <Layout>
-    <Measure as="section">
+    <Measure>
       <H1>Changelog</H1>
       <Lead>
         Notes and thoughts on <Strong>software development</Strong>
       </Lead>
-      <Stack as="ul" space="md">
+      <Stack as={UnstyledList}>
         {issues.map((issue: any) => (
           <li key={issue.id}>
             <Link

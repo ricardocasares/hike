@@ -4,14 +4,14 @@ import { H1, P, Lead, Strong, Measure } from "@/components/Typography";
 
 export const Index: F = () => (
   <Layout>
-    <Measure css={{ flex: "1" }}>
-      <H1>Hi</H1>
-      <Lead>
-        I'm Ricardo, a <Strong>creative software developer</Strong>.
+    <Measure size={{ "@md": "md" }}>
+      <H1>Hello!</H1>
+      <Lead as="h2">
+        I'm <Strong>Ricardo</Strong>, a creative software developer.
       </Lead>
       <P>
-        With over <Strong>+10 years experience</Strong> building on the web, I
-        move around between the back and the frontend, but specialize in
+        As an experienced web developer, I
+        move around between the back and the frontend, and specialize in
         building UI components and single page applications.
       </P>
     </Measure>
