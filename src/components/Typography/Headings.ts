@@ -1,7 +1,7 @@
 import { css, styled } from "@/css";
 
 const base = css({
-  color: "$fg",
+  color: "$contrast",
   fontWeight: 300,
 });
 

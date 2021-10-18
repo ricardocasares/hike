@@ -5,7 +5,8 @@ export const colors = {
   ...slate,
   ...indigo,
 
-  fg: "$slate12",
+  fg: "$slate10",
   bg: "$slate1",
   accent: "$indigo9",
+  contrast: "#000000",
 };

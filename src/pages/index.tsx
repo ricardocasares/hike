@@ -10,7 +10,7 @@ export const Index: F = () => (
         I&apos;m <Strong>Ricardo</Strong>, a creative software developer.
       </Lead>
       <P>
-        As an experienced web developer, I
+        As an <Strong>experienced web developer</Strong>, I
         move around between the back and the frontend, and specialize in
         building UI components and single page applications.
       </P>

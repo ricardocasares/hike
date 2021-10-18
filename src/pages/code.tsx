@@ -18,6 +18,7 @@ export const Projects: NextPage<{ repos: any; }> = ({ repos }) => (
         css={{
           display: "grid",
           gridGap: "$4",
+          marginTop: "$7",
           marginBottom: "$7",
 
           "@sm": {

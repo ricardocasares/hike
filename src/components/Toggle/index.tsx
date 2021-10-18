@@ -6,5 +6,5 @@ export const Toggle = () => {
   const [mode] = themes.filter(t => t !== theme);
   const toggleMode = () => setTheme(mode);
 
-  return <A href="#" onClick={toggleMode}> {mode}</A>;
+  return <A href="#" onClick={toggleMode}>{mode}</A>;
 };

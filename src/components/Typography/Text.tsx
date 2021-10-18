@@ -11,6 +11,7 @@ export const P = styled('p', {
 });
 
 export const Strong = styled('strong', {
+  color: "$contrast !important",
   fontWeight: 500,
 });
 
@@ -54,7 +55,7 @@ export const Html = styled('div', {
   pre: {
     padding: "$2",
     color: "$bg",
-    background: "$fg",
+    background: "$contrast",
     borderRadius: "$3",
     border: "1px solid $bg",
     overflow: "scroll",

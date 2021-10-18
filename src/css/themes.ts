@@ -5,5 +5,6 @@ export const dark = createTheme({
   colors: {
     ...slateDark,
     ...indigoDark,
+    contrast: "#ffffff",
   },
 });

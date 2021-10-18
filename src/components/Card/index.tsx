@@ -11,8 +11,8 @@ export type Card = {
 };
 
 export const Card: F<Card> = ({ id, url, name, description, stargazers, ...props }) => (
-  <Stack {...props} css={{ border: "1px solid $slate6", borderRadius: "$2" }} pad="md">
-    <H2 as="h3">
+  <Stack {...props} css={{ border: "1px solid $slate6", borderRadius: "$2", padding: "$3" }} >
+    <H2 as="h4">
       <A href={url}>{name} {stargazers}</A>
     </H2>
 
