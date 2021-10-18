@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { HomeIcon, CodeIcon, ArchiveIcon } from "@radix-ui/react-icons";
 import { Logo } from "@/components/Logo";
 import { Toggle } from "@/components/Toggle";
 import { A, NavList } from "@/components/Typography";
