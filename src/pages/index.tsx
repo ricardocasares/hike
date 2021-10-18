@@ -7,7 +7,7 @@ export const Index: F = () => (
     <Measure size={{ "@md": "md" }}>
       <H1>Hello!</H1>
       <Lead as="h2">
-        I'm <Strong>Ricardo</Strong>, a creative software developer.
+        I&apos;m <Strong>Ricardo</Strong>, a creative software developer.
       </Lead>
       <P>
         As an experienced web developer, I

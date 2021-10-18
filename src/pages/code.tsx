@@ -11,7 +11,7 @@ export const Projects: NextPage<{ repos: any; }> = ({ repos }) => (
     <Measure size={{ "@md": "md" }}>
       <H1>Code</H1>
       <Lead>
-        Things I've been <Strong>pushing</Strong> lately
+        Things I&apos;ve been <Strong>pushing</Strong> lately
       </Lead>
 
       <Box
