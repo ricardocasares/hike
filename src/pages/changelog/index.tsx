@@ -57,7 +57,7 @@ export const getStaticProps: GetStaticProps = async () => {
         })
       ),
     },
-    revalidate: 5
+    revalidate: 86400
   };
 };
 

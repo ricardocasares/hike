@@ -38,7 +38,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       // @ts-ignore
       issue: data.repository.issue,
     },
-    revalidate: 5
+    revalidate: 86400
   };
 };
 
@@ -58,7 +58,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
         params: { issue: [`${number}`, slug(title)] },
       })
     ),
-    fallback: false,
+    fallback: "blocking",
   };
 };
 
