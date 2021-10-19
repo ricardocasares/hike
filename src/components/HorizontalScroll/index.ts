@@ -1,12 +1,9 @@
-import styled from "@emotion/styled";
+import { styled } from "@/css";
 
-export const HorizontalScroll = styled.div`
-  overflow-x: scroll;
-  overflow-y: hidden;
-  white-space: nowrap;
-  -webkit-overflow-scrolling: touch;
-
-  ::-webkit-scrollbar {
-    display: none;
-  }
-`;
+export const HorizontalScroll = styled("div", {
+  overflowX: "scroll",
+  overflowY: "hidden",
+  whiteSpace: "nowrap",
+  WebkitOverflowScrolling: "touch",
+  "::-webkit-scrollbar": { display: "none" },
+});

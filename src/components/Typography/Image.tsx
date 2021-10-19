@@ -1,5 +1,3 @@
-import styled from "@emotion/styled";
+import { styled } from '@/css';
 
-export const Img = styled.img`
-  width: 100%;
-`;
+export const Img = styled("img", { width: "100%" });

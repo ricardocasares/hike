@@ -1,19 +1,15 @@
+
 import { FunctionComponent as F } from "react";
-import { Box } from "@/components/Box";
+import { Stack } from "@/components/Stack";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 
-export const Layout: F<Box> = ({ children, ...props }) => (
-  <Box
-    as="main"
-    padding={[20, 40]}
-    minHeight="100%"
-    display="flex"
-    flexDirection="column"
-    {...props}
-  >
+export const Layout: F = ({ children, ...props }) => (
+  <Stack {...props} pad="md">
     <Navigation />
-    {children}
+    <Stack as="main" css={{ flex: 1 }}>
+      {children}
+    </Stack>
     <Footer />
-  </Box>
+  </Stack>
 );

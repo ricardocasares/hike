@@ -1,136 +1,78 @@
-import styled from "@emotion/styled";
-import { FunctionComponent as F } from "react";
-import { Box } from "@/components/Box";
+import { styled } from "@/css";
 
-export const A = styled.a`
-  color: #fff;
-  text-decoration: none;
-  transition: border-color 0.5s;
-  padding-bottom: 2px;
-  border-bottom: 2px solid #0070f3;
+export const A = styled('a', {
+  color: "$accent",
+  textDecoration: "none",
+});
 
-  &:hover {
-    border-color: #666;
+export const P = styled('p', {
+  color: "$fg",
+  lineHeight: "1.5em",
+});
+
+export const Strong = styled('strong', {
+  color: "$contrast !important",
+  fontWeight: 500,
+});
+
+export const Lead = styled('p', {
+  color: "$fg",
+  fontWeight: 300,
+  fontSize: "24px",
+  lineHeight: "1.5em",
+  strong: { color: "$fg" }
+});
+
+
+export const Html = styled('div', {
+  marginBottom: "50px",
+  a: {
+    color: "$accent",
+    textDecoration: "none",
+  },
+  "h1, h2, h3, h4, h5, h6": {
+    color: "$fg",
+    fontWeight: 300
+  },
+  p: { lineHeight: "1.5rem" },
+  "p, li": { color: "$slate11" },
+  ul: { margin: "40px 0", paddingLeft: "20px" },
+  li: {
+    marginBottom: "5px",
+    listStyle: "none",
+    "&:before": { content: '"-"', color: "$fg", marginRight: "15px" }
+  },
+  blockquote: {
+    margin: "30px",
+    padding: "15px",
+    textDecoration: "none",
+    p: { color: "$fg", fontSize: "18px" }
+  },
+  "pre, code, .highlight": {
+    fontSize: "$2",
+    fontFamily: "$mono"
+  },
+  pre: {
+    padding: "$2",
+    color: "$bg",
+    background: "$contrast",
+    borderRadius: "$3",
+    border: "1px solid $bg",
+    overflow: "scroll",
+    margin: "$5 0"
   }
-`;
+});
 
-export const P = styled.p`
-  color: #666;
-  line-height: 1.5em;
-`;
-
-export const Strong = styled.strong`
-  color: #ffffff;
-  font-weight: 400;
-`;
-
-export const Lead: F = styled.p`
-  color: #666;
-  font-weight: 300;
-  font-size: 24px;
-  line-height: 1.5em;
-
-  strong {
-    color: #ffffff;
-  }
-`;
-
-export const Code = styled.code`
-  font-family: monospace;
-`;
-
-export const Pre = styled.pre`
-  color: #ffffff;
-  padding: 20px 0;
-  font-size: 14px;
-  font-family: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono",
-    "Courier New", monospace;
-`;
-
-export const Meta = styled.span`
-  color: #cccccc;
-  font-size: 14px;
-  line-height: 0;
-`;
-
-export const Html = styled.div`
-  a {
-    color: #fff;
-    text-decoration: none;
-    transition: border-color 0.5s;
-    padding-bottom: 2px;
-    border-bottom: 2px solid #0070f3;
-
-    &:hover {
-      border-color: #666;
+export const Measure = styled('div', {
+  maxWidth: "100%",
+  variants: {
+    size: {
+      sm: {
+        maxWidth: "40%"
+      },
+      md: {
+        maxWidth: "60%"
+      },
     }
   }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    color: #ddd;
-    font-weight: normal;
-  }
-
-  p {
-    line-height: 1.5em;
-  }
-
-  p,
-  li {
-    color: #888;
-  }
-
-  ul {
-    margin: 40px 0;
-    padding-left: 20px;
-  }
-
-  li {
-    margin-bottom: 5px;
-    list-style: none;
-
-    &:before {
-      content: "→";
-      color: #333;
-      margin-right: 15px;
-    }
-  }
-
-  blockquote {
-    margin: 30px;
-    padding: 15px;
-    text-decoration: none;
-
-    p {
-      color: #fff;
-      font-size: 18px;
-    }
-  }
-
-  pre,
-  code,
-  .highlight {
-    color: #fff;
-    font-size: 15px;
-    font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
-  }
-
-  pre {
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #222;
-    overflow: scroll;
-    margin: 40px 0;
-  }
-`;
-
-export const Measure: F<Box> = ({ children, ...props }) => (
-  <Box maxWidth={["100%", "70%", "60%"]} {...props}>
-    {children}
-  </Box>
-);
+});

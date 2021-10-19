@@ -3,18 +3,25 @@ import Link from "next/link";
 import { NextPage, GetStaticProps } from "next";
 import { Stack } from "@/components/Stack";
 import { Layout } from "@/components/Layout";
-import { H1, Strong, Measure, A, Lead } from "@/components/Typography";
+import {
+  A,
+  H1,
+  Strong,
+  Measure,
+  Lead,
+  UnstyledList,
+} from "@/components/Typography";
 import { gql } from "@/data/api";
 import { LAST_ISSUES as query } from "@/data/queries";
 
-export const Changelog: NextPage<{ issues: any }> = ({ issues }) => (
+export const Changelog: NextPage<{ issues: any; }> = ({ issues }) => (
   <Layout>
-    <Measure flex="1" as="section">
+    <Measure>
       <H1>Changelog</H1>
       <Lead>
         Notes and thoughts on <Strong>software development</Strong>
       </Lead>
-      <Stack as="ul" m={0} p={0} space={20}>
+      <Stack as={UnstyledList}>
         {issues.map((issue: any) => (
           <li key={issue.id}>
             <Link

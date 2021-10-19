@@ -1,21 +1,21 @@
 import { FunctionComponent as F } from "react";
-import { Box } from "@/components/Box";
-import { H4, P, A } from "@/components/Typography";
+import { Stack } from "@/components/Stack";
+import { A, P, H2 } from "@/components/Typography";
 
 export type Card = {
   id: string;
   url: string;
   name: string;
-  stars: number;
+  stargazers: number;
   description: string;
-} & Box;
+};
 
-export const Card: F<Card> = ({ id, url, name, description, ...props }) => (
-  <Box border="1px solid #666" borderRadius="4px" p={3} {...props}>
-    <H4 style={{ margin: 0 }}>
-      <A href={url}>{name}</A>
-    </H4>
+export const Card: F<Card> = ({ id, url, name, description, stargazers, ...props }) => (
+  <Stack {...props} css={{ border: "1px solid $slate6", borderRadius: "$2", padding: "$3" }} >
+    <H2 as="h4">
+      <A href={url}>{name} {stargazers}</A>
+    </H2>
 
-    <P>{description}</P>
-  </Box>
+    <P css={{ color: "$slate10" }}>{description}</P>
+  </Stack>
 );
