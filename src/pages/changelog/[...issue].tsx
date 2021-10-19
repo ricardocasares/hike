@@ -38,6 +38,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       // @ts-ignore
       issue: data.repository.issue,
     },
+    revalidate: 5
   };
 };
 
