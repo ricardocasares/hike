@@ -14,5 +14,6 @@ export const reset = globalCss({
     background: "$bg",
     fontFamily: "$sans",
     fontSize: "$4",
+    lineHeight: "1.5rem",
   },
 });
