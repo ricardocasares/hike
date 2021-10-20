@@ -16,4 +16,8 @@ export const reset = globalCss({
     fontSize: "$4",
     lineHeight: "1.5rem",
   },
+  "*::selection": {
+    color: "$bg",
+    background: "$contrast",
+  },
 });
