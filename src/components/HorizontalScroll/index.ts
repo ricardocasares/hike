@@ -1,7 +1,7 @@
 import { styled } from "@/css";
 
 export const HorizontalScroll = styled("div", {
-  overflowX: "scroll",
+  overflowX: "auto",
   overflowY: "hidden",
   whiteSpace: "nowrap",
   WebkitOverflowScrolling: "touch",
