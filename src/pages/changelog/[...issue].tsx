@@ -2,7 +2,7 @@ import slug from "slugster";
 import Head from "next/head";
 import { NextPage, GetStaticProps, GetStaticPaths } from "next";
 import { Layout } from "@/components/Layout";
-import { H1, Measure, Html } from "@/components/Typography";
+import { H1, Measure, Markdown } from "@/components/Typography";
 import { gql } from "@/data/api";
 import { ISSUE, LAST_ISSUES } from "@/data/queries";
 
@@ -14,7 +14,7 @@ export const Changelog: NextPage<{ issue: any; }> = ({ issue }) => (
     <Measure size={{ "@md": "md" }}>
       {issue && <H1>{issue.title}</H1>}
       {issue && (
-        <Html dangerouslySetInnerHTML={{ __html: issue.bodyHTML }}></Html>
+        <Markdown dangerouslySetInnerHTML={{ __html: issue.bodyHTML }}></Markdown>
       )}
     </Measure>
   </Layout>

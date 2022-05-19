@@ -24,7 +24,7 @@ export const Lead = styled('p', {
 });
 
 
-export const Html = styled('div', {
+export const Markdown = styled('div', {
   marginBottom: "50px",
   a: {
     color: "$accent",
