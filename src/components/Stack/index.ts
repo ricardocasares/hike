@@ -6,14 +6,8 @@ export const Stack = styled(Box, {
   flexDirection: "column",
   justifyContent: "flex-start",
   minHeight: "100%",
+  gap: "$2",
 
-  "> *": {
-    marginTop: "0",
-    marginBottom: "0",
-  },
-  "> * + *": {
-    marginTop: "$2",
-  },
   variants: {
     pad: {
       sm: {
