@@ -6,7 +6,9 @@ on:
       - main
 
 permissions:
+  pages: write
   issues: read
+  id-token: write
 
 env:
   GH_URL: https://api.github.com
