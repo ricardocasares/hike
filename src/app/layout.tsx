@@ -23,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`p-10 ${mono.className}`}>
+      <body className={`p-4 sm:p-10 font-mono ${mono.className}`}>
         <header>
           <h1 className="text-3xl text-primary font-extrabold">
             <Link href="/">Hello</Link>
@@ -33,7 +33,7 @@ export default function RootLayout({
           </h2>
         </header>
         <main className="flex-1">{children}</main>
-        <footer className="pt-10">
+        <footer className="py-10">
           <a
             className="flex gap-2 items-center"
             href="https://github.com/ricardocasares/hike"

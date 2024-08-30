@@ -22,11 +22,6 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  theme: {
-    fontFamily: {
-      mono: ["var(--font-mono)"],
-    },
-  },
   plugins: [typography, daisy],
   daisyui: {
     themes: [{ light }, { dark }],

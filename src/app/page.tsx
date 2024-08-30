@@ -12,7 +12,9 @@ export default async function Home() {
           <li key={issue.number}>
             <Link href={`/issues/${issue.number}`}>
               <h3 className="flex gap-2">
-                <span className="text-neutral">{issue.created_at}</span>
+                <span className="text-neutral hidden sm:block">
+                  {issue.created_at}
+                </span>
                 <span>{issue.title}</span>
               </h3>
             </Link>
