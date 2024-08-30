@@ -6,8 +6,8 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
   pages: write
+  contents: read
   id-token: write
 
 concurrency:
@@ -39,8 +39,7 @@ jobs:
           GH_OWNER: ricardocasares
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PUBLISHED_LABEL: published
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
 
@@ -51,6 +50,5 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
+      - id: deployment
         uses: actions/deploy-pages@v4
