@@ -1,4 +1,20 @@
 import type { Config } from "tailwindcss";
+import daisy from "daisyui";
+import typography from "@tailwindcss/typography";
+
+const dark = {
+  neutral: "#333",
+  primary: "#FFF",
+  secondary: "#666",
+  "base-100": "#000",
+};
+
+const light = {
+  neutral: "#999",
+  primary: "#000",
+  secondary: "#666",
+  "base-100": "#FFF",
+};
 
 const config: Config = {
   content: [
@@ -7,14 +23,15 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
+    fontFamily: {
+      mono: ["var(--font-mono)"],
     },
   },
-  plugins: [],
+  plugins: [typography, daisy],
+  daisyui: {
+    themes: [{ light }, { dark }],
+    darkTheme: "dark",
+  },
 };
+
 export default config;
