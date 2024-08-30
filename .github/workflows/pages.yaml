@@ -35,7 +35,7 @@ jobs:
       - run: bun run build
         env:
           GH_URL: https://api.github.com
-          GH_REPO: analogical
+          GH_REPO: hike
           GH_OWNER: ricardocasares
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PUBLISHED_LABEL: published
