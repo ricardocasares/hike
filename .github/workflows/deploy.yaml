@@ -4,6 +4,13 @@ on:
   push:
     branches:
       - main
+
+env:
+  GH_URL: https://api.github.com
+  GH_REPO: analogical
+  GH_OWNER: ricardocasares
+  PUBLISHED_LABEL: published
+
 jobs:
   build:
     runs-on: ubuntu-latest

@@ -1,7 +1,7 @@
-const url = process.env.GITHUB_URL;
+const url = process.env.GH_URL;
 const token = process.env.GITHUB_TOKEN;
-const repo = process.env.GITHUB_REPO;
-const owner = process.env.GITHUB_OWNER;
+const repo = process.env.GH_REPO;
+const owner = process.env.GH_OWNER;
 const base = `${url}/repos/${owner}/${repo}`;
 const published = process.env.PUBLISHED_LABEL;
 
