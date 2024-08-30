@@ -1,5 +1,5 @@
 const url = process.env.GH_URL;
-const token = process.env.GITHUB_TOKEN;
+const token = process.env.GH_TOKEN;
 const repo = process.env.GH_REPO;
 const owner = process.env.GH_OWNER;
 const base = `${url}/repos/${owner}/${repo}`;
