@@ -5,6 +5,9 @@ on:
     branches:
       - main
 
+permissions:
+  issues: read
+
 env:
   GH_URL: https://api.github.com
   GH_REPO: analogical
