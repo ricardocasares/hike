@@ -36,7 +36,7 @@ export default function RootLayout({
         <footer className="pt-10">
           <a
             className="flex gap-2 items-center"
-            href="https://github.com/ricardocasares/ricardocasares"
+            href="https://github.com/ricardocasares/hike"
           >
             <GitHub /> Source
           </a>
