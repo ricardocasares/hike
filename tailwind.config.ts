@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss";
 import daisy from "daisyui";
+import theme from "tailwindcss/defaultTheme";
 import typography from "@tailwindcss/typography";
 
 const dark = {
@@ -23,6 +24,13 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   plugins: [typography, daisy],
+  theme: {
+    extend: {
+      fontFamily: {
+        mono: ["var(--font-plex-mono)", ...theme.fontFamily.mono],
+      },
+    },
+  },
   daisyui: {
     themes: [{ light }, { dark }],
     darkTheme: "dark",
