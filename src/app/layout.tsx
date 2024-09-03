@@ -8,7 +8,7 @@ const mono = Mono({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-plex-mono",
-  weight: ["400", "500", "700"],
+  weight: ["400"],
 });
 
 export const metadata: Metadata = {

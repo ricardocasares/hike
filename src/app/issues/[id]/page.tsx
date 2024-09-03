@@ -1,4 +1,4 @@
-import "./prism.css";
+import "./shiki.css";
 import { render } from "@/lib/markdown";
 import { get_issue, get_issues } from "@/lib/github";
 
